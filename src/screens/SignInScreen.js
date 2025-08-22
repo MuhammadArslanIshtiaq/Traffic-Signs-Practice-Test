@@ -35,7 +35,7 @@ const SignInScreen = ({ navigation }) => {
     >
       <StatusBar translucent backgroundColor="transparent" />
       <LinearGradient
-        colors={['#4CAF50', '#2E7D32']}
+        colors={['#115740', '#1a7a5a']}
         style={styles.background}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -189,11 +189,11 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   forgotPasswordText: {
-    color: '#2E7D32',
+    color: '#115740',
     fontSize: 14,
   },
   signInButton: {
-    backgroundColor: '#1B5E20',
+    backgroundColor: '#0d4a35',
     borderRadius: 12,
     height: 56,
     justifyContent: 'center',
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   signUpLink: {
-    color: '#2E7D32',
+    color: '#115740',
     fontSize: 14,
     fontWeight: '600',
   },

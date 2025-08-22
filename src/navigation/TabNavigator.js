@@ -1,22 +1,20 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { useUser } from '../contexts/UserContext';
-import AboutScreen from '../screens/AboutScreen';
-import FavoritesScreen from '../screens/FavoritesScreen';
 import HomeScreen from '../screens/HomeScreen';
-import LeaderboardScreen from '../screens/LeaderboardScreen';
+import LearnScreen from '../screens/LearnScreen';
+import ProgressScreen from '../screens/ProgressScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+import TestScreen from '../screens/TestScreen';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
-  const { user } = useUser();
-
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#1B5E20',
+        tabBarActiveTintColor: '#115740',
         tabBarInactiveTintColor: 'gray',
       }}
     >
@@ -34,40 +32,51 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen 
-        name="Leaderboard" 
-        component={LeaderboardScreen}
+        name="Learn" 
+        component={LearnScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons 
-              name={focused ? 'trophy' : 'trophy-outline'} 
+              name={focused ? 'school' : 'school-outline'} 
               size={size} 
               color={color} 
             />
           )
         }}
       />
-      {user ? (
-        <Tab.Screen 
-          name="Favorites" 
-          component={FavoritesScreen}
-          options={{
-            tabBarIcon: ({ focused, color, size }) => (
-              <Ionicons 
-                name={focused ? 'heart' : 'heart-outline'} 
-                size={size} 
-                color={color} 
-              />
-            )
-          }}
-        />
-      ) : null}
       <Tab.Screen 
-        name="About" 
-        component={AboutScreen}
+        name="Test" 
+        component={TestScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons 
-              name={focused ? 'information-circle' : 'information-circle-outline'} 
+              name={focused ? 'document-text' : 'document-text-outline'} 
+              size={size} 
+              color={color} 
+            />
+          )
+        }}
+      />
+      <Tab.Screen 
+        name="Progress" 
+        component={ProgressScreen}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => (
+            <Ionicons 
+              name={focused ? 'stats-chart' : 'stats-chart-outline'} 
+              size={size} 
+              color={color} 
+            />
+          )
+        }}
+      />
+      <Tab.Screen 
+        name="Settings" 
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => (
+            <Ionicons 
+              name={focused ? 'settings' : 'settings-outline'} 
               size={size} 
               color={color} 
             />

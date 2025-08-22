@@ -51,7 +51,7 @@ const AboutScreen = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <LinearGradient
-        colors={['#2E7D32', '#81C784']}
+        colors={['#115740', '#1a7a5a']}
         style={styles.header}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -96,14 +96,8 @@ const AboutScreen = ({ navigation }) => {
             <Ionicons name="book-outline" size={24} color="#4CAF50" />
             <Text style={styles.featureText}>Multiple Quiz Categories</Text>
           </View>
-          <View style={styles.featureItem}>
-            <Ionicons name="heart-outline" size={24} color="#4CAF50" />
-            <Text style={styles.featureText}>Save Favorite Quizzes</Text>
-          </View>
-          <View style={styles.featureItem}>
-            <Ionicons name="trophy-outline" size={24} color="#4CAF50" />
-            <Text style={styles.featureText}>Compete on Leaderboard</Text>
-          </View>
+          
+          
           <View style={styles.featureItem}>
             <Ionicons name="stats-chart-outline" size={24} color="#4CAF50" />
             <Text style={styles.featureText}>Track Your Progress</Text>

@@ -185,7 +185,7 @@ const ProfileScreen = ({ navigation }) => {
 
   return (
     <LinearGradient
-      colors={['#4CAF50', '#2E7D32']}
+              colors={['#115740', '#1a7a5a']}
       style={styles.container}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}

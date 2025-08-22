@@ -25,7 +25,7 @@ const QuizHistoryScreen = ({ navigation }) => {
   };
 
   const getScoreColor = (score) => {
-    if (score >= 90) return '#2E7D32';
+    if (score >= 90) return '#115740';
     if (score >= 70) return '#FFC107';
     return '#FF5722';
   };
@@ -77,7 +77,7 @@ const QuizHistoryScreen = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <LinearGradient
-        colors={['#2E7D32', '#81C784']}
+        colors={['#115740', '#1a7a5a']}
         style={styles.header}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}

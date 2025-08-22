@@ -37,7 +37,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
     >
       <StatusBar translucent backgroundColor="transparent" />
       <LinearGradient
-        colors={['#4CAF50', '#2E7D32']}
+        colors={['#115740', '#1a7a5a']}
         style={styles.background}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   resetButton: {
-    backgroundColor: '#1B5E20',
+    backgroundColor: '#0d4a35',
     borderRadius: 12,
     height: 56,
     justifyContent: 'center',

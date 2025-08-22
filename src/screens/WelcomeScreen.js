@@ -1,25 +1,28 @@
-import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <LinearGradient
-        colors={['#2E7D32', '#81C784']}
+        colors={['#115740', '#1a7a5a']}
         style={styles.background}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
         <View style={styles.content}>
           <View style={styles.iconContainer}>
-            <Ionicons name="school" size={80} color="white" />
+            <Image
+              source={require('../../assets/images/logo.png')}
+              style={styles.logo}
+              resizeMode="contain"
+            />
           </View>
           
-          <Text style={styles.title}>Welcome to Quizly</Text>
-          <Text style={styles.subtitle}>Test your knowledge and challenge yourself!</Text>
+          <Text style={styles.title}>Welcome to Pakistan Sign Tests App</Text>
+          <Text style={styles.subtitle}>پاکستان سائن ٹیسٹ ایپ میں خوش آمدید</Text>
 
           <View style={styles.buttonContainer}>
             <TouchableOpacity 
@@ -71,6 +74,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 30,
   },
+  logo: {
+    width: 80,
+    height: 80,
+  },
   title: {
     fontSize: 32,
     fontWeight: 'bold',
@@ -104,7 +111,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   signUpButton: {
-    backgroundColor: '#1B5E20',
+    backgroundColor: '#0d4a35',
   },
   signInButton: {
     backgroundColor: 'white',
@@ -120,7 +127,7 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   signInText: {
-    color: '#2E7D32',
+    color: '#115740',
   },
   guestButtonText: {
     color: 'white',

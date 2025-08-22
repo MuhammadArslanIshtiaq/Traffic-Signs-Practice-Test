@@ -64,7 +64,7 @@ const FavoritesScreen = ({ navigation }) => {
       <View style={styles.container}>
         <StatusBar translucent backgroundColor="transparent" />
         <LinearGradient
-          colors={['#2E7D32', '#81C784']}
+          colors={['#115740', '#1a7a5a']}
           style={styles.header}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
@@ -95,7 +95,7 @@ const FavoritesScreen = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <LinearGradient
-        colors={['#2E7D32', '#81C784']}
+        colors={['#115740', '#1a7a5a']}
         style={styles.header}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}

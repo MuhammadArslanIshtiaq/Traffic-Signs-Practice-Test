@@ -6,12 +6,15 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import app from './src/config/firebase';
 import { UserProvider } from './src/contexts/UserContext';
 import TabNavigator from './src/navigation/TabNavigator';
+
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import Quiz from './src/screens/Quiz';
 import QuizHistoryScreen from './src/screens/QuizHistoryScreen';
 import QuizPreStart from './src/screens/QuizPreStart';
 import SignInScreen from './src/screens/SignInScreen';
+import SignQuizScreen from './src/screens/SignQuizScreen';
+import SignTestsScreen from './src/screens/SignTestsScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 
@@ -50,10 +53,13 @@ export default function App() {
             <Stack.Screen name="SignUp" component={SignUpScreen} />
             <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
             <Stack.Screen name="Main" component={TabNavigator} />
+
             <Stack.Screen name="QuizPreStart" component={QuizPreStart} />
             <Stack.Screen name="Quiz" component={Quiz} />
             <Stack.Screen name="QuizHistory" component={QuizHistoryScreen} />
             <Stack.Screen name="Profile" component={ProfileScreen} />
+            <Stack.Screen name="SignTests" component={SignTestsScreen} />
+            <Stack.Screen name="SignQuiz" component={SignQuizScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </UserProvider>

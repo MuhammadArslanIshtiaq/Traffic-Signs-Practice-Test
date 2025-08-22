@@ -116,7 +116,7 @@ const LeaderboardScreen = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <LinearGradient
-        colors={['#2E7D32', '#81C784']}
+        colors={['#115740', '#1a7a5a']}
         style={styles.header}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   rankBadge: {
-    backgroundColor: '#2E7D32',
+    backgroundColor: '#115740',
     width: 24,
     height: 24,
     borderRadius: 12,
