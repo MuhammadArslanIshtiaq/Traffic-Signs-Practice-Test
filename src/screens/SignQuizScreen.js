@@ -340,7 +340,7 @@ const SignQuizScreen = ({ navigation, route }) => {
           style={styles.signImageEmoji}
         >
           🚦
-        </Text>
+            </Text>
       );
     }
   };
@@ -370,10 +370,10 @@ const SignQuizScreen = ({ navigation, route }) => {
       >
         <Text style={styles.questionText}>
           {currentQuestion.question || currentQuestion.question_text || currentQuestion.title || currentQuestion.text}
-        </Text>
+            </Text>
         <Text style={styles.questionTextUrdu}>
           {currentQuestion.question_urdu || currentQuestion.question_urdu_text || currentQuestion.title_urdu || currentQuestion.text_urdu || 'No Urdu text available'}
-        </Text>
+            </Text>
         <View style={styles.imageContainer}>
           {renderImage()}
         </View>
@@ -385,7 +385,7 @@ const SignQuizScreen = ({ navigation, route }) => {
             const optionTextUrdu = option.text_urdu || option.option_urdu || option.choice_urdu || option.answer_urdu || option.answer_text_urdu || '';
             
             return (
-              <TouchableOpacity
+              <TouchableOpacity 
                 key={option.id || option.answer_id || index}
                 style={[
                   styles.optionButton,
@@ -404,19 +404,19 @@ const SignQuizScreen = ({ navigation, route }) => {
           })}
         </View>
 
-        <TouchableOpacity
+              <TouchableOpacity 
           style={[styles.nextButton, !selectedAnswer && styles.disabledButton]}
           onPress={handleNextQuestion}
           disabled={!selectedAnswer}
-        >
+              >
           <Text style={styles.nextButtonText}>
             {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
           </Text>
-        </TouchableOpacity>
+              </TouchableOpacity>
       </ScrollView>
-    </View>
-  );
-  }
+        </View>
+      );
+    }
 
   const renderFinishConfirmation = () => (
     <Modal
@@ -453,8 +453,8 @@ const SignQuizScreen = ({ navigation, route }) => {
               <Text style={styles.confirmButtonText}>Finish Quiz</Text>
             </TouchableOpacity>
           </View>
+          </View>
         </View>
-      </View>
     </Modal>
   );
 
@@ -504,7 +504,7 @@ const SignQuizScreen = ({ navigation, route }) => {
             <Text style={styles.statValue}>{Math.round((score / questions.length) * 100)}%</Text>
           </View>
         </View>
-        
+
         <View style={styles.resultButtons}>
           <TouchableOpacity
             style={[styles.resultButton, styles.retryButton]}
@@ -514,17 +514,17 @@ const SignQuizScreen = ({ navigation, route }) => {
             <Text style={styles.resultButtonText}>Try Again</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity
+            <TouchableOpacity
             style={[styles.resultButton, styles.quizzesButton]}
             onPress={handleGoToQuizzes}
-          >
+            >
             <Ionicons name="grid" size={20} color="white" style={styles.buttonIcon} />
             <Text style={styles.resultButtonText}>More Quizzes</Text>
-          </TouchableOpacity>
+            </TouchableOpacity>
+        </View>
         </View>
       </View>
-    </View>
-  );
+    );
 
   return (
     <View style={styles.container}>
@@ -556,7 +556,7 @@ const SignQuizScreen = ({ navigation, route }) => {
               >
                 <Text style={styles.finishQuizButtonText}>Finish Quiz</Text>
               </TouchableOpacity>
-            </View>
+      </View>
           </View>
         )}
 

@@ -321,6 +321,56 @@ const RoadSignsScreen = ({ navigation, route }) => {
             {renderImage(currentSign.image_url)}
           </View>
 
+          {/* Sign type tag */}
+          <View style={styles.tagContainer}>
+            {(() => {
+              // Decode the sign_type if it's encoded
+              let decodedSignType = currentSign.sign_type;
+              if (decodedSignType && decodedSignType.startsWith('\\X')) {
+                try {
+                  // Remove the \X prefix and decode hex
+                  const hexString = decodedSignType.substring(2);
+                  // Convert hex to string manually
+                  decodedSignType = hexString.match(/.{1,2}/g)
+                    ?.map(byte => String.fromCharCode(parseInt(byte, 16)))
+                    .join('') || decodedSignType;
+                } catch (error) {
+                  console.log('Failed to decode sign_type:', decodedSignType);
+                }
+              }
+              
+              // Debug: Log the decoded sign_type
+              console.log('🔍 Sign type debug:', {
+                original: currentSign.sign_type,
+                decoded: decodedSignType
+              });
+              
+              // Determine sign type
+              let signType = 'Road Sign';
+              let tagStyle = styles.signTypeTag;
+              
+              if (decodedSignType) {
+                const lowerSignType = decodedSignType.toLowerCase();
+                if (lowerSignType.includes('warning')) {
+                  signType = 'Warning';
+                  tagStyle = [styles.signTypeTag, styles.warningTag];
+                } else if (lowerSignType.includes('mandatory')) {
+                  signType = 'Mandatory';
+                  tagStyle = [styles.signTypeTag, styles.mandatoryTag];
+                } else if (lowerSignType.includes('informatory')) {
+                  signType = 'Informatory';
+                  tagStyle = [styles.signTypeTag, styles.informatoryTag];
+                }
+              }
+              
+              return (
+                <View style={tagStyle}>
+                  <Text style={styles.signTypeText}>{signType}</Text>
+                </View>
+              );
+            })()}
+          </View>
+
           {/* Sign title */}
           <View style={styles.titleContainer}>
             <Text style={styles.signTitle}>{currentSign.title_en}</Text>
@@ -456,6 +506,31 @@ const styles = StyleSheet.create({
   signImage: {
     width: 200,
     height: 200,
+  },
+  tagContainer: {
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  signTypeTag: {
+    paddingHorizontal: 16,
+    paddingVertical: 6,
+    borderRadius: 20,
+    backgroundColor: '#e0e0e0',
+  },
+  warningTag: {
+    backgroundColor: '#ff9800',
+  },
+  mandatoryTag: {
+    backgroundColor: '#f44336',
+  },
+  informatoryTag: {
+    backgroundColor: '#2196f3',
+  },
+  signTypeText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: 'white',
+    textTransform: 'uppercase',
   },
   titleContainer: {
     marginBottom: 20,
