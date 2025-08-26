@@ -1,10 +1,7 @@
 // Import API configuration
 import { getAuth } from 'firebase/auth';
 import {
-  API_BASE_URL,
   API_SETUP_INSTRUCTIONS,
-  API_TYPES,
-  getAuthHeaders,
   PUBLIC_API_BASE_URL,
   testApiConnection
 } from './api-config.js';
@@ -64,6 +61,16 @@ const createImageMap = () => {
     'mandatory road signs/National Speed Limit Applies.png': require('../../assets/images/signs/mandatory road signs/National Speed Limit Applies.png'),
     'mandatory road signs/Max Speed Limit 80KMH.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'),
     
+    // Additional speed limit variations (common in traffic signs)
+    'mandatory road signs/Speed Limit 30.png': require('../../assets/images/signs/mandatory road signs/End of 30KMH Zone.png'), // Use existing as base
+    'mandatory road signs/Speed Limit 40.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'), // Use existing as base
+    'mandatory road signs/Speed Limit 50.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'), // Use existing as base
+    'mandatory road signs/Speed Limit 60.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'), // Use existing as base
+    'mandatory road signs/Speed Limit 70.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'), // Use existing as base
+    'mandatory road signs/Speed Limit 90.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'), // Use existing as base
+    'mandatory road signs/Speed Limit 100.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'), // Use existing as base
+    'mandatory road signs/Speed Limit 120.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'), // Use existing as base
+    
     // Warning Road Signs
     'warning road signs/Danger Ahead.png': require('../../assets/images/signs/warning road signs/Danger Ahead.png'),
     'warning road signs/Road Works.png': require('../../assets/images/signs/warning road signs/Road Works.png'),
@@ -101,25 +108,69 @@ const createImageMap = () => {
     'warning road signs/Two way traffic.png': require('../../assets/images/signs/warning road signs/Two way traffic.png'),
     'warning road signs/Swing Bridge.png': require('../../assets/images/signs/warning road signs/Swing Bridge.png'),
     
-    // Informatory Road Signs
+    // Additional Warning Road Signs that the API might request
+    'warning road signs/Road Work.png': require('../../assets/images/signs/warning road signs/Road Works.png'), // Alias for Road Works
+    'warning road signs/Sharp Turn.png': require('../../assets/images/signs/warning road signs/Left Bend.png'), // Use Left Bend as base
+    'warning road signs/Steep Descent.png': require('../../assets/images/signs/warning road signs/Dangerous Descent.png'), // Use Dangerous Descent as base
+    'warning road signs/Crossroads.png': require('../../assets/images/signs/warning road signs/Minor Crossing Road.png'), // Use Minor Crossing as base
+    'warning road signs/Roundabout.png': require('../../assets/images/signs/warning road signs/Right Bend.png'), // Use Right Bend as base
+    'warning road signs/Traffic Signals.png': require('../../assets/images/signs/warning road signs/Light signals.png'), // Use Light signals as base
+    'warning road signs/Accident.png': require('../../assets/images/signs/warning road signs/Danger Ahead.png'), // Use Danger Ahead as base
+    'warning road signs/Construction.png': require('../../assets/images/signs/warning road signs/Road Works.png'), // Use Road Works as base
+    'warning road signs/School Zone.png': require('../../assets/images/signs/warning road signs/Children Crossing.png'), // Use Children Crossing as base
+    'warning road signs/Hospital Zone.png': require('../../assets/images/signs/warning road signs/Danger Ahead.png'), // Use Danger Ahead as base
+    
+    // Informatory Road Signs - Complete mapping with aliases
     'informatory road signs/Slow Down to Stop Signal.png': require('../../assets/images/signs/informatory road signs/Slow Down to Stop Signal.png'),
+    
+    // Hospital signs with multiple variations
     'informatory road signs/Hospital Sign.png': require('../../assets/images/signs/informatory road signs/Hospital Sign.png'),
     'informatory road signs/Hospital Sign PK.png': require('../../assets/images/signs/informatory road signs/Hospital Sign PK.png'),
+    'informatory road signs/Hospital.png': require('../../assets/images/signs/informatory road signs/Hospital Sign.png'), // Alias
+    
+    // Fuel/Petrol signs
     'informatory road signs/Petrol Pump.png': require('../../assets/images/signs/informatory road signs/Petrol Pump.png'),
+    'informatory road signs/Fuel Station.png': require('../../assets/images/signs/informatory road signs/Petrol Pump.png'), // Alias
+    'informatory road signs/Gas Station.png': require('../../assets/images/signs/informatory road signs/Petrol Pump.png'), // Alias
+    
+    // Restaurant signs
     'informatory road signs/Restaurant.png': require('../../assets/images/signs/informatory road signs/Restaurant.png'),
+    'informatory road signs/Food.png': require('../../assets/images/signs/informatory road signs/Restaurant.png'), // Alias
+    
+    // Toilet signs
     'informatory road signs/Toilet Facility Sign.png': require('../../assets/images/signs/informatory road signs/Toilet Facility Sign.png'),
     'informatory road signs/Toilet Facility Sign (2).png': require('../../assets/images/signs/informatory road signs/Toilet Facility Sign (2).png'),
+    'informatory road signs/Toilet.png': require('../../assets/images/signs/informatory road signs/Toilet Facility Sign.png'), // Alias
+    'informatory road signs/Bathroom.png': require('../../assets/images/signs/informatory road signs/Toilet Facility Sign.png'), // Alias
+    
+    // Bus and transport signs
     'informatory road signs/Bus Stop.png': require('../../assets/images/signs/informatory road signs/Bus Stop.png'),
-    'informatory road signs/Dangerous Turn.png': require('../../assets/images/signs/informatory road signs/Dangerous Turn.png'),
-    'informatory road signs/Go Signal.png': require('../../assets/images/signs/informatory road signs/Go Signal.png'),
-    'informatory road signs/Stop Signal.png': require('../../assets/images/signs/informatory road signs/Stop Signal.png'),
+    'informatory road signs/Bus.png': require('../../assets/images/signs/informatory road signs/Bus Stop.png'), // Alias
+    
+    // Parking signs
     'informatory road signs/Parking Sign.png': require('../../assets/images/signs/informatory road signs/Parking Sign.png'),
     'informatory road signs/Parking Place Direction.png': require('../../assets/images/signs/informatory road signs/Parking Place Direction.png'),
+    'informatory road signs/Parking.png': require('../../assets/images/signs/informatory road signs/Parking Sign.png'), // Alias
+    
+    // Traffic signals
+    'informatory road signs/Go Signal.png': require('../../assets/images/signs/informatory road signs/Go Signal.png'),
+    'informatory road signs/Stop Signal.png': require('../../assets/images/signs/informatory road signs/Stop Signal.png'),
+    'informatory road signs/Traffic Light.png': require('../../assets/images/signs/informatory road signs/Go Signal.png'), // Alias
+    'informatory road signs/Signal.png': require('../../assets/images/signs/informatory road signs/Go Signal.png'), // Alias
+    
+    // Other informatory signs
+    'informatory road signs/Dangerous Turn.png': require('../../assets/images/signs/informatory road signs/Dangerous Turn.png'),
     'informatory road signs/Telephone.png': require('../../assets/images/signs/informatory road signs/Telephone.png'),
     'informatory road signs/Start Of Motorway.png': require('../../assets/images/signs/informatory road signs/Start Of Motorway.png'),
     'informatory road signs/Breakdown Service.png': require('../../assets/images/signs/informatory road signs/Breakdown Service.png'),
     'informatory road signs/A Deadend Road.png': require('../../assets/images/signs/informatory road signs/A Deadend Road.png'),
     'informatory road signs/Deadend on Left.png': require('../../assets/images/signs/informatory road signs/Deadend on Left.png'),
+    'informatory road signs/Overtaking is Prohibited.png': require('../../assets/images/signs/informatory road signs/Overtaking is Prohibited.png'),
+    'informatory road signs/Overtaking Allowed if no Vehicle Approaching  from the opposite direction.png': require('../../assets/images/signs/informatory road signs/Overtaking Allowed if no Vehicle Approaching  from the opposite direction.png'),
+    'informatory road signs/Cannot Cross without stopping on these lines first.png': require('../../assets/images/signs/informatory road signs/Cannot Cross without stopping on these lines first.png'),
+    'informatory road signs/Prohibited For Vehicles from Crossing the Lines.png': require('../../assets/images/signs/informatory road signs/Prohibited For Vehicles from Crossing the Lines.png'),
+    'informatory road signs/Prohibition of Stopping the Vehicle on Yellow Section.png': require('../../assets/images/signs/informatory road signs/Prohibition of Stopping the Vehicle on Yellow Section.png'),
+    'informatory road signs/Stoping on Road Prohibited.png': require('../../assets/images/signs/informatory road signs/Stoping on Road Prohibited.png'),
   };
   
   // Create map with both URL-encoded and regular paths
@@ -134,48 +185,184 @@ const createImageMap = () => {
     map[`/signs/${encodeURIComponent(encodeURIComponent(key))}`] = image;
   });
   
+  // Debug: Log all warning road sign images we have mapped
+  const warningSigns = Object.keys(images).filter(key => key.includes('warning road signs'));
+  console.log('📊 Warning Road Signs mapped:', warningSigns.length);
+  console.log('📋 Warning Road Signs list:', warningSigns);
+  
   return map;
 };
 
 const signImageMap = createImageMap();
 
+// Debug: Check what's actually in the image map
+console.log('🔍 Image map created with', Object.keys(signImageMap).length, 'entries');
+console.log('🔍 Sample image map entry:', Object.keys(signImageMap)[0], '->', signImageMap[Object.keys(signImageMap)[0]]);
+console.log('🔍 Sample image type:', typeof signImageMap[Object.keys(signImageMap)[0]]);
+
+// Count images by category
+const countImagesByCategory = () => {
+  const mandatoryCount = Object.keys(signImageMap).filter(path => path.includes('mandatory')).length;
+  const warningCount = Object.keys(signImageMap).filter(path => path.includes('warning')).length;
+  const informatoryCount = Object.keys(signImageMap).filter(path => path.includes('informatory')).length;
+  
+  console.log('📊 Image Counts by Category:');
+  console.log('   🚫 Mandatory Road Signs:', mandatoryCount, '/ 46');
+  console.log('   ⚠️ Warning Road Signs:', warningCount, '/ 42');
+  console.log('   ℹ️ Informatory Road Signs:', informatoryCount, '/ 24');
+  
+  return { mandatoryCount, warningCount, informatoryCount };
+};
+
+// Display counts
+countImagesByCategory();
+
 const getSignImage = (imagePath) => {
   try {
     console.log('🔍 Looking for image:', imagePath);
     
-    // Try different variations of the path
-    const pathsToTry = [
-      imagePath, // Original path
-      decodeURIComponent(imagePath), // URL decoded
-      encodeURIComponent(imagePath), // URL encoded
-    ];
+    // Check if this is one of the problematic images (questions showing text instead of images)
+    const filename = imagePath?.split('/').pop();
+    if (filename && ['Hospital.png', 'Petrol Pump.png', 'Restaurant.png', 'Toilet Facility Sign.png', 'Bus Stop.png', 'Parking Sign.png'].includes(filename)) {
+      console.log('🚨 PROCESSING PROBLEMATIC IMAGE (text showing):', imagePath);
+    }
     
-    console.log('🔍 Trying these path variations:', pathsToTry);
-    
-    for (const path of pathsToTry) {
-      const image = signImageMap[path];
-      if (image) {
-        console.log('✅ Found image in map for path:', path);
-        return image;
-      } else {
-        console.log('❌ No match for path:', path);
+    // Check if this is one of the Warning Road Signs problematic questions
+    if (imagePath && imagePath.includes('warning') && imagePath.includes('road') && imagePath.includes('signs')) {
+      const questionNumber = imagePath.match(/question_(\d+)/) || imagePath.match(/(\d+)/);
+      if (questionNumber && [10, 17, 18, 19, 26, 32].includes(parseInt(questionNumber[1]))) {
+        console.log(`⚠️ WARNING Q${questionNumber[1]} IMAGE MAPPING:`, {
+          originalPath: imagePath,
+          filename: filename,
+          willUseLocal: __DEV__ && !forceApiMode,
+          localMapMatch: signImageMap[imagePath] || signImageMap[imagePath.replace(/%20/g, ' ')] || signImageMap[imagePath.replace(/%2F/g, '/')]
+        });
       }
     }
     
-    console.log('⚠️ Image not found in map for any variation of:', imagePath);
-    console.log('📋 Available paths (first 15):', Object.keys(signImageMap).slice(0, 15));
-    
-    // Try to extract just the filename and look for it
-    const filename = imagePath.split('/').pop();
-    console.log('🔍 Trying to find by filename:', filename);
-    
-    const matchingPath = Object.keys(signImageMap).find(path => path.includes(filename));
-    if (matchingPath) {
-      console.log('✅ Found matching path by filename:', matchingPath);
-      return signImageMap[matchingPath];
+    // Also log if imagePath is undefined or null
+    if (!imagePath) {
+      console.log('🚨 IMAGE PATH IS NULL/UNDEFINED!');
+      return '🚦'; // Return emoji fallback
     }
     
-    // Try to find a similar image based on the category
+    // In development, try local assets first (can be overridden for testing)
+    const forceApiMode = false; // Set to true to test API mode in development
+    
+    if (__DEV__ && !forceApiMode) {
+      console.log('🔧 Development mode: trying local assets first');
+      
+      // Try different variations of the path
+      const pathsToTry = [
+        imagePath, // Original path
+        decodeURIComponent(imagePath), // URL decoded
+        encodeURIComponent(imagePath), // URL encoded
+      ];
+      
+      console.log('🔍 Trying these path variations:', pathsToTry);
+      
+      for (const path of pathsToTry) {
+        const image = signImageMap[path];
+        if (image) {
+          console.log('✅ Found image in local map for path:', path);
+          console.log('🔍 Retrieved image value:', image);
+          console.log('🔍 Retrieved image type:', typeof image);
+          return image;
+        } else {
+          console.log('❌ No match for path:', path);
+        }
+      }
+      
+      console.log('⚠️ Image not found in local map for any variation of:', imagePath);
+      console.log('📋 Available local paths (first 15):', Object.keys(signImageMap).slice(0, 15));
+      
+      // Try to extract just the filename and look for it
+      const filename = imagePath.split('/').pop();
+      console.log('🔍 Trying to find by filename:', filename);
+      
+      // First try exact filename match
+      const matchingPath = Object.keys(signImageMap).find(path => path.includes(filename));
+      if (matchingPath) {
+        console.log('✅ Found matching local path by filename:', matchingPath);
+        return signImageMap[matchingPath];
+      }
+      
+      // If no exact match, try to find similar images in the same category
+      const category = imagePath.toLowerCase().includes('mandatory') ? 'mandatory' : 
+                      imagePath.toLowerCase().includes('warning') ? 'warning' : 
+                      imagePath.toLowerCase().includes('informatory') ? 'informatory' : 'unknown';
+      
+      console.log('🔍 Looking for similar images in category:', category);
+      
+      // Get all available images in this category
+      const categoryImages = Object.keys(signImageMap).filter(path => 
+        path.toLowerCase().includes(category)
+      );
+      
+      console.log('🔍 Available category images:', categoryImages.length);
+      
+      // Try to find a more appropriate fallback based on the filename
+      if (categoryImages.length > 0) {
+        // Look for images that might be semantically similar
+        const filenameLower = filename.toLowerCase();
+        
+        // Try to find images with similar names or purposes
+        let bestMatch = null;
+        
+        if (filenameLower.includes('hospital') || filenameLower.includes('medical')) {
+          bestMatch = categoryImages.find(path => path.toLowerCase().includes('hospital'));
+        } else if (filenameLower.includes('fuel') || filenameLower.includes('petrol') || filenameLower.includes('gas')) {
+          bestMatch = categoryImages.find(path => path.toLowerCase().includes('petrol') || path.toLowerCase().includes('fuel'));
+        } else if (filenameLower.includes('restaurant') || filenameLower.includes('food')) {
+          bestMatch = categoryImages.find(path => path.toLowerCase().includes('restaurant'));
+        } else if (filenameLower.includes('toilet') || filenameLower.includes('bathroom')) {
+          bestMatch = categoryImages.find(path => path.toLowerCase().includes('toilet'));
+        } else if (filenameLower.includes('bus') || filenameLower.includes('transport')) {
+          bestMatch = categoryImages.find(path => path.toLowerCase().includes('bus'));
+        } else if (filenameLower.includes('parking')) {
+          bestMatch = categoryImages.find(path => path.toLowerCase().includes('parking'));
+        } else if (filenameLower.includes('signal') || filenameLower.includes('light')) {
+          bestMatch = categoryImages.find(path => path.toLowerCase().includes('signal') || path.toLowerCase().includes('light'));
+        }
+        
+        if (bestMatch) {
+          console.log('✅ Found semantic match:', bestMatch);
+          return signImageMap[bestMatch];
+        }
+        
+        // If no semantic match, use a random image from the category (but not the same one every time)
+        const randomIndex = Math.floor(Math.random() * categoryImages.length);
+        const randomImage = categoryImages[randomIndex];
+        console.log('🎲 Using random category image as fallback:', randomImage);
+        return signImageMap[randomImage];
+      }
+    }
+    
+    // If not found locally or in production, use API URL
+    console.log('🌐 Using API URL for image:', imagePath);
+    const apiUrl = `${PUBLIC_API_BASE_URL}${imagePath}`;
+    console.log('🔗 Full API URL:', apiUrl);
+    
+    // If we get here, use API URL (or fallback in development)
+    if (__DEV__) {
+      console.log('🔧 Development mode: using category fallback since no local match found');
+      // Use the improved fallback logic from above
+      const normalizedPath = imagePath.toLowerCase();
+      if (normalizedPath.includes('mandatory')) {
+        return require('../../assets/images/signs/mandatory road signs/Slow.png');
+      } else if (normalizedPath.includes('warning')) {
+        return require('../../assets/images/signs/warning road signs/Danger Ahead.png');
+      } else if (normalizedPath.includes('informatory')) {
+        return require('../../assets/images/signs/informatory road signs/Slow Down to Stop Signal.png');
+      }
+    }
+    
+    return { uri: apiUrl };
+    
+  } catch (error) {
+    console.log('⚠️ Error getting image:', error.message);
+    
+    // Fallback based on category
     const normalizedPath = imagePath.toLowerCase();
     if (normalizedPath.includes('mandatory')) {
       console.log('🔄 Using mandatory fallback for:', imagePath);
@@ -190,9 +377,6 @@ const getSignImage = (imagePath) => {
       console.log('🔄 Using default fallback for:', imagePath);
       return require('../../assets/images/signs/mandatory road signs/Slow.png');
     }
-  } catch (error) {
-    console.log('⚠️ Error getting image:', error.message);
-    return require('../../assets/images/signs/mandatory road signs/Slow.png'); // Safe fallback
   }
 };
 
@@ -339,14 +523,13 @@ export const fetchQuizQuestions = async (category) => {
       const title = categoryMap[category];
       console.log('🔍 Looking for quiz with title:', title);
       
-      const firebaseAuth = getAuth();
-      
-      // Step 1: Get all quizzes with their questions
+      // Step 1: Get all quizzes using the new simplified API
       console.log('📋 Step 1: Fetching all quizzes...');
-      const publicHeaders = await getAuthHeaders(firebaseAuth, API_TYPES.PUBLIC);
       const quizzesResponse = await fetch(`${PUBLIC_API_BASE_URL}/quizzes`, {
         method: 'GET',
-        headers: publicHeaders
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
       
       if (quizzesResponse.ok) {
@@ -354,298 +537,284 @@ export const fetchQuizQuestions = async (category) => {
         console.log('✅ Quizzes fetched successfully!');
         console.log('📊 Response structure:', responseData);
         
-        // Handle the proper API response structure
+        // Handle the new simplified API response structure
         let quizzesArray = [];
-        if (responseData.success && Array.isArray(responseData.quizzes)) {
-          quizzesArray = responseData.quizzes;
-        } else if (Array.isArray(responseData)) {
-          quizzesArray = responseData;
-        } else if (responseData && Array.isArray(responseData.data)) {
-          quizzesArray = responseData.data;
+        if (responseData.success && responseData.data && responseData.data.quizzes && Array.isArray(responseData.data.quizzes)) {
+          quizzesArray = responseData.data.quizzes;
+        } else {
+          console.log('❌ Unexpected quizzes data structure:', responseData);
+          throw new Error('Invalid quizzes data structure');
         }
         
-        console.log('📋 Available quizzes:', quizzesArray.map(q => ({ id: q.id, title: q.title })));
+        console.log('📋 Available quizzes:', quizzesArray.map(q => ({ id: q.id, title: q.title, total_questions: q.total_questions })));
         
         // Find the target quiz
         const targetQuiz = quizzesArray.find(quiz => quiz.title === title);
         
         if (targetQuiz) {
           console.log('🎯 Found target quiz:', targetQuiz);
+          console.log('🎯 Target quiz details:', {
+            id: targetQuiz.id,
+            title: targetQuiz.title,
+            total_questions: targetQuiz.total_questions,
+            description: targetQuiz.description
+          });
           
-          // Step 2: Extract questions from the quiz object
-          console.log('📝 Step 2: Extracting questions from quiz object...');
+          // Step 2: Fetch the specific quiz with all questions
+          console.log('📝 Step 2: Fetching specific quiz with questions...');
+          const quizResponse = await fetch(`${PUBLIC_API_BASE_URL}/quizzes/${targetQuiz.id}`, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
           
+          if (!quizResponse.ok) {
+            throw new Error(`Quiz HTTP ${quizResponse.status}: ${quizResponse.statusText}`);
+          }
+          
+          const quizData = await quizResponse.json();
+          console.log('✅ Quiz with questions fetched successfully!');
+          console.log('📊 Quiz data structure:', quizData);
+          
+          // Extract questions array from response
           let questionsArray = [];
-          if (targetQuiz.questions && Array.isArray(targetQuiz.questions)) {
-            console.log('✅ Found questions in quiz object!');
-            console.log(`📝 Found ${targetQuiz.questions.length} questions for: ${title}`);
+          if (quizData.success && quizData.data && quizData.data.questions && Array.isArray(quizData.data.questions)) {
+            questionsArray = quizData.data.questions;
+          } else {
+            console.log('❌ Unexpected quiz data structure:', quizData);
+            throw new Error('Invalid quiz data structure');
+          }
+          
+          console.log(`📝 Found ${questionsArray.length} questions for quiz: ${title}`);
+          
+          // Step 3: Process questions with image URLs
+          const processedQuestions = questionsArray.map((question, index) => {
             
-            // Process the questions according to the proper structure
-            questionsArray = targetQuiz.questions.map((quizQuestion, index) => {
-              console.log(`🔍 Raw quiz question ${index + 1}:`, quizQuestion);
-              
-              const question = quizQuestion.question;
-              const sign = question.sign;
-              
-              console.log(`🔍 Processing question ${index + 1}:`, question);
-              console.log(`🔍 Sign data for question ${index + 1}:`, sign);
-              
-              // Extract question text
-              let questionText = question.question_text || 'What does this traffic sign mean?';
-              let questionTextUrdu = '';
-              
-              // Extract Urdu question text from secondary_languages
-              if (question.secondary_languages && Array.isArray(question.secondary_languages)) {
-                const urduQuestion = question.secondary_languages.find(lang => 
-                  lang.language_code === 'ur' || lang.language_code === 'urdu'
-                );
-                if (urduQuestion && urduQuestion.question_text) {
-                  questionTextUrdu = urduQuestion.question_text;
-                }
+            // Get image URL using the improved getSignImage function
+            const imageUrl = getSignImage(question.sign?.image_url || question.image_url || '/signs/default.png');
+            
+
+            
+            // Extract question text
+            let questionText = question.question_text || 'What does this traffic sign mean?';
+            
+            // Try different possible structures for Urdu text
+            let questionTextUrdu = '';
+            if (Array.isArray(question.secondary_languages)) {
+              // API returns array of objects with language_code and question_text
+              const urduItem = question.secondary_languages.find(item => item.language_code === 'ur');
+              if (urduItem) {
+                questionTextUrdu = urduItem.question_text || '';
               }
-              
-              // Extract sign information
-              let imageUrl = '🛑'; // Fallback emoji
-              let signTitle = '';
-              let signDescription = '';
-              
-              if (sign) {
-                // Use local images from the assets directory
-                if (sign.image_url) {
-                  console.log('🔍 Original API image URL:', sign.image_url);
-                  
-                  // Try to get the image using our mapping function
-                  const localImage = getSignImage(sign.image_url);
-                  if (localImage) {
-                    imageUrl = localImage;
-                    console.log('✅ Successfully loaded local image for:', sign.image_url);
-                    console.log('📄 Mapped to local asset:', imageUrl);
-                  } else {
-                    console.log('⚠️ Could not load local image for:', sign.image_url);
-                    // Keep the fallback emoji
+            } else if (question.secondary_languages?.ur) {
+              questionTextUrdu = question.secondary_languages.ur;
+            } else if (question.question_urdu) {
+              questionTextUrdu = question.question_urdu;
+            } else if (question.question_text_urdu) {
+              questionTextUrdu = question.question_text_urdu;
+            } else if (typeof question.secondary_languages === 'string') {
+              // If secondary_languages is a JSON string, try to parse it
+              try {
+                const parsed = JSON.parse(question.secondary_languages);
+                questionTextUrdu = parsed.ur || '';
+              } catch (e) {
+                console.log('Failed to parse secondary_languages as JSON:', e);
+              }
+            }
+            
+            // Debug: Log first question to check data structure
+            if (index === 0) {
+              console.log('🔍 First question data structure:', {
+                question_text: question.question_text,
+                secondary_languages: question.secondary_languages,
+                secondary_languages_type: typeof question.secondary_languages,
+                secondary_languages_keys: question.secondary_languages ? Object.keys(question.secondary_languages) : 'null',
+                ur_text: question.secondary_languages?.ur,
+                extracted_urdu: questionTextUrdu,
+                extracted_urdu_length: questionTextUrdu.length,
+                options: question.options?.slice(0, 2)?.map(opt => ({
+                  option_text: opt.option_text,
+                  secondary_languages: opt.secondary_languages,
+                  secondary_languages_type: typeof opt.secondary_languages,
+                  secondary_languages_keys: opt.secondary_languages ? Object.keys(opt.secondary_languages) : 'null',
+                  ur_text: opt.secondary_languages?.ur
+                }))
+              });
+            }
+            
+            // Extract options
+            let options = [];
+            if (Array.isArray(question.options)) {
+              options = question.options.map(option => {
+                return option.option_text || option.text || '';
+              });
+            }
+            
+            // Find correct answer
+            const correctOption = question.options?.find(opt => opt.is_correct);
+            const correctAnswer = correctOption?.option_letter?.toLowerCase() || 'a';
+            
+            // Process options
+            if (question.options && Array.isArray(question.options)) {
+              options = question.options.map((option, optIndex) => {
+                let optionText = option.option_text || `Option ${String.fromCharCode(65 + optIndex)}`;
+                
+                // Try different possible structures for option Urdu text
+                let optionTextUrdu = '';
+                if (Array.isArray(option.secondary_languages)) {
+                  // API returns array of objects with language_code and option_text
+                  const urduItem = option.secondary_languages.find(item => item.language_code === 'ur');
+                  if (urduItem) {
+                    optionTextUrdu = urduItem.option_text || urduItem.question_text || '';
+                  }
+                } else if (option.secondary_languages?.ur) {
+                  optionTextUrdu = option.secondary_languages.ur;
+                } else if (option.option_urdu) {
+                  optionTextUrdu = option.option_urdu;
+                } else if (option.text_urdu) {
+                  optionTextUrdu = option.text_urdu;
+                } else if (typeof option.secondary_languages === 'string') {
+                  // If secondary_languages is a JSON string, try to parse it
+                  try {
+                    const parsed = JSON.parse(option.secondary_languages);
+                    optionTextUrdu = parsed.ur || '';
+                  } catch (e) {
+                    console.log('Failed to parse option secondary_languages as JSON:', e);
                   }
                 }
                 
-                signTitle = sign.title_en || '';
-                signDescription = sign.english_description || '';
-              }
-              
-              // Process options
-              let options = [];
-              let correctAnswer = 'a';
-              
-              if (question.options && Array.isArray(question.options)) {
-                options = question.options.map((option, optIndex) => {
-                  let optionText = option.option_text || `Option ${String.fromCharCode(65 + optIndex)}`;
-                  let optionTextUrdu = '';
-                  
-                  // Extract Urdu option text
-                  if (option.secondary_languages && Array.isArray(option.secondary_languages)) {
-                    const urduOption = option.secondary_languages.find(lang => 
-                      lang.language_code === 'ur' || lang.language_code === 'urdu'
-                    );
-                    if (urduOption && urduOption.option_text) {
-                      optionTextUrdu = urduOption.option_text;
-                    }
-                  }
-                  
-                  // Set correct answer
-                  if (option.is_correct) {
-                    correctAnswer = option.option_letter?.toLowerCase() || String.fromCharCode(97 + optIndex);
-                  }
-                  
-                  return {
-                    id: option.id || String.fromCharCode(97 + optIndex),
-                    text: optionText,
-                    text_urdu: optionTextUrdu || `آپشن ${String.fromCharCode(65 + optIndex)}`
-                  };
-                });
-              }
-              
-              // Ensure we have at least 4 options
-              while (options.length < 4) {
-                const optIndex = options.length;
-                options.push({
-                  id: String.fromCharCode(97 + optIndex),
-                  text: `Option ${String.fromCharCode(65 + optIndex)}`,
-                  text_urdu: `آپشن ${String.fromCharCode(65 + optIndex)}`
-                });
-              }
-              
-              console.log(`📋 Processed question ${index + 1}:`, {
-                questionText,
-                questionTextUrdu,
-                imageUrl,
-                signTitle,
-                signDescription,
-                optionsCount: options.length,
-                correctAnswer
+                return {
+                  id: option.id || String.fromCharCode(97 + optIndex),
+                  text: optionText,
+                  text_urdu: optionTextUrdu,
+                  is_correct: option.is_correct || false
+                };
               });
-              
-              // Debug image URL construction
-              if (sign && sign.image_url) {
-                console.log(`🖼️ Image URL for question ${index + 1}:`, {
-                  original: sign.image_url,
-                  constructed: imageUrl,
-                  fileName: sign.image_url.split('/').pop()
-                });
-              }
-              
-              return {
-                id: question.id || `question-${index}`,
-                question: questionText,
-                question_urdu: questionTextUrdu,
-                image_url: imageUrl,
-                sign_title: signTitle,
-                sign_description: signDescription,
-                options: options,
-                correct_answer: correctAnswer
-              };
-            });
+            }
             
-            console.log('✅ Successfully processed all questions!');
-            return questionsArray;
+            // Ensure we have at least 4 options
+            while (options.length < 4) {
+              const optIndex = options.length;
+              options.push({
+                id: String.fromCharCode(97 + optIndex),
+                text: `Option ${String.fromCharCode(65 + optIndex)}`,
+                text_urdu: `آپشن ${String.fromCharCode(65 + optIndex)}`
+              });
+            }
             
-          } else {
-            console.log('⚠️ No questions found in quiz object');
-          }
+
+            
+            const processedQuestion = {
+              id: question.id || `question-${index}`,
+              question: questionText,
+              question_urdu: questionTextUrdu,
+              image_url: imageUrl,
+              options: options,
+              correct_answer: correctAnswer
+            };
+            
+            // Debug: Log processed question for first question
+            if (index === 0) {
+              console.log('🔍 Processed question structure:', {
+                question: processedQuestion.question,
+                question_urdu: processedQuestion.question_urdu,
+                question_urdu_length: processedQuestion.question_urdu?.length || 0,
+                options_urdu: processedQuestion.options?.map(opt => ({
+                  text: opt.text,
+                  text_urdu: opt.text_urdu,
+                  text_urdu_length: opt.text_urdu?.length || 0,
+                  has_urdu: opt.text_urdu && opt.text_urdu.length > 0
+                }))
+              });
+            }
+            
+            return processedQuestion;
+          });
+          
+          console.log('✅ Successfully processed all questions!');
+          return processedQuestions;
           
         } else {
-          console.log('❌ Target quiz not found:', title);
-          console.log('Available quiz titles:', quizzesArray.map(q => q.title));
+          console.log('❌ Target quiz not found for title:', title);
+          console.log('📋 Available quiz titles:', quizzesArray.map(q => q.title));
+          throw new Error(`Quiz not found: ${title}`);
         }
+        
       } else {
-        console.log('❌ Failed to fetch quizzes:', quizzesResponse.status);
-      }
-      
-      // Try authenticated API as fallback
-      console.log('🔐 Trying authenticated API as fallback...');
-      const authHeaders = await getAuthHeaders(firebaseAuth, API_TYPES.AUTHENTICATED);
-      
-      const authQuizzesResponse = await fetch(`${API_BASE_URL}/quizzes`, {
-        method: 'GET',
-        headers: authHeaders
-      });
-      
-      if (authQuizzesResponse.ok) {
-        console.log('✅ Authenticated API successful, but using public API data');
+        throw new Error(`HTTP ${quizzesResponse.status}: ${quizzesResponse.statusText}`);
       }
       
     } catch (apiError) {
-      console.log('❌ API fetch failed, using mock data:', apiError.message);
+      console.log('❌ API fetch failed:', apiError.message);
+      throw apiError;
     }
-    
-    // Fallback to mock data
-    console.log('🔄 Falling back to mock data for category:', category);
-    const mockQuestions = mockQuizData[category];
-    if (mockQuestions) {
-      console.log('📋 Processing mock data through image mapping...');
-      
-      // Process mock data through the same image mapping logic as API data
-      const processedMockQuestions = mockQuestions.map((question, index) => {
-        console.log(`🔍 Processing mock question ${index + 1}:`, question);
-        
-        // Process the image URL through getSignImage
-        let processedImageUrl = question.image_url;
-        if (question.image_url && typeof question.image_url === 'string') {
-          console.log('🔍 Original mock image URL:', question.image_url);
-          const localImage = getSignImage(question.image_url);
-          if (localImage) {
-            processedImageUrl = localImage;
-            console.log('✅ Successfully mapped mock image:', question.image_url, '->', localImage);
-          } else {
-            console.log('⚠️ Could not map mock image:', question.image_url);
-          }
-        }
-        
-        return {
-          ...question,
-          image_url: processedImageUrl
-        };
-      });
-      
-      console.log('✅ Mock data processed successfully!');
-      return processedMockQuestions;
-    }
-    
-    console.log('❌ No data found for category:', category);
-    return [];
     
   } catch (error) {
-    console.error('❌ Error fetching quiz questions:', error);
-    return [];
+    console.log('❌ API fetch failed, using mock data:', error.message);
+    
+    // Return mock data for development
+    if (__DEV__) {
+      console.log('🔧 Using mock data for development...');
+      return mockQuizData[category] || mockQuizData.mandatory;
+    }
+    
+    throw error;
   }
 };
 
 export const fetchSignCategories = async () => {
   try {
-    const firebaseAuth = getAuth();
+    console.log('🚀 Fetching sign categories...');
     
-    // Try public API first
-    const publicHeaders = await getAuthHeaders(firebaseAuth, API_TYPES.PUBLIC);
-    const publicResponse = await fetch(`${PUBLIC_API_BASE_URL}/signs`, {
+    // Use the new simplified API
+    const response = await fetch(`${PUBLIC_API_BASE_URL}/signs`, {
       method: 'GET',
-      headers: publicHeaders
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
     
-         if (publicResponse.ok) {
-       const publicData = await publicResponse.json();
-       console.log('✅ Public signs loaded!');
-       console.log('📊 Public signs structure:', publicData);
-       
-       // Handle different response formats
-       if (Array.isArray(publicData)) {
-         return publicData;
-       } else if (publicData && Array.isArray(publicData.data)) {
-         return publicData.data;
-       } else if (publicData && Array.isArray(publicData.signs)) {
-         return publicData.signs;
-       } else if (publicData && typeof publicData === 'object') {
-         // Try to extract array from common properties
-         const possibleArrays = Object.values(publicData).filter(val => Array.isArray(val));
-         if (possibleArrays.length > 0) {
-           return possibleArrays[0];
-         }
-       }
-       
-       console.log('⚠️ Could not extract signs array from public API response');
-       return [];
-     }
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
     
-    // If public API fails, try authenticated API
-    const authHeaders = await getAuthHeaders(firebaseAuth, API_TYPES.AUTHENTICATED);
-    const response = await fetch(`${API_BASE_URL}/signs`, {
-      method: 'GET',
-      headers: authHeaders
+    const data = await response.json();
+    console.log('✅ Sign categories fetched successfully!');
+    
+    // Extract signs array from response
+    let signsArray = [];
+    if (data.success && data.data && data.data.signs && Array.isArray(data.data.signs)) {
+      signsArray = data.data.signs;
+    } else {
+      console.log('❌ Unexpected signs data structure:', data);
+      throw new Error('Invalid signs data structure');
+    }
+    
+    console.log(`📝 Found ${signsArray.length} signs`);
+    
+    // Group signs by category
+    const categories = {
+      mandatory: signsArray.filter(sign => sign.sign_type === 'mandatory'),
+      warning: signsArray.filter(sign => sign.sign_type === 'warning'),
+      informatory: signsArray.filter(sign => sign.sign_type === 'informatory')
+    };
+    
+    console.log('📊 Signs by category:', {
+      mandatory: categories.mandatory.length,
+      warning: categories.warning.length,
+      informatory: categories.informatory.length
     });
     
-         if (!response.ok) {
-       throw new Error(`HTTP error! status: ${response.status}`);
-     }
-     
-     const data = await response.json();
-     console.log('📊 Authenticated signs structure:', data);
-     
-     // Handle different response formats for authenticated API
-     if (Array.isArray(data)) {
-       return data;
-     } else if (data && Array.isArray(data.data)) {
-       return data.data;
-     } else if (data && Array.isArray(data.signs)) {
-       return data.signs;
-     } else if (data && typeof data === 'object') {
-       // Try to extract array from common properties
-       const possibleArrays = Object.values(data).filter(val => Array.isArray(val));
-       if (possibleArrays.length > 0) {
-         return possibleArrays[0];
-       }
-     }
-     
-     console.log('⚠️ Could not extract signs array from authenticated API response');
-     return [];
+    return categories;
+    
   } catch (error) {
-    console.error('Error fetching sign categories:', error);
-    return null;
+    console.log('❌ Error fetching sign categories:', error.message);
+    return {
+      mandatory: [],
+      warning: [],
+      informatory: []
+    };
   }
 };
 

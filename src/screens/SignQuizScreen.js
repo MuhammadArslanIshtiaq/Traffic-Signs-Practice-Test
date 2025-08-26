@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Alert, Image, Modal, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../components/Header';
 import { fetchQuizQuestions, inspectQuizzesTable, saveQuizResult } from '../config/supabase';
 import { useUser } from '../contexts/UserContext';
@@ -9,13 +9,36 @@ const SignQuizScreen = ({ navigation, route }) => {
   const { user } = useUser();
   const { authority, category, categoryName } = route.params;
   
+  console.log('🎯 SignQuizScreen params:', { authority, category, categoryName });
+  console.log('🎯 Authority object:', authority);
+  
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
+  const [showFinishConfirmation, setShowFinishConfirmation] = useState(false);
+  
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Function to shuffle array (Fisher-Yates algorithm)
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  // Function to reset quiz state
+  const resetQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setSelectedAnswer(null);
+    setScore(0);
+    setShowResult(false);
+  };
 
   // Fetch questions from Supabase on component mount
   useEffect(() => {
@@ -30,10 +53,18 @@ const SignQuizScreen = ({ navigation, route }) => {
         console.log('Fetched quiz data:', quizData);
         
         if (quizData && quizData.length > 0) {
-          setQuestions(quizData);
+          console.log('📋 Quiz data loaded:', quizData.length, 'questions');
+          console.log('🔍 Sample question structure:', quizData[0]);
+          
+          // Shuffle options for each question to randomize order
+          const shuffledQuizData = quizData.map(question => ({
+            ...question,
+            options: shuffleArray(question.options || [])
+          }));
+          setQuestions(shuffledQuizData);
         } else {
           // Fallback to sample questions if no data from Supabase
-          setQuestions([
+          const fallbackQuestions = [
     {
       id: 1,
       question: "What does this sign mean?",
@@ -60,7 +91,14 @@ const SignQuizScreen = ({ navigation, route }) => {
               ],
               correct_answer: 'c'
             }
-          ]);
+          ];
+          
+          // Shuffle options for fallback questions too
+          const shuffledFallbackQuestions = fallbackQuestions.map(question => ({
+            ...question,
+            options: shuffleArray(question.options || [])
+          }));
+          setQuestions(shuffledFallbackQuestions);
         }
       } catch (err) {
         console.error('Error loading questions:', err);
@@ -82,8 +120,40 @@ const SignQuizScreen = ({ navigation, route }) => {
         index: currentQuestionIndex,
         id: currentQuestion.id,
         imageUrl: currentQuestion.image_url,
+        imageType: typeof currentQuestion.image_url,
         question: currentQuestion.question || currentQuestion.question_text
       });
+      
+      // Debug image source details
+      if (currentQuestion.image_url) {
+        console.log('🖼️ Image Debug:', {
+          questionIndex: currentQuestionIndex + 1,
+          imageUrl: currentQuestion.image_url,
+          isNumber: typeof currentQuestion.image_url === 'number',
+          isObject: typeof currentQuestion.image_url === 'object',
+          isString: typeof currentQuestion.image_url === 'string',
+          hasUri: currentQuestion.image_url?.uri,
+          isStaticMedia: typeof currentQuestion.image_url === 'string' && currentQuestion.image_url.includes('/static/media/'),
+          isBase64: typeof currentQuestion.image_url === 'string' && currentQuestion.image_url.startsWith('data:'),
+          isEmoji: typeof currentQuestion.image_url === 'string' && currentQuestion.image_url.length <= 4
+        });
+        
+        // Special logging for problematic questions
+        if ([6, 21, 23].includes(currentQuestionIndex + 1)) {
+          console.log(`🚨 QUESTION ${currentQuestionIndex + 1} IMAGE DEBUG:`, {
+            imageUrl: currentQuestion.image_url,
+            type: typeof currentQuestion.image_url,
+            isBase64: typeof currentQuestion.image_url === 'string' && currentQuestion.image_url.startsWith('data:'),
+            willShowText: typeof currentQuestion.image_url === 'string' && 
+              !currentQuestion.image_url.startsWith('http') && 
+              !currentQuestion.image_url.includes('/static/media/') && 
+              !currentQuestion.image_url.startsWith('data:') && 
+              typeof currentQuestion.image_url !== 'number'
+          });
+        }
+      } else {
+        console.log('🚨 NO IMAGE URL for question:', currentQuestionIndex + 1);
+      }
     }
   }, [currentQuestionIndex, currentQuestion]);
 
@@ -92,23 +162,58 @@ const SignQuizScreen = ({ navigation, route }) => {
   };
 
   const handleNextQuestion = () => {
-    const correctAnswer = currentQuestion.correct_answer || 
-                         currentQuestion.correct_answer_id || 
-                         currentQuestion.answer || 
-                         currentQuestion.right_answer;
+    // Find the correct answer from the options array
+    let correctAnswer = null;
+    let selectedOption = null;
     
-    if (selectedAnswer === correctAnswer) {
-      setScore(score + 1);
+    // Find the selected option object
+    if (currentQuestion.options && Array.isArray(currentQuestion.options)) {
+      selectedOption = currentQuestion.options.find(opt => 
+        opt.id === selectedAnswer || opt.id === String(selectedAnswer)
+      );
+      
+      // Find the correct option
+      correctAnswer = currentQuestion.options.find(opt => opt.is_correct === true);
+    }
+    
+    // Fallback to old logic if options structure is different
+    if (!correctAnswer) {
+      correctAnswer = currentQuestion.correct_answer || 
+                     currentQuestion.correct_answer_id || 
+                     currentQuestion.answer || 
+                     currentQuestion.right_answer;
+    }
+    
+    const isCorrect = selectedOption?.is_correct === true || selectedAnswer === correctAnswer;
+    
+    console.log('🎯 Answer Check:', {
+      selectedAnswer,
+      selectedOption,
+      correctAnswer,
+      isCorrect,
+      currentScore: score,
+      newScore: isCorrect ? score + 1 : score,
+      options: currentQuestion.options,
+      optionsWithCorrect: currentQuestion.options?.map(opt => ({
+        id: opt.id,
+        text: opt.text,
+        is_correct: opt.is_correct
+      }))
+    });
+    
+    if (isCorrect) {
+      setScore(prevScore => {
+        const newScore = prevScore + 1;
+        console.log('✅ Correct answer! Score increased to:', newScore);
+        return newScore;
+      });
+    } else {
+      console.log('❌ Wrong answer. Score remains:', score);
     }
 
     if (currentQuestionIndex < questions.length - 1) {
       const newIndex = currentQuestionIndex + 1;
-      console.log('Moving to next question:', {
-        currentIndex: currentQuestionIndex,
-        newIndex: newIndex,
-        currentImageUrl: currentQuestion.image_url,
-        nextImageUrl: questions[newIndex]?.image_url
-      });
+
       
       setCurrentQuestionIndex(newIndex);
       setSelectedAnswer(null);
@@ -118,22 +223,49 @@ const SignQuizScreen = ({ navigation, route }) => {
   };
 
   const handleFinishQuiz = async () => {
+    console.log('🎯 handleFinishQuiz called');
+    console.log('🎯 Current question:', currentQuestionIndex + 1, 'of', questions.length);
+    
+    // Ask for confirmation if not at the last question
+    if (currentQuestionIndex < questions.length - 1) {
+      console.log('🎯 Showing custom confirmation modal...');
+      setShowFinishConfirmation(true);
+    } else {
+      console.log('🎯 On last question, finishing directly');
+      finishQuizNow();
+    }
+  };
+
+  const finishQuizNow = async () => {
+    console.log('🎯 finishQuizNow called');
+    
     // Save quiz result to Supabase if user is logged in
     if (user?.uid) {
-      await saveQuizResult(
-        user.uid,
-        authority.code,
-        category,
-        score,
-        questions.length
-      );
+      try {
+        await saveQuizResult(
+          user.uid,
+          authority?.code || authority?.name || 'unknown',
+          category,
+          score,
+          questions.length
+        );
+      } catch (error) {
+        console.log('❌ Error saving quiz result:', error);
+      }
     }
+    
+    // Show results screen
+    console.log('🎯 Setting showResult to true');
+    setShowResult(true);
+    console.log('🎯 showResult set to true');
+  };
 
-    Alert.alert(
-      'Quiz Complete!',
-      `You scored ${score} out of ${questions.length}`,
-      [{ text: 'OK', onPress: () => navigation.goBack() }]
-    );
+  const handleRetryQuiz = () => {
+    resetQuiz();
+  };
+
+  const handleGoToQuizzes = () => {
+    navigation.navigate('Home');
   };
 
   const handleProfilePress = () => {
@@ -148,7 +280,20 @@ const SignQuizScreen = ({ navigation, route }) => {
     <View style={styles.headerButtons}>
       <TouchableOpacity 
         style={styles.headerButton}
-        onPress={() => navigation.goBack()}
+        onPress={() => {
+          if (!showResult && currentQuestionIndex > 0) {
+            Alert.alert(
+              'Leave Quiz?',
+              'Are you sure you want to leave? Your progress will be lost.',
+              [
+                { text: 'Cancel', style: 'cancel' },
+                { text: 'Leave Quiz', style: 'destructive', onPress: () => navigation.goBack() }
+              ]
+            );
+          } else {
+            navigation.goBack();
+          }
+        }}
       >
         <Ionicons name="arrow-back" size={28} color="white" />
       </TouchableOpacity>
@@ -161,77 +306,126 @@ const SignQuizScreen = ({ navigation, route }) => {
     </View>
   );
 
-  const renderQuestion = () => (
-    <View style={styles.questionContainer}>
-      <View style={styles.questionHeader}>
-        <Text style={styles.questionNumber}>
-          Question {currentQuestionIndex + 1} of {questions.length}
-            </Text>
-        <Text style={styles.scoreText}>Score: {score}</Text>
-      </View>
+  const renderImage = () => {
+    const imageSource = questions[currentQuestionIndex]?.image_url;
+    
+    if (typeof imageSource === 'number') {
+      return (
+        <Image 
+          key={`image-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
+          source={imageSource}
+          style={styles.signImage}
+          resizeMode="contain"
+        />
+      );
+    } else if (imageSource && typeof imageSource === 'object' && imageSource.uri) {
+      return (
+        <Image 
+          key={`image-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
+          source={imageSource}
+          style={styles.signImage}
+          resizeMode="contain"
+        />
+      );
+    } else if (typeof imageSource === 'string' && (imageSource.startsWith('http') || imageSource.includes('/static/media/'))) {
+      return (
+        <Image 
+          key={`image-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
+          source={{ uri: imageSource }}
+          style={styles.signImage}
+          resizeMode="contain"
+        />
+      );
+    } else if (typeof imageSource === 'string' && imageSource.startsWith('data:')) {
+      return (
+        <Image 
+          key={`image-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
+          source={{ uri: imageSource }}
+          style={styles.signImage}
+          resizeMode="contain"
+        />
+      );
+    } else {
+      return (
+        <Text 
+          key={`emoji-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
+          style={styles.signImageEmoji}
+        >
+          🚦
+        </Text>
+      );
+    }
+  };
 
-      <View style={styles.questionContent}>
+  const renderQuestion = () => {
+    const currentQuestion = questions[currentQuestionIndex];
+    if (!currentQuestion) {
+      return <Text>Loading question...</Text>;
+    }
+    
+    // Debug: Log current question data
+    if (currentQuestionIndex === 0) {
+      console.log('🔍 SignQuizScreen - Current question data:', {
+        question: currentQuestion.question,
+        question_urdu: currentQuestion.question_urdu,
+        question_urdu_length: currentQuestion.question_urdu?.length || 0,
+        options: currentQuestion.options?.map(opt => ({
+          text: opt.text,
+          text_urdu: opt.text_urdu,
+          text_urdu_length: opt.text_urdu?.length || 0
+        }))
+      });
+    }
+    
+    return (
+      <View style={styles.questionContainer}>
+        <View style={styles.questionHeader}>
+          <View style={styles.questionInfo}>
+            <View style={styles.progressBar}>
+              <View style={[styles.progressFill, { width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }]} />
+            </View>
+            <Text style={styles.scoreText}>Score: {score}</Text>
+          </View>
+        </View>
+      <ScrollView 
+        style={styles.questionContent}
+        showsVerticalScrollIndicator={true}
+        contentContainerStyle={styles.questionContentContainer}
+      >
         <Text style={styles.questionText}>
           {currentQuestion.question || currentQuestion.question_text || currentQuestion.title || currentQuestion.text}
-            </Text>
+        </Text>
         <Text style={styles.questionTextUrdu}>
-          {currentQuestion.question_urdu || currentQuestion.question_urdu_text || currentQuestion.title_urdu || currentQuestion.text_urdu}
-            </Text>
-        
+          {currentQuestion.question_urdu || currentQuestion.question_urdu_text || currentQuestion.title_urdu || currentQuestion.text_urdu || 'No Urdu text available'}
+        </Text>
         <View style={styles.imageContainer}>
-          {typeof currentQuestion.image_url === 'string' && currentQuestion.image_url.startsWith('http') ? (
-            // If it's a web URL, use Image component with uri
-            <Image 
-              key={`image-${currentQuestionIndex}-${currentQuestion.id}`}
-              source={{ uri: currentQuestion.image_url }}
-              style={styles.signImage}
-              resizeMode="contain"
-            />
-          ) : typeof currentQuestion.image_url === 'string' && currentQuestion.image_url.includes('/static/media/') ? (
-            // If it's a bundled asset URL (from require), use Image component with uri
-            <Image 
-              key={`image-${currentQuestionIndex}-${currentQuestion.id}`}
-              source={{ uri: currentQuestion.image_url }}
-              style={styles.signImage}
-              resizeMode="contain"
-            />
-          ) : typeof currentQuestion.image_url === 'number' ? (
-            // If it's a require() result (number), use Image component directly
-            <Image 
-              key={`image-${currentQuestionIndex}-${currentQuestion.id}`}
-              source={currentQuestion.image_url}
-              style={styles.signImage}
-              resizeMode="contain"
-            />
-          ) : (
-            // Fallback to emoji
-            <Text 
-              key={`emoji-${currentQuestionIndex}-${currentQuestion.id}`}
-              style={styles.signImageEmoji}
-            >
-              {currentQuestion.image_url || currentQuestion.image || currentQuestion.sign_image || currentQuestion.imageUrl || '🚦'}
-            </Text>
-          )}
+          {renderImage()}
         </View>
 
         <View style={styles.optionsContainer}>
-          {(currentQuestion.options || currentQuestion.choices || currentQuestion.answers || []).map((option, index) => (
-            <TouchableOpacity
-              key={option.id || option.answer_id || index}
-              style={[
-                styles.optionButton,
-                selectedAnswer === (option.id || option.answer_id || String.fromCharCode(97 + index)) && styles.selectedOption
-              ]}
-              onPress={() => handleAnswerSelect(option.id || option.answer_id || String.fromCharCode(97 + index))}
-            >
-              <Text style={styles.optionText}>
-                {option.text || option.option_text || option.choice || option.answer || option.answer_text}
-              </Text>
-              <Text style={styles.optionTextUrdu}>
-                {option.text_urdu || option.option_urdu || option.choice_urdu || option.answer_urdu || option.answer_text_urdu}
-              </Text>
-            </TouchableOpacity>
-          ))}
+          {(currentQuestion.options || currentQuestion.choices || currentQuestion.answers || []).map((option, index) => {
+            // Extract option text properly
+            const optionText = option.text || option.option_text || option.choice || option.answer || option.answer_text || `Option ${String.fromCharCode(65 + index)}`;
+            const optionTextUrdu = option.text_urdu || option.option_urdu || option.choice_urdu || option.answer_urdu || option.answer_text_urdu || '';
+            
+            return (
+              <TouchableOpacity
+                key={option.id || option.answer_id || index}
+                style={[
+                  styles.optionButton,
+                  selectedAnswer === (option.id || option.answer_id || String.fromCharCode(97 + index)) && styles.selectedOption
+                ]}
+                onPress={() => handleAnswerSelect(option.id || option.answer_id || String.fromCharCode(97 + index))}
+              >
+                <Text style={styles.optionText}>
+                  {optionText}
+                </Text>
+                <Text style={styles.optionTextUrdu}>
+                  {optionTextUrdu || 'No Urdu option text'}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
         </View>
 
         <TouchableOpacity
@@ -243,8 +437,51 @@ const SignQuizScreen = ({ navigation, route }) => {
             {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
           </Text>
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     </View>
+  );
+  }
+
+  const renderFinishConfirmation = () => (
+    <Modal
+      visible={showFinishConfirmation}
+      transparent={true}
+      animationType="fade"
+      onRequestClose={() => setShowFinishConfirmation(false)}
+    >
+      <View style={styles.modalOverlay}>
+        <View style={styles.modalContent}>
+          <Ionicons name="warning-outline" size={60} color="#dc3545" />
+          <Text style={styles.modalTitle}>Finish Quiz Early?</Text>
+          <Text style={styles.modalMessage}>
+            Are you sure you want to finish the quiz now? You're on question {currentQuestionIndex + 1} of {questions.length}.
+          </Text>
+          
+          <View style={styles.modalButtons}>
+            <TouchableOpacity
+              style={[styles.modalButton, styles.cancelButton]}
+              onPress={() => {
+                console.log('🎯 User cancelled finish');
+                setShowFinishConfirmation(false);
+              }}
+            >
+              <Text style={styles.cancelButtonText}>Cancel</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity
+              style={[styles.modalButton, styles.confirmButton]}
+              onPress={() => {
+                console.log('🎯 User confirmed finish!');
+                setShowFinishConfirmation(false);
+                finishQuizNow();
+              }}
+            >
+              <Text style={styles.confirmButtonText}>Finish Quiz</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </Modal>
   );
 
   const renderResult = () => (
@@ -263,21 +500,57 @@ const SignQuizScreen = ({ navigation, route }) => {
           {Math.round((score / questions.length) * 100)}%
         </Text>
         <Text style={styles.resultMessage}>
-          {score >= questions.length * 0.7 
-            ? "Great job! You passed the quiz!" 
-            : "Keep practicing to improve your score!"
-          }
+          {score === questions.length ? 'Perfect! Excellent work!' : 
+           score >= questions.length * 0.8 ? 'Great job! Well done!' :
+           score >= questions.length * 0.7 ? 'Good job! You passed!' :
+           score >= questions.length * 0.6 ? 'Good effort! Keep practicing!' :
+           'Keep studying! You\'ll improve with practice!'}
         </Text>
         
-        <TouchableOpacity
-          style={styles.finishButton}
-          onPress={handleFinishQuiz}
-        >
-          <Text style={styles.finishButtonText}>Finish</Text>
-        </TouchableOpacity>
+        <View style={styles.resultStats}>
+          <View style={styles.statItem}>
+            <View style={styles.statIconContainer}>
+              <Ionicons name="checkmark-circle" size={24} color="#28a745" />
+            </View>
+            <Text style={styles.statLabel}>Correct</Text>
+            <Text style={styles.statValue}>{score}</Text>
+          </View>
+          <View style={styles.statItem}>
+            <View style={styles.statIconContainer}>
+              <Ionicons name="close-circle" size={24} color="#dc3545" />
+            </View>
+            <Text style={styles.statLabel}>Incorrect</Text>
+            <Text style={styles.statValue}>{questions.length - score}</Text>
+          </View>
+          <View style={styles.statItem}>
+            <View style={styles.statIconContainer}>
+              <Ionicons name="trophy" size={24} color="#ffc107" />
+            </View>
+            <Text style={styles.statLabel}>Accuracy</Text>
+            <Text style={styles.statValue}>{Math.round((score / questions.length) * 100)}%</Text>
+          </View>
+        </View>
+        
+        <View style={styles.resultButtons}>
+          <TouchableOpacity
+            style={[styles.resultButton, styles.retryButton]}
+            onPress={handleRetryQuiz}
+          >
+            <Ionicons name="refresh" size={20} color="white" style={styles.buttonIcon} />
+            <Text style={styles.resultButtonText}>Try Again</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity
+            style={[styles.resultButton, styles.quizzesButton]}
+            onPress={handleGoToQuizzes}
+          >
+            <Ionicons name="grid" size={20} color="white" style={styles.buttonIcon} />
+            <Text style={styles.resultButtonText}>More Quizzes</Text>
+          </TouchableOpacity>
         </View>
       </View>
-    );
+    </View>
+  );
 
   return (
     <View style={styles.container}>
@@ -285,15 +558,35 @@ const SignQuizScreen = ({ navigation, route }) => {
       <Header 
         username={user?.displayName} 
         navigation={navigation}
+        customGreeting={categoryName}
+        customSubtitle={authority?.name}
       >
         {renderHeaderRight()}
       </Header>
       
-      <View style={styles.content}>
-        <View style={styles.quizHeader}>
-          <Text style={styles.quizTitle}>{categoryName}</Text>
-          <Text style={styles.quizSubtitle}>{authority?.name}</Text>
-        </View>
+      <ScrollView 
+        style={styles.content}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.contentContainer}
+      >
+        {!showResult && (
+          <View style={styles.quizProgress}>
+            <View style={styles.progressRow}>
+              <Text style={styles.quizProgressText}>
+                Question {currentQuestionIndex + 1} of {questions.length}
+              </Text>
+              <TouchableOpacity
+                style={styles.finishQuizButton}
+                onPress={() => {
+                  console.log('🎯 Finish Quiz button pressed!');
+                  handleFinishQuiz();
+                }}
+              >
+                <Text style={styles.finishQuizButtonText}>Finish Quiz</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
 
         {loading ? (
           <View style={styles.loadingContainer}>
@@ -321,11 +614,12 @@ const SignQuizScreen = ({ navigation, route }) => {
             >
               <Text style={styles.retryButtonText}>Go Back</Text>
             </TouchableOpacity>
-        </View>
-        ) : (
-          showResult ? renderResult() : renderQuestion()
-        )}
-      </View>
+          </View>
+        ) : showResult ? renderResult() : renderQuestion()}
+      </ScrollView>
+      
+      {/* Render the finish confirmation modal */}
+      {renderFinishConfirmation()}
     </View>
   );
 };
@@ -337,20 +631,29 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+  },
+  contentContainer: {
     padding: 16,
+    flexGrow: 1,
   },
-  quizHeader: {
+  quizProgress: {
+    backgroundColor: '#f0f0f0',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 16,
+    marginTop: 8,
     marginBottom: 20,
+    width: '100%',
   },
-  quizTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 4,
+  progressRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  quizSubtitle: {
-    fontSize: 16,
-    color: '#666',
+  quizProgressText: {
+    fontSize: 14,
+    color: '#115740',
+    fontWeight: '600',
   },
   questionContainer: {
     flex: 1,
@@ -361,10 +664,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
-  questionNumber: {
-    fontSize: 16,
-    color: '#666',
+  questionInfo: {
+    flex: 1,
   },
+  progressBar: {
+    height: 4,
+    backgroundColor: '#e0e0e0',
+    borderRadius: 2,
+    marginVertical: 8,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: '#115740',
+    borderRadius: 2,
+  },
+
   scoreText: {
     fontSize: 16,
     fontWeight: 'bold',
@@ -372,6 +687,9 @@ const styles = StyleSheet.create({
   },
   questionContent: {
     flex: 1,
+  },
+  questionContentContainer: {
+    paddingBottom: 20,
   },
   questionText: {
     fontSize: 20,
@@ -449,32 +767,76 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 32,
     backgroundColor: 'white',
-    borderRadius: 16,
-    elevation: 4,
+    borderRadius: 20,
+    elevation: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    width: '90%',
+    maxWidth: 400,
   },
   resultTitle: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
     color: '#333',
     marginTop: 20,
-    marginBottom: 10,
+    marginBottom: 16,
   },
   resultScore: {
-    fontSize: 20,
+    fontSize: 18,
     color: '#666',
-    marginBottom: 10,
+    marginBottom: 12,
   },
   resultPercentage: {
-    fontSize: 36,
+    fontSize: 48,
     fontWeight: 'bold',
     color: '#115740',
-    marginBottom: 10,
+    marginBottom: 16,
+    textShadowColor: 'rgba(0, 0, 0, 0.1)',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 4,
   },
   resultMessage: {
     fontSize: 16,
     color: '#666',
     textAlign: 'center',
+    marginBottom: 20,
+  },
+  resultStats: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
     marginBottom: 30,
+    paddingHorizontal: 20,
+  },
+  statItem: {
+    alignItems: 'center',
+    flex: 1,
+    backgroundColor: '#f8f9fa',
+    padding: 16,
+    borderRadius: 12,
+    marginHorizontal: 4,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+  },
+  statIconContainer: {
+    marginBottom: 8,
+  },
+  statLabel: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 6,
+    textAlign: 'center',
+    fontWeight: '600',
+  },
+  statValue: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
   },
   finishButton: {
     backgroundColor: '#115740',
@@ -518,16 +880,131 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginBottom: 24,
   },
+  finishQuizButton: {
+    backgroundColor: '#dc3545',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#dc3545',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+    minWidth: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 16,
+  },
+  finishQuizButtonText: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  resultButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    marginTop: 30,
+    gap: 16,
+  },
+  resultButton: {
+    flex: 1,
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+    borderRadius: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+  },
   retryButton: {
     backgroundColor: '#115740',
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 8,
+  },
+  quizzesButton: {
+    backgroundColor: '#28a745',
+  },
+  buttonIcon: {
+    marginRight: 8,
+  },
+  resultButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   retryButtonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    borderRadius: 16,
+    padding: 24,
+    margin: 20,
+    alignItems: 'center',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+    marginTop: 16,
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  modalMessage: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+    marginBottom: 24,
+    lineHeight: 22,
+  },
+  modalButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+  modalButton: {
+    flex: 1,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    marginHorizontal: 8,
+  },
+  cancelButton: {
+    backgroundColor: '#6c757d',
+  },
+  confirmButton: {
+    backgroundColor: '#dc3545',
+  },
+  cancelButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  confirmButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 
