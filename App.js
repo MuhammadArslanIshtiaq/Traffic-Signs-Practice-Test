@@ -4,18 +4,23 @@ import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import app from './src/config/firebase';
+import { AuthorityProvider } from './src/contexts/AuthorityContext';
 import { UserProvider } from './src/contexts/UserContext';
 import TabNavigator from './src/navigation/TabNavigator';
 
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import LearningMaterialScreen from './src/screens/LearningMaterialScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import Quiz from './src/screens/Quiz';
 import QuizHistoryScreen from './src/screens/QuizHistoryScreen';
 import QuizPreStart from './src/screens/QuizPreStart';
+import RoadSignsScreen from './src/screens/RoadSignsScreen';
+import RulesScreen from './src/screens/RulesScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignQuizScreen from './src/screens/SignQuizScreen';
 import SignTestsScreen from './src/screens/SignTestsScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
+import VideosScreen from './src/screens/VideosScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
@@ -41,7 +46,8 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <UserProvider>
-        <NavigationContainer>
+        <AuthorityProvider>
+          <NavigationContainer>
           <Stack.Navigator 
             screenOptions={{ 
               headerShown: false,
@@ -60,8 +66,13 @@ export default function App() {
             <Stack.Screen name="Profile" component={ProfileScreen} />
             <Stack.Screen name="SignTests" component={SignTestsScreen} />
             <Stack.Screen name="SignQuiz" component={SignQuizScreen} />
+            <Stack.Screen name="LearningMaterial" component={LearningMaterialScreen} />
+            <Stack.Screen name="RoadSigns" component={RoadSignsScreen} />
+            <Stack.Screen name="Rules" component={RulesScreen} />
+            <Stack.Screen name="Videos" component={VideosScreen} />
           </Stack.Navigator>
         </NavigationContainer>
+        </AuthorityProvider>
       </UserProvider>
     </SafeAreaProvider>
   );

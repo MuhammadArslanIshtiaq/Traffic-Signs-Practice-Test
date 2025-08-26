@@ -1,11 +1,13 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import { FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../components/Header';
+import { useAuthority } from '../contexts/AuthorityContext';
 import { useUser } from '../contexts/UserContext';
 
 const HomeScreen = ({ navigation }) => {
-  const { user } = useUser();
+  const { user, signout } = useUser();
+  const { selectedAuthority, setSelectedAuthority } = useAuthority();
 
   const drivingAuthorities = [
     {
@@ -52,52 +54,69 @@ const HomeScreen = ({ navigation }) => {
     }
   ];
 
-  const handleProfilePress = () => {
-    if (!user) {
-      navigation.navigate('SignIn');
-      return;
+  const handleBackPress = () => {
+    if (selectedOption === 'signTests') {
+      setSelectedOption(null);
+    } else if (selectedAuthority) {
+      setSelectedAuthority(null);
+    } else {
+      // On "Select Driving Authority" screen
+      if (user) {
+        // User is logged in, show confirmation dialog
+        Alert.alert(
+          'Logout',
+          'Are you sure you want to logout?',
+          [
+            {
+              text: 'Cancel',
+              style: 'cancel',
+            },
+            {
+              text: 'Logout',
+              style: 'destructive',
+              onPress: async () => {
+                try {
+                  // Sign out the user
+                  await signout();
+                  // Navigate to login screen
+                  navigation.navigate('SignIn');
+                } catch (error) {
+                  console.error('Error signing out:', error);
+                  // Still navigate to login screen even if signout fails
+                  navigation.navigate('SignIn');
+                }
+              },
+            },
+          ]
+        );
+      } else {
+        // User is not logged in, go to login screen
+        navigation.navigate('SignIn');
+      }
     }
-    navigation.navigate('Profile');
   };
 
   const renderHeaderRight = () => (
     <TouchableOpacity 
       style={styles.headerButton}
-      onPress={handleProfilePress}
+      onPress={handleBackPress}
     >
-      <Ionicons name="person-circle-outline" size={28} color="white" />
+      <Ionicons name="arrow-back" size={28} color="white" />
     </TouchableOpacity>
   );
 
   const ListHeader = () => (
     <View style={styles.sectionHeader}>
-      <Text style={styles.welcomeText}>Welcome, {user?.displayName || 'Guest'}!</Text>
       {selectedOption === 'signTests' ? (
         <>
           <Text style={styles.sectionTitle}>Sign Tests</Text>
           <Text style={styles.sectionSubtitle}>{selectedAuthority.name}</Text>
-          <Text style={styles.description}>
-            Choose a category to practice traffic sign recognition
-          </Text>
-          <TouchableOpacity 
-            style={styles.backButton}
-            onPress={() => setSelectedOption(null)}
-          >
-            <Ionicons name="arrow-back" size={20} color="#115740" />
-            <Text style={styles.backButtonText}>Back to Options</Text>
-          </TouchableOpacity>
+         
         </>
       ) : selectedAuthority ? (
         <>
           <Text style={styles.sectionTitle}>{selectedAuthority.name}</Text>
           <Text style={styles.sectionSubtitle}>{selectedAuthority.nameUrdu}</Text>
-          <TouchableOpacity 
-            style={styles.backButton}
-            onPress={() => setSelectedAuthority(null)}
-          >
-            <Ionicons name="arrow-back" size={20} color="#115740" />
-            <Text style={styles.backButtonText}>Back to Authorities</Text>
-          </TouchableOpacity>
         </>
       ) : (
         <Text style={styles.sectionTitle}>Select Driving Authority</Text>
@@ -105,7 +124,6 @@ const HomeScreen = ({ navigation }) => {
     </View>
   );
 
-  const [selectedAuthority, setSelectedAuthority] = React.useState(null);
   const [selectedOption, setSelectedOption] = React.useState(null);
 
   const authorityOptions = [
@@ -113,7 +131,7 @@ const HomeScreen = ({ navigation }) => {
       id: '1',
       title: 'Sign Tests',
       titleUrdu: 'سائن ٹیسٹ',
-      icon: 'traffic-light-outline',
+      icon: require('../../assets/images/SignTest.png'),
       description: 'Practice traffic sign recognition',
       onPress: () => setSelectedOption('signTests')
     },
@@ -121,7 +139,7 @@ const HomeScreen = ({ navigation }) => {
       id: '2',
       title: 'Theory Test',
       titleUrdu: 'تھیوری ٹیسٹ',
-      icon: 'book-outline',
+      icon: require('../../assets/images/TheoryTest.png'),
       description: 'Take driving theory exam',
       onPress: () => navigation.navigate('TheoryTest', { authority: selectedAuthority })
     },
@@ -129,7 +147,7 @@ const HomeScreen = ({ navigation }) => {
       id: '3',
       title: 'Learning Material',
       titleUrdu: 'سیکھنے کا مواد',
-      icon: 'school-outline',
+      icon: require('../../assets/images/LearningMaterials.png'),
       description: 'Study signs and rules',
       onPress: () => navigation.navigate('LearningMaterial', { authority: selectedAuthority })
     },
@@ -137,7 +155,7 @@ const HomeScreen = ({ navigation }) => {
       id: '4',
       title: 'General Info',
       titleUrdu: 'عام معلومات',
-      icon: 'information-circle-outline',
+      icon: require('../../assets/images/GeneralInfo.png'),
       description: 'Fees, requirements & procedures',
       onPress: () => navigation.navigate('GeneralInfo', { authority: selectedAuthority })
     }
@@ -159,7 +177,7 @@ const HomeScreen = ({ navigation }) => {
     },
     {
       id: '2',
-      title: 'Warning Road Signs',
+      title: 'earning Road Signs',
       titleUrdu: 'انتباہی روڈ سائنز',
       icon: 'warning-outline',
       description: 'Signs that warn of hazards',
@@ -213,7 +231,15 @@ const HomeScreen = ({ navigation }) => {
     >
       <View style={styles.cardContent}>
         <View style={styles.iconContainer}>
-          <Ionicons name={item.icon} size={32} color="#115740" />
+          {typeof item.icon === 'string' ? (
+            <Ionicons name={item.icon} size={32} color="#115740" />
+          ) : (
+            <Image 
+              source={item.icon} 
+              style={styles.iconImage} 
+              resizeMode="contain"
+            />
+          )}
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.optionTitle}>{item.title}</Text>
@@ -254,6 +280,7 @@ const HomeScreen = ({ navigation }) => {
       <Header 
         username={user?.displayName} 
         navigation={navigation}
+        pageTitle="Pakistan Traffic Signs"
       >
         {renderHeaderRight()}
       </Header>
@@ -350,17 +377,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginBottom: 16,
   },
-  backButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 8,
-  },
-  backButtonText: {
-    fontSize: 16,
-    color: '#115740',
-    marginLeft: 8,
-    fontWeight: '600',
-  },
+
   optionCard: {
     backgroundColor: 'white',
     borderRadius: 12,
@@ -381,6 +398,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#f8f9fa',
     borderRadius: 30,
+  },
+  iconImage: {
+    width: 32,
+    height: 32,
   },
   optionTitle: {
     fontSize: 18,

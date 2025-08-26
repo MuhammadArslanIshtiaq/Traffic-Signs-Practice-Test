@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import { useAuthority } from '../contexts/AuthorityContext';
 import HomeScreen from '../screens/HomeScreen';
 import LearnScreen from '../screens/LearnScreen';
 import ProgressScreen from '../screens/ProgressScreen';
@@ -10,12 +11,17 @@ import TestScreen from '../screens/TestScreen';
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
+  const { selectedAuthority } = useAuthority();
+  
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: '#115740',
         tabBarInactiveTintColor: 'gray',
+        tabBarStyle: {
+          display: selectedAuthority ? 'flex' : 'none',
+        },
       }}
     >
       <Tab.Screen 

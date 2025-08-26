@@ -40,12 +40,7 @@ const SignInScreen = ({ navigation }) => {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => navigation.goBack()}
-        >
-          <Ionicons name="arrow-back" size={24} color="white" />
-        </TouchableOpacity>
+
 
         <View style={styles.content}>
           <View style={styles.header}>
@@ -112,6 +107,19 @@ const SignInScreen = ({ navigation }) => {
                 <Text style={styles.signUpLink}>Sign Up</Text>
               </TouchableOpacity>
             </View>
+
+            <View style={styles.divider}>
+              <View style={styles.dividerLine} />
+              <Text style={styles.dividerText}>or</Text>
+              <View style={styles.dividerLine} />
+            </View>
+
+            <TouchableOpacity
+              style={styles.guestButton}
+              onPress={() => navigation.replace('Main')}
+            >
+              <Text style={styles.guestButtonText}>Continue as Guest</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </LinearGradient>
@@ -126,13 +134,7 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
   },
-  backButton: {
-    position: 'absolute',
-    top: 48,
-    left: 16,
-    zIndex: 1,
-    padding: 8,
-  },
+
   content: {
     flex: 1,
     justifyContent: 'center',
@@ -140,16 +142,19 @@ const styles = StyleSheet.create({
   },
   header: {
     marginBottom: 40,
+    alignItems: 'center',
   },
   title: {
     fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
     marginBottom: 8,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
     color: 'rgba(255, 255, 255, 0.8)',
+    textAlign: 'center',
   },
   form: {
     backgroundColor: 'white',
@@ -216,6 +221,35 @@ const styles = StyleSheet.create({
   signUpLink: {
     color: '#115740',
     fontSize: 14,
+    fontWeight: '600',
+  },
+  divider: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 20,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: '#e0e0e0',
+  },
+  dividerText: {
+    color: '#666',
+    fontSize: 14,
+    marginHorizontal: 16,
+  },
+  guestButton: {
+    backgroundColor: 'transparent',
+    borderWidth: 2,
+    borderColor: '#115740',
+    borderRadius: 12,
+    height: 56,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  guestButtonText: {
+    color: '#115740',
+    fontSize: 18,
     fontWeight: '600',
   },
 });

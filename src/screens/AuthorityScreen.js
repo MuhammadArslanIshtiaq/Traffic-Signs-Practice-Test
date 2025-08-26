@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import { FlatList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../components/Header';
 import { useUser } from '../contexts/UserContext';
 
@@ -13,7 +13,7 @@ const AuthorityScreen = ({ navigation, route }) => {
       id: '1',
       title: 'Sign Tests',
       titleUrdu: 'سائن ٹیسٹ',
-      icon: 'traffic-light-outline',
+      icon: require('../assets/images/SignTest.png'),
       description: 'Practice traffic sign recognition',
       onPress: () => navigation.navigate('SignTests', { authority })
     },
@@ -21,7 +21,7 @@ const AuthorityScreen = ({ navigation, route }) => {
       id: '2',
       title: 'Theory Test',
       titleUrdu: 'تھیوری ٹیسٹ',
-      icon: 'book-outline',
+      icon: require('../assets/images/TheoryTest.png'),
       description: 'Take driving theory exam',
       onPress: () => navigation.navigate('TheoryTest', { authority })
     },
@@ -29,7 +29,7 @@ const AuthorityScreen = ({ navigation, route }) => {
       id: '3',
       title: 'Learning Material',
       titleUrdu: 'سیکھنے کا مواد',
-      icon: 'school-outline',
+      icon: require('../assets/images/LearningMaterials.png'),
       description: 'Study signs and rules',
       onPress: () => navigation.navigate('LearningMaterial', { authority })
     },
@@ -37,57 +37,61 @@ const AuthorityScreen = ({ navigation, route }) => {
       id: '4',
       title: 'General Info',
       titleUrdu: 'عام معلومات',
-      icon: 'information-circle-outline',
+      icon: require('../assets/images/GeneralInfo.png'),
       description: 'Fees, requirements & procedures',
       onPress: () => navigation.navigate('GeneralInfo', { authority })
     }
   ];
 
-  const handleProfilePress = () => {
-    if (!user) {
-      navigation.navigate('SignIn');
-      return;
-    }
-    navigation.navigate('Profile');
+  const handleBackPress = () => {
+    navigation.goBack();
   };
 
   const renderHeaderRight = () => (
     <TouchableOpacity 
       style={styles.headerButton}
-      onPress={handleProfilePress}
+      onPress={handleBackPress}
     >
-      <Ionicons name="person-circle-outline" size={28} color="white" />
+      <Ionicons name="arrow-back" size={28} color="white" />
     </TouchableOpacity>
   );
 
   const ListHeader = () => (
     <View style={styles.sectionHeader}>
-      <Text style={styles.welcomeText}>Welcome, {user?.displayName || 'Guest'}!</Text>
-      <Text style={styles.sectionTitle}>{authority.name}</Text>
-      <Text style={styles.sectionSubtitle}>{authority.nameUrdu}</Text>
+      {/* Authority name removed from body - now only shown in header */}
     </View>
   );
 
-  const renderOptionItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.optionCard}
-      onPress={item.onPress}
-    >
-      <View style={styles.cardContent}>
-        <View style={styles.iconContainer}>
-          <Ionicons name={item.icon} size={32} color="#115740" />
+  const renderOptionItem = ({ item }) => {
+    return (
+      <TouchableOpacity
+        style={styles.optionCard}
+        onPress={item.onPress}
+      >
+        <View style={styles.cardContent}>
+          <View style={styles.iconContainer}>
+            {typeof item.icon === 'string' ? (
+              <Ionicons name={item.icon} size={32} color="#115740" />
+            ) : (
+                             <Image 
+                 source={item.icon} 
+                 style={styles.iconImage} 
+                 resizeMode="contain"
+               />
+            )}
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.optionTitle}>{item.title}</Text>
+            <Text style={styles.optionTitleUrdu}>{item.titleUrdu}</Text>
+            <Text style={styles.optionDescription}>{item.description}</Text>
+          </View>
+          <View style={styles.arrowContainer}>
+            <Ionicons name="chevron-forward" size={24} color="#115740" />
+          </View>
         </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.optionTitle}>{item.title}</Text>
-          <Text style={styles.optionTitleUrdu}>{item.titleUrdu}</Text>
-          <Text style={styles.optionDescription}>{item.description}</Text>
-        </View>
-        <View style={styles.arrowContainer}>
-          <Ionicons name="chevron-forward" size={24} color="#115740" />
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -95,6 +99,7 @@ const AuthorityScreen = ({ navigation, route }) => {
       <Header 
         username={user?.displayName} 
         navigation={navigation}
+        pageTitle="Select Driving Authority"
       >
         {renderHeaderRight()}
       </Header>
@@ -120,11 +125,6 @@ const styles = StyleSheet.create({
   },
   sectionHeader: {
     marginBottom: 16,
-  },
-  welcomeText: {
-    fontSize: 18,
-    color: '#666',
-    marginBottom: 8,
   },
   sectionTitle: {
     fontSize: 24,
@@ -162,6 +162,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#f8f9fa',
     borderRadius: 30,
+  },
+  iconImage: {
+    width: 32,
+    height: 32,
   },
   textContainer: {
     flex: 1,

@@ -1,7 +1,6 @@
 // Import API configuration
 import { getAuth } from 'firebase/auth';
 import {
-  API_SETUP_INSTRUCTIONS,
   PUBLIC_API_BASE_URL,
   testApiConnection
 } from './api-config.js';
@@ -552,16 +551,10 @@ export const fetchQuizQuestions = async (category) => {
         const targetQuiz = quizzesArray.find(quiz => quiz.title === title);
         
         if (targetQuiz) {
-          console.log('🎯 Found target quiz:', targetQuiz);
-          console.log('🎯 Target quiz details:', {
-            id: targetQuiz.id,
-            title: targetQuiz.title,
-            total_questions: targetQuiz.total_questions,
-            description: targetQuiz.description
-          });
+
           
           // Step 2: Fetch the specific quiz with all questions
-          console.log('📝 Step 2: Fetching specific quiz with questions...');
+
           const quizResponse = await fetch(`${PUBLIC_API_BASE_URL}/quizzes/${targetQuiz.id}`, {
             method: 'GET',
             headers: {
@@ -574,8 +567,7 @@ export const fetchQuizQuestions = async (category) => {
           }
           
           const quizData = await quizResponse.json();
-          console.log('✅ Quiz with questions fetched successfully!');
-          console.log('📊 Quiz data structure:', quizData);
+
           
           // Extract questions array from response
           let questionsArray = [];
@@ -623,25 +615,7 @@ export const fetchQuizQuestions = async (category) => {
               }
             }
             
-            // Debug: Log first question to check data structure
-            if (index === 0) {
-              console.log('🔍 First question data structure:', {
-                question_text: question.question_text,
-                secondary_languages: question.secondary_languages,
-                secondary_languages_type: typeof question.secondary_languages,
-                secondary_languages_keys: question.secondary_languages ? Object.keys(question.secondary_languages) : 'null',
-                ur_text: question.secondary_languages?.ur,
-                extracted_urdu: questionTextUrdu,
-                extracted_urdu_length: questionTextUrdu.length,
-                options: question.options?.slice(0, 2)?.map(opt => ({
-                  option_text: opt.option_text,
-                  secondary_languages: opt.secondary_languages,
-                  secondary_languages_type: typeof opt.secondary_languages,
-                  secondary_languages_keys: opt.secondary_languages ? Object.keys(opt.secondary_languages) : 'null',
-                  ur_text: opt.secondary_languages?.ur
-                }))
-              });
-            }
+
             
             // Extract options
             let options = [];
@@ -714,30 +688,15 @@ export const fetchQuizQuestions = async (category) => {
               correct_answer: correctAnswer
             };
             
-            // Debug: Log processed question for first question
-            if (index === 0) {
-              console.log('🔍 Processed question structure:', {
-                question: processedQuestion.question,
-                question_urdu: processedQuestion.question_urdu,
-                question_urdu_length: processedQuestion.question_urdu?.length || 0,
-                options_urdu: processedQuestion.options?.map(opt => ({
-                  text: opt.text,
-                  text_urdu: opt.text_urdu,
-                  text_urdu_length: opt.text_urdu?.length || 0,
-                  has_urdu: opt.text_urdu && opt.text_urdu.length > 0
-                }))
-              });
-            }
+
             
             return processedQuestion;
           });
           
-          console.log('✅ Successfully processed all questions!');
+
           return processedQuestions;
           
         } else {
-          console.log('❌ Target quiz not found for title:', title);
-          console.log('📋 Available quiz titles:', quizzesArray.map(q => q.title));
           throw new Error(`Quiz not found: ${title}`);
         }
         
@@ -746,16 +705,12 @@ export const fetchQuizQuestions = async (category) => {
       }
       
     } catch (apiError) {
-      console.log('❌ API fetch failed:', apiError.message);
       throw apiError;
     }
     
   } catch (error) {
-    console.log('❌ API fetch failed, using mock data:', error.message);
-    
     // Return mock data for development
     if (__DEV__) {
-      console.log('🔧 Using mock data for development...');
       return mockQuizData[category] || mockQuizData.mandatory;
     }
     
@@ -765,7 +720,6 @@ export const fetchQuizQuestions = async (category) => {
 
 export const fetchSignCategories = async () => {
   try {
-    console.log('🚀 Fetching sign categories...');
     
     // Use the new simplified API
     const response = await fetch(`${PUBLIC_API_BASE_URL}/signs`, {
@@ -780,18 +734,14 @@ export const fetchSignCategories = async () => {
     }
     
     const data = await response.json();
-    console.log('✅ Sign categories fetched successfully!');
     
     // Extract signs array from response
     let signsArray = [];
     if (data.success && data.data && data.data.signs && Array.isArray(data.data.signs)) {
       signsArray = data.data.signs;
     } else {
-      console.log('❌ Unexpected signs data structure:', data);
       throw new Error('Invalid signs data structure');
     }
-    
-    console.log(`📝 Found ${signsArray.length} signs`);
     
     // Group signs by category
     const categories = {
@@ -800,16 +750,9 @@ export const fetchSignCategories = async () => {
       informatory: signsArray.filter(sign => sign.sign_type === 'informatory')
     };
     
-    console.log('📊 Signs by category:', {
-      mandatory: categories.mandatory.length,
-      warning: categories.warning.length,
-      informatory: categories.informatory.length
-    });
-    
     return categories;
     
   } catch (error) {
-    console.log('❌ Error fetching sign categories:', error.message);
     return {
       mandatory: [],
       warning: [],
@@ -821,47 +764,24 @@ export const fetchSignCategories = async () => {
 // Function to inspect the structure of the quizzes
 export const inspectQuizzesTable = async () => {
   try {
-    console.log('Available mock quiz categories:', Object.keys(mockQuizData));
-    console.log('Mock quiz data structure:', mockQuizData);
     return Object.keys(mockQuizData);
   } catch (error) {
-    console.error('Error inspecting quizzes:', error);
     return null;
   }
 };
 
 // Function to test API connection and show setup instructions
 export const testApiAndShowInstructions = async () => {
-  console.log('🧪 Testing API Connection with Firebase auth...');
   const firebaseAuth = getAuth();
   const result = await testApiConnection(firebaseAuth);
-  
-  if (!result.success) {
-    console.log('❌ API Connection Failed!');
-    console.log('📋 Setup Instructions:');
-    console.log(API_SETUP_INSTRUCTIONS);
-  }
-  
   return result;
 };
 
 export const saveQuizResult = async (userId, authority, category, score, totalQuestions) => {
   try {
-    // For now, we'll just log the result since there's no save endpoint
-    console.log('Quiz result to save:', {
-      user_id: userId,
-      authority: authority,
-      category: category,
-      score: score,
-      total_questions: totalQuestions,
-      percentage: Math.round((score / totalQuestions) * 100),
-      completed_at: new Date().toISOString()
-    });
-    
     // TODO: Add API endpoint for saving quiz results
     return true;
   } catch (error) {
-    console.error('Error saving quiz result:', error);
     return false;
   }
 };

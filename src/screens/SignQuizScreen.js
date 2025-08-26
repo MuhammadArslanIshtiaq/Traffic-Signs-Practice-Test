@@ -204,11 +204,8 @@ const SignQuizScreen = ({ navigation, route }) => {
     if (isCorrect) {
       setScore(prevScore => {
         const newScore = prevScore + 1;
-        console.log('✅ Correct answer! Score increased to:', newScore);
         return newScore;
       });
-    } else {
-      console.log('❌ Wrong answer. Score remains:', score);
     }
 
     if (currentQuestionIndex < questions.length - 1) {
@@ -223,22 +220,15 @@ const SignQuizScreen = ({ navigation, route }) => {
   };
 
   const handleFinishQuiz = async () => {
-    console.log('🎯 handleFinishQuiz called');
-    console.log('🎯 Current question:', currentQuestionIndex + 1, 'of', questions.length);
-    
     // Ask for confirmation if not at the last question
     if (currentQuestionIndex < questions.length - 1) {
-      console.log('🎯 Showing custom confirmation modal...');
       setShowFinishConfirmation(true);
     } else {
-      console.log('🎯 On last question, finishing directly');
       finishQuizNow();
     }
   };
 
   const finishQuizNow = async () => {
-    console.log('🎯 finishQuizNow called');
-    
     // Save quiz result to Supabase if user is logged in
     if (user?.uid) {
       try {
@@ -255,9 +245,7 @@ const SignQuizScreen = ({ navigation, route }) => {
     }
     
     // Show results screen
-    console.log('🎯 Setting showResult to true');
     setShowResult(true);
-    console.log('🎯 showResult set to true');
   };
 
   const handleRetryQuiz = () => {
@@ -363,19 +351,7 @@ const SignQuizScreen = ({ navigation, route }) => {
       return <Text>Loading question...</Text>;
     }
     
-    // Debug: Log current question data
-    if (currentQuestionIndex === 0) {
-      console.log('🔍 SignQuizScreen - Current question data:', {
-        question: currentQuestion.question,
-        question_urdu: currentQuestion.question_urdu,
-        question_urdu_length: currentQuestion.question_urdu?.length || 0,
-        options: currentQuestion.options?.map(opt => ({
-          text: opt.text,
-          text_urdu: opt.text_urdu,
-          text_urdu_length: opt.text_urdu?.length || 0
-        }))
-      });
-    }
+
     
     return (
       <View style={styles.questionContainer}>
@@ -458,20 +434,18 @@ const SignQuizScreen = ({ navigation, route }) => {
           </Text>
           
           <View style={styles.modalButtons}>
-            <TouchableOpacity
-              style={[styles.modalButton, styles.cancelButton]}
-              onPress={() => {
-                console.log('🎯 User cancelled finish');
-                setShowFinishConfirmation(false);
-              }}
-            >
+                          <TouchableOpacity
+                style={[styles.modalButton, styles.cancelButton]}
+                onPress={() => {
+                  setShowFinishConfirmation(false);
+                }}
+              >
               <Text style={styles.cancelButtonText}>Cancel</Text>
             </TouchableOpacity>
             
             <TouchableOpacity
               style={[styles.modalButton, styles.confirmButton]}
               onPress={() => {
-                console.log('🎯 User confirmed finish!');
                 setShowFinishConfirmation(false);
                 finishQuizNow();
               }}
@@ -558,8 +532,7 @@ const SignQuizScreen = ({ navigation, route }) => {
       <Header 
         username={user?.displayName} 
         navigation={navigation}
-        customGreeting={categoryName}
-        customSubtitle={authority?.name}
+        pageTitle={categoryName}
       >
         {renderHeaderRight()}
       </Header>
@@ -578,7 +551,6 @@ const SignQuizScreen = ({ navigation, route }) => {
               <TouchableOpacity
                 style={styles.finishQuizButton}
                 onPress={() => {
-                  console.log('🎯 Finish Quiz button pressed!');
                   handleFinishQuiz();
                 }}
               >

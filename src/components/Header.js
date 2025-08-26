@@ -2,12 +2,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const Header = ({ username, navigation, children, customGreeting, customSubtitle }) => {
+const Header = ({ username, navigation, children, customGreeting, customSubtitle, pageTitle }) => {
   const displayName = username || 'Guest';
   
   // Use custom text if provided, otherwise use default
-  const greeting = customGreeting || `Hi ${displayName},`;
-  const subtitle = customSubtitle || 'Ready for today\'s quiz?';
+  const greeting = customGreeting || (username ? `Welcome ${displayName}` : 'Welcome');
+  const subtitle = pageTitle || customSubtitle || 'Ready for today\'s quiz?';
   
   return (
     <LinearGradient
