@@ -137,11 +137,11 @@ const HomeScreen = ({ navigation }) => {
     },
     {
       id: '2',
-      title: 'Theory Test',
-      titleUrdu: 'تھیوری ٹیسٹ',
+      title: 'Rules Test',
+      titleUrdu: 'قواعد ٹیسٹ',
       icon: require('../../assets/images/TheoryTest.png'),
       description: 'Take driving theory exam',
-      onPress: () => navigation.navigate('TheoryTest', { authority: selectedAuthority })
+      onPress: () => navigation.navigate('Rules', { authority: selectedAuthority })
     },
     {
       id: '3',
@@ -177,7 +177,7 @@ const HomeScreen = ({ navigation }) => {
     },
     {
       id: '2',
-      title: 'earning Road Signs',
+      title: 'Warning Road Signs',
       titleUrdu: 'انتباہی روڈ سائنز',
       icon: 'warning-outline',
       description: 'Signs that warn of hazards',

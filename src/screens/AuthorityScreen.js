@@ -19,11 +19,11 @@ const AuthorityScreen = ({ navigation, route }) => {
     },
     {
       id: '2',
-      title: 'Theory Test',
-      titleUrdu: 'تھیوری ٹیسٹ',
+      title: 'Rules Test',
+      titleUrdu: 'قواعد ٹیسٹ',
       icon: require('../assets/images/TheoryTest.png'),
       description: 'Take driving theory exam',
-      onPress: () => navigation.navigate('TheoryTest', { authority })
+      onPress: () => navigation.navigate('Rules', { authority })
     },
     {
       id: '3',

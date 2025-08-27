@@ -1,8 +1,8 @@
 // Import API configuration
 import { getAuth } from 'firebase/auth';
 import {
-  PUBLIC_API_BASE_URL,
-  testApiConnection
+    PUBLIC_API_BASE_URL,
+    testApiConnection
 } from './api-config.js';
 
 // Image mapping for traffic signs
@@ -516,7 +516,9 @@ export const fetchQuizQuestions = async (category) => {
       const categoryMap = {
         'mandatory': 'Mandatory Road Signs',
         'warning': 'Warning Road Signs', 
-        'informatory': 'Informatory Road Signs'
+        'informatory': 'Informatory Road Signs',
+        'rules1': 'Rules Quiz 1',
+        'rules2': 'Rules Quiz 2'
       };
       
       const title = categoryMap[category];
@@ -667,8 +669,11 @@ export const fetchQuizQuestions = async (category) => {
               });
             }
             
-            // Ensure we have at least 4 options
-            while (options.length < 4) {
+            // Ensure we have at least 4 options for sign quizzes, 3 for rules quizzes
+            const isRulesQuiz = category === 'rules1' || category === 'rules2';
+            const minOptions = isRulesQuiz ? 3 : 4;
+            
+            while (options.length < minOptions) {
               const optIndex = options.length;
               options.push({
                 id: String.fromCharCode(97 + optIndex),

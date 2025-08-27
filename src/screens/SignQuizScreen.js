@@ -21,6 +21,8 @@ const SignQuizScreen = ({ navigation, route }) => {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [incorrectAnswers, setIncorrectAnswers] = useState([]);
+  const [showReviewModal, setShowReviewModal] = useState(false);
 
   // Function to shuffle array (Fisher-Yates algorithm)
   const shuffleArray = (array) => {
@@ -38,6 +40,8 @@ const SignQuizScreen = ({ navigation, route }) => {
     setSelectedAnswer(null);
     setScore(0);
     setShowResult(false);
+    setIncorrectAnswers([]);
+    setShowReviewModal(false);
   };
 
   // Fetch questions from Supabase on component mount
@@ -206,6 +210,14 @@ const SignQuizScreen = ({ navigation, route }) => {
         const newScore = prevScore + 1;
         return newScore;
       });
+    } else {
+      // Track incorrect answer for review
+      setIncorrectAnswers(prev => [...prev, {
+        questionIndex: currentQuestionIndex,
+        question: currentQuestion,
+        selectedAnswer: selectedAnswer,
+        correctAnswer: correctAnswer
+      }]);
     }
 
     if (currentQuestionIndex < questions.length - 1) {
@@ -294,7 +306,25 @@ const SignQuizScreen = ({ navigation, route }) => {
     </View>
   );
 
+  // Check if this is a rules quiz (no images needed)
+  const isRulesQuiz = category === 'rules1' || category === 'rules2';
+
+  // Function to get percentage color based on score
+  const getPercentageColor = (score, total) => {
+    const percentage = (score / total) * 100;
+    if (percentage >= 90) return '#28a745'; // Green for excellent
+    if (percentage >= 80) return '#17a2b8'; // Blue for good
+    if (percentage >= 70) return '#ffc107'; // Yellow for pass
+    if (percentage >= 60) return '#fd7e14'; // Orange for below average
+    return '#dc3545'; // Red for poor
+  };
+
   const renderImage = () => {
+    // Don't render image for rules quizzes
+    if (isRulesQuiz) {
+      return null;
+    }
+
     const imageSource = questions[currentQuestionIndex]?.image_url;
     
     if (typeof imageSource === 'number') {
@@ -368,21 +398,32 @@ const SignQuizScreen = ({ navigation, route }) => {
         showsVerticalScrollIndicator={true}
         contentContainerStyle={styles.questionContentContainer}
       >
-        <Text style={styles.questionText}>
+        <Text style={[styles.questionText, isRulesQuiz && styles.questionTextRules]}>
           {currentQuestion.question || currentQuestion.question_text || currentQuestion.title || currentQuestion.text}
             </Text>
-        <Text style={styles.questionTextUrdu}>
+        <Text style={[styles.questionTextUrdu, isRulesQuiz && styles.questionTextUrduRules]}>
           {currentQuestion.question_urdu || currentQuestion.question_urdu_text || currentQuestion.title_urdu || currentQuestion.text_urdu || 'No Urdu text available'}
             </Text>
-        <View style={styles.imageContainer}>
-          {renderImage()}
-        </View>
+        {!isRulesQuiz && (
+          <View style={styles.imageContainer}>
+            {renderImage()}
+          </View>
+        )}
 
         <View style={styles.optionsContainer}>
           {(currentQuestion.options || currentQuestion.choices || currentQuestion.answers || []).map((option, index) => {
             // Extract option text properly
             const optionText = option.text || option.option_text || option.choice || option.answer || option.answer_text || `Option ${String.fromCharCode(65 + index)}`;
             const optionTextUrdu = option.text_urdu || option.option_urdu || option.choice_urdu || option.answer_urdu || option.answer_text_urdu || '';
+            
+            // Debug: Log option details for rules quizzes
+            if (isRulesQuiz && index === 0) {
+              console.log('🔍 Rules Quiz Options Debug:', {
+                totalOptions: (currentQuestion.options || currentQuestion.choices || currentQuestion.answers || []).length,
+                category: category,
+                questionIndex: currentQuestionIndex + 1
+              });
+            }
             
             return (
               <TouchableOpacity 
@@ -470,7 +511,7 @@ const SignQuizScreen = ({ navigation, route }) => {
         <Text style={styles.resultScore}>
           You scored {score} out of {questions.length}
         </Text>
-        <Text style={styles.resultPercentage}>
+        <Text style={[styles.resultPercentage, { color: getPercentageColor(score, questions.length) }]}>
           {Math.round((score / questions.length) * 100)}%
         </Text>
         <Text style={styles.resultMessage}>
@@ -505,26 +546,131 @@ const SignQuizScreen = ({ navigation, route }) => {
           </View>
         </View>
 
-        <View style={styles.resultButtons}>
+        {incorrectAnswers.length > 0 && (
           <TouchableOpacity
+            style={[styles.resultButton, styles.reviewButton]}
+            onPress={() => setShowReviewModal(true)}
+          >
+            <Ionicons name="eye" size={20} color="white" style={styles.buttonIcon} />
+            <Text style={styles.resultButtonText}>Review Incorrect Answers ({incorrectAnswers.length})</Text>
+          </TouchableOpacity>
+        )}
+
+        <View style={styles.resultButtons}>
+            <TouchableOpacity
             style={[styles.resultButton, styles.retryButton]}
             onPress={handleRetryQuiz}
-          >
+            >
             <Ionicons name="refresh" size={20} color="white" style={styles.buttonIcon} />
             <Text style={styles.resultButtonText}>Try Again</Text>
-          </TouchableOpacity>
-          
-            <TouchableOpacity
-            style={[styles.resultButton, styles.quizzesButton]}
-            onPress={handleGoToQuizzes}
-            >
-            <Ionicons name="grid" size={20} color="white" style={styles.buttonIcon} />
-            <Text style={styles.resultButtonText}>More Quizzes</Text>
             </TouchableOpacity>
         </View>
         </View>
       </View>
     );
+
+  const renderReviewModal = () => (
+    <Modal
+      visible={showReviewModal}
+      transparent={true}
+      animationType="slide"
+      onRequestClose={() => setShowReviewModal(false)}
+    >
+      <View style={styles.modalOverlay}>
+        <View style={styles.reviewModalContent}>
+          <View style={styles.reviewModalHeader}>
+            <Text style={styles.reviewModalTitle}>Incorrect Answers Review</Text>
+            <TouchableOpacity
+              style={styles.closeButton}
+              onPress={() => setShowReviewModal(false)}
+            >
+              <Ionicons name="close" size={24} color="#666" />
+            </TouchableOpacity>
+          </View>
+          
+          <ScrollView style={styles.reviewModalBody} showsVerticalScrollIndicator={false}>
+            {incorrectAnswers.map((item, index) => {
+              const question = item.question;
+              const correctOption = question.options?.find(opt => opt.is_correct) || 
+                                   question.options?.find(opt => opt.id === item.correctAnswer) ||
+                                   question.options?.[0];
+              
+              return (
+                <View key={index} style={styles.reviewQuestionCard}>
+                  <View style={styles.reviewQuestionHeader}>
+                    <Text style={styles.reviewQuestionNumber}>Question {item.questionIndex + 1}</Text>
+                    <View style={styles.reviewQuestionStatus}>
+                      <Ionicons name="close-circle" size={20} color="#dc3545" />
+                      <Text style={styles.reviewQuestionStatusText}>Incorrect</Text>
+                    </View>
+                  </View>
+                  
+                  <Text style={styles.reviewQuestionText}>
+                    {question.question || question.question_text || question.title || question.text}
+                  </Text>
+                  
+                  {question.question_urdu && (
+                    <Text style={styles.reviewQuestionTextUrdu}>
+                      {question.question_urdu}
+                    </Text>
+                  )}
+                  
+                  {!isRulesQuiz && question.image_url && (
+                    <View style={styles.reviewImageContainer}>
+                      {renderImage()}
+                    </View>
+                  )}
+                  
+                  <View style={styles.reviewOptionsContainer}>
+                    {question.options?.map((option, optIndex) => {
+                      const isCorrect = option.is_correct || option.id === item.correctAnswer;
+                      const isSelected = option.id === item.selectedAnswer;
+                      
+                      return (
+                        <View
+                          key={option.id || optIndex}
+                          style={[
+                            styles.reviewOptionItem,
+                            isCorrect && styles.reviewCorrectOption,
+                            isSelected && !isCorrect && styles.reviewIncorrectOption
+                          ]}
+                        >
+                          <View style={styles.reviewOptionContent}>
+                            <Text style={[
+                              styles.reviewOptionText,
+                              isCorrect && styles.reviewCorrectOptionText,
+                              isSelected && !isCorrect && styles.reviewIncorrectOptionText
+                            ]}>
+                              {option.text || option.option_text || option.choice || option.answer || `Option ${String.fromCharCode(65 + optIndex)}`}
+                            </Text>
+                            {option.text_urdu && (
+                              <Text style={[
+                                styles.reviewOptionTextUrdu,
+                                isCorrect && styles.reviewCorrectOptionText,
+                                isSelected && !isCorrect && styles.reviewIncorrectOptionText
+                              ]}>
+                                {option.text_urdu}
+                              </Text>
+                            )}
+                          </View>
+                          {isCorrect && (
+                            <Ionicons name="checkmark-circle" size={20} color="#28a745" />
+                          )}
+                          {isSelected && !isCorrect && (
+                            <Ionicons name="close-circle" size={20} color="#dc3545" />
+                          )}
+                        </View>
+                      );
+                    })}
+                  </View>
+                </View>
+              );
+            })}
+          </ScrollView>
+        </View>
+      </View>
+    </Modal>
+  );
 
   return (
     <View style={styles.container}>
@@ -592,6 +738,9 @@ const SignQuizScreen = ({ navigation, route }) => {
       
       {/* Render the finish confirmation modal */}
       {renderFinishConfirmation()}
+      
+      {/* Render the review modal */}
+      {renderReviewModal()}
     </View>
   );
 };
@@ -673,6 +822,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#666',
     marginBottom: 20,
+  },
+  questionTextRules: {
+    fontSize: 22,
+    marginBottom: 16,
+    textAlign: 'center',
+    lineHeight: 28,
+  },
+  questionTextUrduRules: {
+    fontSize: 20,
+    marginBottom: 30,
+    textAlign: 'center',
+    lineHeight: 26,
   },
   imageContainer: {
     alignItems: 'center',
@@ -776,37 +937,35 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   resultStats: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
     width: '100%',
     marginBottom: 30,
-    paddingHorizontal: 20,
   },
   statItem: {
     alignItems: 'center',
-    flex: 1,
+    width: '100%',
     backgroundColor: '#f8f9fa',
-    padding: 16,
-    borderRadius: 12,
-    marginHorizontal: 4,
-    elevation: 2,
+    padding: 20,
+    borderRadius: 16,
+    marginBottom: 12,
+    elevation: 3,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+    minHeight: 80,
   },
   statIconContainer: {
     marginBottom: 8,
   },
   statLabel: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#666',
-    marginBottom: 6,
+    marginBottom: 8,
     textAlign: 'center',
     fontWeight: '600',
   },
   statValue: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#333',
   },
@@ -875,16 +1034,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   resultButtons: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     width: '100%',
     marginTop: 30,
-    gap: 16,
   },
   resultButton: {
-    flex: 1,
+    width: '100%',
     paddingHorizontal: 24,
-    paddingVertical: 16,
+    paddingVertical: 18,
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
@@ -977,6 +1133,131 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  // Review Modal Styles
+  reviewButton: {
+    backgroundColor: '#6f42c1',
+    marginBottom: 16,
+  },
+  reviewModalContent: {
+    backgroundColor: 'white',
+    borderRadius: 16,
+    margin: 20,
+    maxHeight: '90%',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  reviewModalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
+  },
+  reviewModalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  closeButton: {
+    padding: 4,
+  },
+  reviewModalBody: {
+    padding: 20,
+  },
+  reviewQuestionCard: {
+    backgroundColor: '#f8f9fa',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 16,
+    borderLeftWidth: 4,
+    borderLeftColor: '#dc3545',
+  },
+  reviewQuestionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  reviewQuestionNumber: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  reviewQuestionStatus: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  reviewQuestionStatusText: {
+    fontSize: 14,
+    color: '#dc3545',
+    marginLeft: 4,
+    fontWeight: '600',
+  },
+  reviewQuestionText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#333',
+    marginBottom: 8,
+    lineHeight: 22,
+  },
+  reviewQuestionTextUrdu: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 12,
+    lineHeight: 20,
+  },
+  reviewImageContainer: {
+    alignItems: 'center',
+    marginBottom: 16,
+    padding: 12,
+    backgroundColor: 'white',
+    borderRadius: 8,
+  },
+  reviewOptionsContainer: {
+    marginTop: 8,
+  },
+  reviewOptionItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 8,
+    borderWidth: 2,
+    borderColor: '#e0e0e0',
+  },
+  reviewCorrectOption: {
+    borderColor: '#28a745',
+    backgroundColor: '#f8fff9',
+  },
+  reviewIncorrectOption: {
+    borderColor: '#dc3545',
+    backgroundColor: '#fff8f8',
+  },
+  reviewOptionContent: {
+    flex: 1,
+  },
+  reviewOptionText: {
+    fontSize: 14,
+    color: '#333',
+    marginBottom: 2,
+  },
+  reviewOptionTextUrdu: {
+    fontSize: 12,
+    color: '#666',
+  },
+  reviewCorrectOptionText: {
+    color: '#28a745',
+    fontWeight: '600',
+  },
+  reviewIncorrectOptionText: {
+    color: '#dc3545',
+    fontWeight: '600',
   },
 });
 
