@@ -1,0 +1,158 @@
+[
+  {
+    "s_no": 1,
+    "type": "Fresh Driving License",
+    "description": "Learner Permit Valid for Six Months (for each Category)",
+    "fee_rs": 1000
+  },
+  {
+    "s_no": 2,
+    "type": "Fresh Driving License",
+    "description": "Issue of Driving license motor car + motor Cycle (Non-professional)",
+    "fee_rs": 5000
+  },
+  {
+    "s_no": 3,
+    "type": "Fresh Driving License",
+    "description": "Issue of Driving license LTV or HTV or HTV PSV or Motor Cab (professional)",
+    "fee_rs": 12000
+  },
+  {
+    "s_no": 4,
+    "type": "Fresh Driving License",
+    "description": "Issue of Driving license Motor Cycle + professional",
+    "fee_rs": 12000
+  },
+  {
+    "s_no": 1,
+    "type": "Renewal",
+    "description": "Renewal of Driving License Within 30 days",
+    "fee_rs": 4000
+  },
+  {
+    "s_no": 2,
+    "type": "Renewal",
+    "description": "Renewal of Driving License after thirty days but within one year from the date of expiry of the license",
+    "fee_rs": 4500
+  },
+  {
+    "s_no": 3,
+    "type": "Renewal",
+    "description": "Renewal of Driving License after one year but within three year from the date of expiry of the license",
+    "fee_rs": 5000
+  },
+  {
+    "s_no": 4,
+    "type": "Renewal and Duplicate",
+    "description": "Renewal of Driving License Within 30 days & Duplicate License",
+    "fee_rs": 7000
+  },
+  {
+    "s_no": 5,
+    "type": "Renewal and Duplicate",
+    "description": "Renewal of Driving License after thirty days but within one year from the date of expiry of the license & Duplicate License",
+    "fee_rs": 7500
+  },
+  {
+    "s_no": 6,
+    "type": "Renewal and Duplicate",
+    "description": "Renewal of Driving License after one year but within three year from the date of expiry of the license & Duplicate License",
+    "fee_rs": 8000
+  },
+  {
+    "s_no": 7,
+    "type": "Renewal with Test",
+    "description": "Renewal of Driving License after three years from the date of expiry of the license. The Applicant has to appear in driving test also as per section 12 (4).",
+    "fee_rs": 10000
+  },
+  {
+    "s_no": 8,
+    "type": "Renewal with Test",
+    "description": "Renewal of Driving License after three years from the date of expiry of the license. The Applicant has to appear in driving test also as per section 12 (4) Renewal after 01 year",
+    "fee_rs": 12000
+  },
+  {
+    "s_no": 9,
+    "type": "Renewal with Test and Duplicate",
+    "description": "Renewal of Driving License after three years from the date of expiry of the license. The Applicant has to appear in driving test also as per section 12 (4) Renewal after 01 year & Duplicate License",
+    "fee_rs": 13000
+  },
+  {
+    "s_no": 10,
+    "type": "Renewal with Test and Duplicate",
+    "description": "Renewal of Driving License after three years from the date of expiry of the license. The Applicant has to appear in driving test also as per section 12 (4) & Duplicate License",
+    "fee_rs": 15000
+  },
+  {
+    "s_no": 11,
+    "type": "Duplicate",
+    "description": "Duplicate Driving License",
+    "fee_rs": 5000
+  },
+  {
+    "s_no": 12,
+    "type": "Conversion",
+    "description": "Conversion Out Distt. Digital Driving License (Valid)",
+    "fee_rs": 5000
+  },
+  {
+    "s_no": 13,
+    "type": "Conversion",
+    "description": "Conversion Islamabad Booklet to Digital Driving License",
+    "fee_rs": 5000
+  },
+  {
+    "s_no": 14,
+    "type": "Conversion",
+    "description": "Conversion Islamabad Booklet to Digital Driving License after thirty days but within one year from the date of expiry of the license",
+    "fee_rs": 7500
+  },
+  {
+    "s_no": 15,
+    "type": "Conversion",
+    "description": "Conversion Islamabad Booklet to Digital Driving License after one year but within three year from the date of expiry of the license",
+    "fee_rs": 8000
+  },
+  {
+    "s_no": 16,
+    "type": "Conversion with Test",
+    "description": "Conversion Islamabad Booklet to Digital Driving License after three years from the date of expiry of the license. The Applicant has to appear in driving test also as per section 12 (4).",
+    "fee_rs": 13000
+  },
+  {
+    "s_no": 17,
+    "type": "Conversion with Test and Duplicate",
+    "description": "Conversion Islamabad Booklet to Digital Driving License after three years from the date of expiry of the license. The Applicant has to appear in driving test also as per section 12 (4) & Duplicate",
+    "fee_rs": 16000
+  },
+  {
+    "s_no": 18,
+    "type": "Renewal of Learner Permit",
+    "description": "Renewal of Learner Permit",
+    "fee_rs": 500
+  },
+  {
+    "s_no": 19,
+    "type": "Duplicate of Learner Permit",
+    "description": "Duplicate of Learner Permit",
+    "fee_rs": 500
+  },
+  {
+    "s_no": 20,
+    "type": "Restoration",
+    "description": "Restoration of driving in case of its suspension under section 16 and 18 of the MVO 1965",
+    "fee_rs": 20000
+  },
+  {
+    "s_no": 21,
+    "type": "Motoring License",
+    "description": "License of Motoring (Registration of Private of Driving Schools)",
+    "fee_rs": 100000
+  },
+  {
+    "s_no": 22,
+    "type": "Motoring License Renewal",
+    "description": "Renewal of License of Motoring",
+    "fee_rs": 150000
+  }
+]

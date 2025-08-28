@@ -425,7 +425,7 @@ const SignQuizScreen = ({ navigation, route }) => {
               });
             }
             
-            return (
+      return (
               <TouchableOpacity 
                 key={option.id || option.answer_id || index}
                 style={[
@@ -500,9 +500,9 @@ const SignQuizScreen = ({ navigation, route }) => {
   );
 
   const renderResult = () => (
-    <View style={styles.resultContainer}>
+        <View style={styles.resultContainer}>
       <View style={styles.resultContent}>
-        <Ionicons 
+            <Ionicons 
           name={score >= questions.length * 0.7 ? "trophy" : "sad"} 
           size={80} 
           color={score >= questions.length * 0.7 ? "#f39c12" : "#e74c3c"} 
@@ -510,17 +510,17 @@ const SignQuizScreen = ({ navigation, route }) => {
         <Text style={styles.resultTitle}>Quiz Complete!</Text>
         <Text style={styles.resultScore}>
           You scored {score} out of {questions.length}
-        </Text>
+            </Text>
         <Text style={[styles.resultPercentage, { color: getPercentageColor(score, questions.length) }]}>
           {Math.round((score / questions.length) * 100)}%
-        </Text>
-        <Text style={styles.resultMessage}>
+            </Text>
+            <Text style={styles.resultMessage}>
           {score === questions.length ? 'Perfect! Excellent work!' : 
            score >= questions.length * 0.8 ? 'Great job! Well done!' :
            score >= questions.length * 0.7 ? 'Good job! You passed!' :
            score >= questions.length * 0.6 ? 'Good effort! Keep practicing!' :
            'Keep studying! You\'ll improve with practice!'}
-        </Text>
+            </Text>
         
         <View style={styles.resultStats}>
           <View style={styles.statItem}>
@@ -547,27 +547,27 @@ const SignQuizScreen = ({ navigation, route }) => {
         </View>
 
         {incorrectAnswers.length > 0 && (
-          <TouchableOpacity
+              <TouchableOpacity 
             style={[styles.resultButton, styles.reviewButton]}
             onPress={() => setShowReviewModal(true)}
-          >
+              >
             <Ionicons name="eye" size={20} color="white" style={styles.buttonIcon} />
             <Text style={styles.resultButtonText}>Review Incorrect Answers ({incorrectAnswers.length})</Text>
-          </TouchableOpacity>
+              </TouchableOpacity>
         )}
 
         <View style={styles.resultButtons}>
-            <TouchableOpacity
+              <TouchableOpacity 
             style={[styles.resultButton, styles.retryButton]}
             onPress={handleRetryQuiz}
-            >
+              >
             <Ionicons name="refresh" size={20} color="white" style={styles.buttonIcon} />
             <Text style={styles.resultButtonText}>Try Again</Text>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
-        </View>
-      </View>
-    );
+      );
 
   const renderReviewModal = () => (
     <Modal
@@ -594,17 +594,17 @@ const SignQuizScreen = ({ navigation, route }) => {
               const correctOption = question.options?.find(opt => opt.is_correct) || 
                                    question.options?.find(opt => opt.id === item.correctAnswer) ||
                                    question.options?.[0];
-              
-              return (
+
+    return (
                 <View key={index} style={styles.reviewQuestionCard}>
                   <View style={styles.reviewQuestionHeader}>
                     <Text style={styles.reviewQuestionNumber}>Question {item.questionIndex + 1}</Text>
                     <View style={styles.reviewQuestionStatus}>
                       <Ionicons name="close-circle" size={20} color="#dc3545" />
                       <Text style={styles.reviewQuestionStatusText}>Incorrect</Text>
-                    </View>
-                  </View>
-                  
+          </View>
+        </View>
+
                   <Text style={styles.reviewQuestionText}>
                     {question.question || question.question_text || question.title || question.text}
                   </Text>
@@ -618,7 +618,7 @@ const SignQuizScreen = ({ navigation, route }) => {
                   {!isRulesQuiz && question.image_url && (
                     <View style={styles.reviewImageContainer}>
                       {renderImage()}
-                    </View>
+          </View>
                   )}
                   
                   <View style={styles.reviewOptionsContainer}>
@@ -650,7 +650,7 @@ const SignQuizScreen = ({ navigation, route }) => {
                                 isSelected && !isCorrect && styles.reviewIncorrectOptionText
                               ]}>
                                 {option.text_urdu}
-                              </Text>
+              </Text>
                             )}
                           </View>
                           {isCorrect && (
@@ -662,9 +662,9 @@ const SignQuizScreen = ({ navigation, route }) => {
                         </View>
                       );
                     })}
-                  </View>
-                </View>
-              );
+        </View>
+      </View>
+    );
             })}
           </ScrollView>
         </View>

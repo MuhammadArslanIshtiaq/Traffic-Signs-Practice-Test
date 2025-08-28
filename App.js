@@ -8,12 +8,18 @@ import { AuthorityProvider } from './src/contexts/AuthorityContext';
 import { UserProvider } from './src/contexts/UserContext';
 import TabNavigator from './src/navigation/TabNavigator';
 
+import FinesScreen from './src/screens/FinesScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import GeneralInfoScreen from './src/screens/GeneralInfoScreen';
 import LearningMaterialScreen from './src/screens/LearningMaterialScreen';
+import LicenseFeeDetailScreen from './src/screens/LicenseFeeDetailScreen';
+import LicenseFeesScreen from './src/screens/LicenseFeesScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import Quiz from './src/screens/Quiz';
 import QuizHistoryScreen from './src/screens/QuizHistoryScreen';
 import QuizPreStart from './src/screens/QuizPreStart';
+import RequirementDetailScreen from './src/screens/RequirementDetailScreen';
+import RequirementsScreen from './src/screens/RequirementsScreen';
 import RoadSignsScreen from './src/screens/RoadSignsScreen';
 import RulesScreen from './src/screens/RulesScreen';
 import SignInScreen from './src/screens/SignInScreen';
@@ -70,6 +76,12 @@ export default function App() {
             <Stack.Screen name="RoadSigns" component={RoadSignsScreen} />
             <Stack.Screen name="Rules" component={RulesScreen} />
             <Stack.Screen name="Videos" component={VideosScreen} />
+            <Stack.Screen name="GeneralInfo" component={GeneralInfoScreen} />
+            <Stack.Screen name="Requirements" component={RequirementsScreen} />
+            <Stack.Screen name="RequirementDetail" component={RequirementDetailScreen} />
+            <Stack.Screen name="LicenseFees" component={LicenseFeesScreen} />
+            <Stack.Screen name="LicenseFeeDetail" component={LicenseFeeDetailScreen} />
+            <Stack.Screen name="Fines" component={FinesScreen} />
           </Stack.Navigator>
         </NavigationContainer>
         </AuthorityProvider>

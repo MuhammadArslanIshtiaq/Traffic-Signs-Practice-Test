@@ -1,0 +1,338 @@
+[
+  {
+    "type": "Permanent Driving License 3 Years",
+    "description": "License valid for 3 years",
+    "fee_rs": 510,
+    "category": "Motorcycle"
+  },
+  {
+    "type": "Permanent Driving License 5 Years",
+    "description": "License valid for 5 years",
+    "fee_rs": 660,
+    "category": "Motorcycle"
+  },
+  {
+    "type": "New Learner License Fee",
+    "description": "Fee for a new learner permit",
+    "fee_rs": 50,
+    "category": "Motorcycle"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Fee for renewing an existing learner permit",
+    "fee_rs": 100,
+    "category": "Motorcycle"
+  },
+  {
+    "type": "Renewal After 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed after 30 days of expiry",
+    "fee_rs": 435,
+    "category": "Motorcycle"
+  },
+  {
+    "type": "Renewal After 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed after 30 days of expiry",
+    "fee_rs": 660,
+    "category": "Motorcycle"
+  },
+  {
+    "type": "Renewal Within 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed within 30 days of expiry",
+    "fee_rs": 310,
+    "category": "Motorcycle"
+  },
+  {
+    "type": "Renewal Within 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed within 30 days of expiry",
+    "fee_rs": 460,
+    "category": "Motorcycle"
+  },
+  {
+    "type": "Permanent Driving License 3 Years",
+    "description": "License valid for 3 years",
+    "fee_rs": 960,
+    "category": "Car"
+  },
+  {
+    "type": "Permanent Driving License 5 Years",
+    "description": "License valid for 5 years",
+    "fee_rs": 1260,
+    "category": "Car"
+  },
+  {
+    "type": "New Learner License Fee",
+    "description": "Fee for a new learner permit",
+    "fee_rs": 100,
+    "category": "Car"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Fee for renewing an existing learner permit",
+    "fee_rs": 100,
+    "category": "Car"
+  },
+  {
+    "type": "Renewal After 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed after 30 days of expiry",
+    "fee_rs": 810,
+    "category": "Car"
+  },
+  {
+    "type": "Renewal After 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed after 30 days of expiry",
+    "fee_rs": 1260,
+    "category": "Car"
+  },
+  {
+    "type": "Renewal Within 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed within 30 days of expiry",
+    "fee_rs": 560,
+    "category": "Car"
+  },
+  {
+    "type": "Renewal Within 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed within 30 days of expiry",
+    "fee_rs": 860,
+    "category": "Car"
+  },
+  {
+    "type": "Permanent Driving License 3 Years",
+    "description": "License valid for 3 years",
+    "fee_rs": 1410,
+    "category": "Car + Motorcycle"
+  },
+  {
+    "type": "Permanent Driving License 5 Years",
+    "description": "License valid for 5 years",
+    "fee_rs": 1860,
+    "category": "Car + Motorcycle"
+  },
+  {
+    "type": "New Learner License Fee",
+    "description": "Fee for a new learner permit",
+    "fee_rs": 150,
+    "category": "Car + Motorcycle"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Fee for renewing an existing learner permit",
+    "fee_rs": 100,
+    "category": "Car + Motorcycle"
+  },
+  {
+    "type": "Renewal After 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed after 30 days of expiry",
+    "fee_rs": 1185,
+    "category": "Car + Motorcycle"
+  },
+  {
+    "type": "Renewal After 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed after 30 days of expiry",
+    "fee_rs": 1860,
+    "category": "Car + Motorcycle"
+  },
+  {
+    "type": "Renewal Within 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed within 30 days of expiry",
+    "fee_rs": 810,
+    "category": "Car + Motorcycle"
+  },
+  {
+    "type": "Renewal Within 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed within 30 days of expiry",
+    "fee_rs": 1260,
+    "category": "Car + Motorcycle"
+  },
+  {
+    "type": "Permanent Driving License 3 Years",
+    "description": "License valid for 3 years",
+    "fee_rs": 960,
+    "category": "MCR"
+  },
+  {
+    "type": "Permanent Driving License 5 Years",
+    "description": "License valid for 5 years",
+    "fee_rs": 1260,
+    "category": "MCR"
+  },
+  {
+    "type": "New Learner License Fee",
+    "description": "Fee for a new learner permit",
+    "fee_rs": 100,
+    "category": "MCR"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Fee for renewing an existing learner permit",
+    "fee_rs": 100,
+    "category": "MCR"
+  },
+  {
+    "type": "Renewal After 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed after 30 days of expiry",
+    "fee_rs": 810,
+    "category": "MCR"
+  },
+  {
+    "type": "Renewal After 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed after 30 days of expiry",
+    "fee_rs": 1260,
+    "category": "MCR"
+  },
+  {
+    "type": "Renewal Within 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed within 30 days of expiry",
+    "fee_rs": 560,
+    "category": "MCR"
+  },
+  {
+    "type": "Renewal Within 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed within 30 days of expiry",
+    "fee_rs": 860,
+    "category": "MCR"
+  },
+  {
+    "type": "Permanent Driving License 3 Years",
+    "description": "License valid for 3 years",
+    "fee_rs": 960,
+    "category": "LTV"
+  },
+  {
+    "type": "Permanent Driving License 5 Years",
+    "description": "License valid for 5 years",
+    "fee_rs": 1260,
+    "category": "LTV"
+  },
+  {
+    "type": "New Learner License Fee",
+    "description": "Fee for a new learner permit",
+    "fee_rs": 100,
+    "category": "LTV"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Fee for renewing an existing learner permit",
+    "fee_rs": 100,
+    "category": "LTV"
+  },
+  {
+    "type": "Renewal After 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed after 30 days of expiry",
+    "fee_rs": 810,
+    "category": "LTV"
+  },
+  {
+    "type": "Renewal After 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed after 30 days of expiry",
+    "fee_rs": 1260,
+    "category": "LTV"
+  },
+  {
+    "type": "Renewal Within 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed within 30 days of expiry",
+    "fee_rs": 560,
+    "category": "LTV"
+  },
+  {
+    "type": "Renewal Within 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed within 30 days of expiry",
+    "fee_rs": 860,
+    "category": "LTV"
+  },
+  {
+    "type": "Permanent Driving License 3 Years",
+    "description": "License valid for 3 years",
+    "fee_rs": 1410,
+    "category": "LTV + Motorcycle"
+  },
+  {
+    "type": "Permanent Driving License 5 Years",
+    "description": "License valid for 5 years",
+    "fee_rs": 1860,
+    "category": "LTV + Motorcycle"
+  },
+  {
+    "type": "New Learner License Fee",
+    "description": "Fee for a new learner permit",
+    "fee_rs": 150,
+    "category": "LTV + Motorcycle"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Fee for renewing an existing learner permit",
+    "fee_rs": 100,
+    "category": "LTV + Motorcycle"
+  },
+  {
+    "type": "Renewal After 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed after 30 days of expiry",
+    "fee_rs": 1185,
+    "category": "LTV + Motorcycle"
+  },
+  {
+    "type": "Renewal After 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed after 30 days of expiry",
+    "fee_rs": 1860,
+    "category": "LTV + Motorcycle"
+  },
+  {
+    "type": "Renewal Within 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed within 30 days of expiry",
+    "fee_rs": 810,
+    "category": "LTV + Motorcycle"
+  },
+  {
+    "type": "Renewal Within 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed within 30 days of expiry",
+    "fee_rs": 1260,
+    "category": "LTV + Motorcycle"
+  },
+  {
+    "type": "Permanent Driving License 3 Years",
+    "description": "License valid for 3 years",
+    "fee_rs": 460,
+    "category": "HTV"
+  },
+  {
+    "type": "Permanent Driving License 5 Years",
+    "description": "License valid for 5 years",
+    "fee_rs": 460,
+    "category": "HTV"
+  },
+  {
+    "type": "New Learner License Fee",
+    "description": "Fee for a new learner permit",
+    "fee_rs": 100,
+    "category": "HTV"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Fee for renewing an existing learner permit",
+    "fee_rs": 100,
+    "category": "HTV"
+  },
+  {
+    "type": "Renewal After 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed after 30 days of expiry",
+    "fee_rs": 1185,
+    "category": "HTV"
+  },
+  {
+    "type": "Renewal After 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed after 30 days of expiry",
+    "fee_rs": 1860,
+    "category": "HTV"
+  },
+  {
+    "type": "Renewal Within 30 Days 3 Years",
+    "description": "Renewal fee for 3 years, if renewed within 30 days of expiry",
+    "fee_rs": 810,
+    "category": "HTV"
+  },
+  {
+    "type": "Renewal Within 30 Days 5 Years",
+    "description": "Renewal fee for 5 years, if renewed within 30 days of expiry",
+    "fee_rs": 1260,
+    "category": "HTV"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "type": "Learner Driving Permit",
+    "description": "Temporary permit for learning highway vehicle driving",
+    "fee_rs": 300,
+    "category": "All Categories"
+  },
+  {
+    "type": "Fresh Driving License",
+    "description": "New driving license for highway and motorway driving",
+    "fee_rs": 600,
+    "category": "All Categories"
+  },
+  {
+    "type": "International driving permit",
+    "description": "International driving permit for overseas travel",
+    "fee_rs": 800,
+    "category": "All Categories"
+  },
+  {
+    "type": "Conversion of Driving Licence",
+    "description": "Converting existing license to NHA highway license",
+    "fee_rs": 600,
+    "category": "All Categories"
+  },
+  {
+    "type": "Driving licence on urgent basis",
+    "description": "Expedited processing for urgent driving license needs",
+    "fee_rs": 1000,
+    "category": "All Categories"
+  },
+  {
+    "type": "renewal",
+    "fee_rs": 100,
+    "description": "Renewal of learner's permit",
+    "category": "All Categories"
+  },
+  {
+    "type": "renewal",
+    "fee_rs": 600,
+    "description": "Renewal of driving licence within 30 days after expiry",
+    "category": "All Categories"
+  },
+  {
+    "type": "renewal",
+    "fee_rs": 1000,
+    "description": "Renewal of licence on urgent basis",
+    "category": "All Categories"
+  },
+  {
+    "type": "renewal",
+    "fee_rs": 700,
+    "description": "Renewal of licence after 30 days but within One year from the date of expiry of the licence",
+    "category": "All Categories"
+  },
+  {
+    "type": "renewal",
+    "fee_rs": 1000,
+    "description": "Renewal of licence after One year of expiry of driving licence but within three years from the date of expiry of the licence",
+    "category": "All Categories"
+  }
+]

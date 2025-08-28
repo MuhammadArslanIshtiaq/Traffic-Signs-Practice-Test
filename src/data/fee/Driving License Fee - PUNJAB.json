@@ -1,0 +1,230 @@
+[
+  {
+    "type": "Fresh Driving License",
+    "category": "M/Cycle",
+    "description": "New motorcycle driving license for first-time applicants",
+    "test_fee": 50,
+    "fee_rs": 930
+  },
+  { 
+    "type": "Fresh Driving License",
+    "category": "Rickshaw",
+    "description": "New rickshaw driving license for commercial vehicle operators",
+    "test_fee": 100,
+    "fee_rs": 880
+  },
+  {
+    "type": "Fresh Driving License",  
+    "category": "Car/Jeep",
+    "description": "New car/jeep driving license for private vehicle owners",
+    "test_fee": 150,
+    "fee_rs": 1830
+  },
+  {
+    "type": "Fresh Driving License",
+    "category": "Tractor Agri",
+    "description": "Agricultural tractor license for farming operations",
+    "test_fee": 50,
+    "fee_rs": 1430
+  },
+  {
+    "type": "Fresh Driving License",
+    "category": "Tractor Commercial",
+    "description": "Commercial tractor license for business operations",
+    "test_fee": 100,
+    "fee_rs": 1880
+  },
+  {
+    "type": "Fresh Driving License",
+    "category": "LTV",
+    "description": "Light Transport Vehicle license for commercial goods transport",
+    "test_fee": 150,
+    "fee_rs": 2330
+  },
+  {
+    "type": "Fresh Driving License",
+    "category": "Invalid Carriage",
+    "description": "Special license for disabled persons vehicles (no test required)",
+    "test_fee": 0,
+    "fee_rs": 430
+  },
+  {
+    "type": "Fresh Driving License",
+    "category": "M/Cycle+Car/Jeep",
+    "description": "Combined motorcycle and car license for versatile driving",
+    "test_fee": 200,
+    "fee_rs": 1830
+  },
+  {
+    "type": "Fresh Driving License",
+    "category": "M/Cycle+LTV",
+    "description": "Combined motorcycle and light transport vehicle license",
+    "test_fee": 200,
+    "fee_rs": 2330
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 930,
+    "category": "M/Cycle"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 1880,
+    "category": "Tractor Commercial"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 880,
+    "category": "Rickshaw"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 1830,
+    "category": "Car/Jeep"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 1830,
+    "category": "M/Cycle+M/Car"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 1830,
+    "category": "Agriculture"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 2330,
+    "category": "LTV"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 2330,
+    "category": "M/Cycle+LTV"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 2330,
+    "category": "LTV + PSV"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 2330,
+    "category": "M/Cycle+LTV+Trac Com"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 2330,
+    "category": "HTV"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 2330,
+    "category": "M/Cycle+PSV"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 2330,
+    "category": "HTV + PSV"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 1430,
+    "category": "Tractor Agri"
+  },
+  {
+    "type": "Renewal of Learner License",
+    "description": "Renewal fee for learner permit before expiry",
+    "fee_rs": 480,
+    "category": "Invalid Carriage"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 580,
+    "category": "M/Cycle"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 580,
+    "category": "Tractor Commercial"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 580,
+    "category": "Rickshaw"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 630,
+    "category": "Car/Jeep"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "M/Cycle+M/Car"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "Agriculture"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 630,
+    "category": "LTV"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "M/Cycle+LTV"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "LTV + PSV"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "M/Cycle+LTV+Trac Com"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "HTV"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "M/Cycle+PSV"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "HTV + PSV"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 680,
+    "category": "Tractor Agri"
+  },
+  {
+    "type": "Duplicate",
+    "fee_rs": 480,
+    "category": "Invalid Carriage"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "s_no": 1,
+    "type": "Learner Driving Permit",
+    "description": "Temporary permit for learning motorcycle driving (valid for 6 months)",
+    "fee_rs": 1000,
+    "category": "Motorcycle Only"
+  },
+  {
+    "s_no": 1,
+    "type": "Learner Driving Permit",
+    "description": "Temporary permit for learning car/jeep driving (valid for 6 months)",
+    "fee_rs": 1000,
+    "category": "Motor Car / Jeep"
+  },
+  {
+    "s_no": 1,
+    "type": "Learner Driving Permit",
+    "description": "Combined permit for learning both motorcycle and car driving",
+    "fee_rs": 1000,
+    "category": "Motorcycle + Motor Car / Jeep"
+  },
+  {
+    "s_no": 2,
+    "type": "Medical",
+    "description": "Medical fitness certificate required for driving license",
+    "fee_rs": 150,
+    "category": "All Categories"
+  },
+  {
+    "s_no": 3,
+    "type": "Driving Test & E-Test",
+    "description": "Practical driving test and electronic theory test",
+    "fee_rs": 500,
+    "category": "All Categories"
+  },
+  {
+    "s_no": 4,
+    "type": "Fresh Driving License",
+    "description": "New driving license after passing all required tests",
+    "fee_rs": 2000,
+    "category": "All Categories"
+  },
+  {
+    "s_no": 5,
+    "type": "Renewal",
+    "fee_rs": 2500,
+    "category": "Motorcycle + Motor Car / Jeep",
+    "description": "within the expiry of 1 Month"
+  },
+  {
+    "s_no": 5,
+    "type": "Renewal",
+    "fee_rs": 5000,
+    "category": "Motorcycle + Motor Car / Jeep",
+    "description": "after 3 Years of Expiry"
+  },
+  {
+    "s_no": 6,
+    "type": "Duplicate",
+    "description": "Replacement license for lost or damaged driving license",
+    "fee_rs": 2000,
+    "category": "Motorcycle + Motor Car / Jeep"
+  },
+  {
+    "s_no": 7,
+    "type": "International Driving Permit",
+    "description": "International driving permit for overseas travel and driving",
+    "fee_rs": 10000,
+    "category": "Motorcycle + Motor Car / Jeep"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "s_no": 1,
+    "fee_rs": 250,
+    "description": "Lamination"
+  },
+  {
+    "s_no": 2,
+    "fee_rs": 65,
+    "description": "Nadra"
+  },
+  {
+    "s_no": 3,
+    "fee_rs": 100,
+    "description": "Medical"
+  },
+  {
+    "s_no": 4,
+    "fee_rs": 310,
+    "description": "Correction"
+  },
+  {
+    "s_no": 5,
+    "fee_rs": 360,
+    "description": "Duplicate"
+  },
+  {
+    "s_no": 6,
+    "fee_rs": 500,
+    "description": "PSV"
+  },
+  {
+    "s_no": 7,
+    "fee_rs": 38,
+    "description": "TCS (Karachi)"
+  },
+  {
+    "s_no": 7,
+    "fee_rs": 55,
+    "description": "TCS (Outside Karachi)"
+  }
+]
