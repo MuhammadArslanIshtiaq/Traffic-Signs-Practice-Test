@@ -1,0 +1,375 @@
+{
+    "document": [
+      {
+        "type": "heading",
+        "level": 2,
+        "content": "General Traffic Rules for Learners 🚦"
+      },
+      {
+        "type": "paragraph",
+        "content": "Learning to drive is a significant milestone that comes with great responsibility. Understanding and adhering to traffic rules is crucial for your safety and the safety of everyone else on the road. This guide outlines essential traffic rules every learner driver should master."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "1. Understanding Traffic Signals and Signs 🛑"
+      },
+      {
+        "type": "paragraph",
+        "content": "Traffic signals and signs are the universal language of the road. You must know what each color and shape signifies."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Traffic Lights:",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 14}
+              ]
+            }
+          },
+          {
+            "type": "list",
+            "listType": "bullet",
+            "items": [
+              {
+                "type": "list_item",
+                "content": {
+                  "text": "Red Light: Stop behind the stop line.",
+                  "styles": [
+                    {"type": "bold", "start": 0, "end": 9}
+                  ]
+                }
+              },
+              {
+                "type": "list_item",
+                "content": {
+                  "text": "Yellow Light: Prepare to stop; do not enter the intersection if you can stop safely.",
+                  "styles": [
+                    {"type": "bold", "start": 0, "end": 12}
+                  ]
+                }
+              },
+              {
+                "type": "list_item",
+                "content": {
+                  "text": "Green Light: Proceed if the intersection is clear and safe.",
+                  "styles": [
+                    {"type": "bold", "start": 0, "end": 11}
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Road Signs: Pay close attention to regulatory signs (e.g., STOP, YIELD, NO PARKING), warning signs (e.g., sharp curve, pedestrian crossing), and informational signs. Each sign provides vital instructions or warnings.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 10}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "2. Lane Discipline and Road Markings 🛣️"
+      },
+      {
+        "type": "paragraph",
+        "content": "Staying in your lane and understanding road markings is fundamental to organized traffic flow."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Stay in Your Lane: Drive within a single lane and avoid weaving between lanes.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 18}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Solid Lines: Do not cross a solid white or yellow line. A double solid line means no passing in either direction.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 12}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Broken Lines: A broken line (white or yellow) indicates that passing or changing lanes is permitted when safe.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 13}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Zebra Crossings: Always stop for pedestrians at zebra crossings.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 16}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "3. Speed Limits ⏳"
+      },
+      {
+        "type": "paragraph",
+        "content": "Speed limits are not suggestions; they are maximum safe speeds for ideal conditions."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Adhere to Limits: Always drive within the posted speed limits. In the absence of signs, be aware of general limits (e.g., residential areas, highways).",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 16}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Adjust for Conditions: Reduce your speed in adverse weather (rain, fog), heavy traffic, or when approaching intersections, curves, or pedestrian areas.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 20}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "4. Right of Way 🤝"
+      },
+      {
+        "type": "paragraph",
+        "content": "Knowing who has the right of way prevents confusion and accidents."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Intersections: At an uncontrolled intersection (no signs or lights), yield to vehicles approaching from your right.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 13}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Yield Signs: Slow down and be prepared to stop to allow other vehicles or pedestrians to proceed.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 11}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Emergency Vehicles: Always yield to emergency vehicles (ambulances, fire trucks, police) by pulling over to the right and stopping.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 19}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "5. Safe Following Distance 🚗"
+      },
+      {
+        "type": "paragraph",
+        "content": "Maintaining a safe distance from the vehicle ahead gives you time to react and stop safely."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "The \"Two-Second Rule\": Choose a fixed object ahead (e.g., a tree or sign). When the vehicle in front passes it, count \"one thousand one, one thousand two.\" If you reach the object before you finish counting, you're too close. Increase this distance in poor conditions.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 22}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "6. Using Mirrors and Signaling ↩️"
+      },
+      {
+        "type": "paragraph",
+        "content": "Communication with other drivers is vital."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Check Mirrors: Regularly check your rearview and side mirrors to be aware of your surroundings.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 13}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Signal Intentions: Always use your turn indicators well in advance before turning or changing lanes. This alerts other drivers to your intentions.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 18}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "7. Distracted Driving 📵"
+      },
+      {
+        "type": "paragraph",
+        "content": "Any activity that takes your attention away from driving is a distraction."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "No Mobile Phones: Never use a handheld mobile phone for talking, texting, or browsing while driving.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 16}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Focus on the Road: Avoid eating, drinking, adjusting the radio excessively, or engaging in intense conversations that divert your focus from driving.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 17}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "8. Wearing Seatbelts/Helmets ⛑️"
+      },
+      {
+        "type": "paragraph",
+        "content": "These are essential safety devices that can save lives."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Seatbelts: Always wear your seatbelt, and ensure all passengers do too.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 10}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Helmets (for Two-Wheelers): If you're learning to ride a motorcycle or scooter, always wear a certified safety helmet.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 24}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "content": "9. Parking Rules 🅿️"
+      },
+      {
+        "type": "paragraph",
+        "content": "Parking correctly is crucial for traffic flow and safety."
+      },
+      {
+        "type": "list",
+        "listType": "bullet",
+        "items": [
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Designated Zones: Park only in designated parking areas.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 17}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "No Parking Zones: Avoid parking near fire hydrants, on zebra crossings, in front of entrances, or in areas marked 'No Parking'.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 17}
+              ]
+            }
+          },
+          {
+            "type": "list_item",
+            "content": {
+              "text": "Parallel Parking: Learn proper parallel parking techniques to avoid obstructing traffic.",
+              "styles": [
+                {"type": "bold", "start": 0, "end": 16}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Remember, these rules are designed to create a predictable and safe environment for everyone. Practice them diligently, and always drive defensively!"
+      }
+    ]
+  }
+  

@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../components/Header';
 import { useUser } from '../contexts/UserContext';
 
@@ -28,8 +29,8 @@ const LicenseFeesScreen = ({ navigation }) => {
       name: 'Islamabad Traffic Police',
       shortName: 'ITP',
       description: 'Islamabad Capital Territory driving license fees',
-      icon: 'business',
-      color: '#007AFF',
+      logo: require('../../assets/images/gov-logos/GOGB.png'),
+      color: ['#FF6B6B', '#FF8E53'],
       tag: 'ITP'
     },
     {
@@ -37,8 +38,8 @@ const LicenseFeesScreen = ({ navigation }) => {
       name: 'Punjab',
       shortName: 'PUNJAB',
       description: 'Punjab province driving license fees',
-      icon: 'location',
-      color: '#28a745',
+      logo: require('../../assets/images/gov-logos/GOPUN.png'),
+      color: ['#4ECDC4', '#44A08D'],
       tag: 'PUN'
     },
     {
@@ -46,8 +47,8 @@ const LicenseFeesScreen = ({ navigation }) => {
       name: 'Khyber Pakhtunkhwa',
       shortName: 'KPK',
       description: 'KPK province driving license fees',
-      icon: 'mountain',
-      color: '#17a2b8',
+      logo: require('../../assets/images/gov-logos/GOPKPK.png'),
+      color: ['#45B7D1', '#96C93D'],
       tag: 'KPK'
     },
     {
@@ -55,8 +56,8 @@ const LicenseFeesScreen = ({ navigation }) => {
       name: 'Balochistan',
       shortName: 'BALOCHISTAN',
       description: 'Balochistan province driving license fees',
-      icon: 'globe',
-      color: '#ffc107',
+      logo: require('../../assets/images/gov-logos/GOBALOCH.png'),
+      color: ['#F093FB', '#F5576C'],
       tag: 'BAL'
     },
     {
@@ -64,8 +65,8 @@ const LicenseFeesScreen = ({ navigation }) => {
       name: 'Sindh',
       shortName: 'SINDH',
       description: 'Sindh province driving license fees',
-      icon: 'water',
-      color: '#6f42c1',
+      logo: require('../../assets/images/gov-logos/GOSINDH.png'),
+      color: ['#4facfe', '#00f2fe'],
       tag: 'SND'
     },
     {
@@ -73,8 +74,8 @@ const LicenseFeesScreen = ({ navigation }) => {
       name: 'National Highway Authority',
       shortName: 'NHA',
       description: 'National Highway Authority license fees',
-      icon: 'car-sport',
-      color: '#dc3545',
+      logo: require('../../assets/images/gov-logos/NHA.png'),
+      color: ['#77ede8', '#fa98b8'],
       tag: 'NHA'
     }
   ];
@@ -478,62 +479,55 @@ const LicenseFeesScreen = ({ navigation }) => {
       style={styles.headerButton}
       onPress={handleBackPress}
     >
-      <Ionicons name="arrow-back" size={24} color="#115740" />
+      <Ionicons name="arrow-back" size={24} color="white" />
     </TouchableOpacity>
   );
 
   const renderAuthorityCard = ({ item }) => (
     <TouchableOpacity
-      style={[styles.authorityCard, { borderLeftColor: item.color }]}
+      style={styles.authorityCard}
       onPress={() => handleAuthoritySelect(item)}
-      activeOpacity={0.7}
     >
-      <View style={styles.authorityCardContent}>
-        <View style={[styles.authorityIconContainer, { backgroundColor: item.color }]}>
-          <Ionicons name={item.icon} size={28} color="white" />
+      <LinearGradient
+        colors={item.color}
+        style={styles.authorityGradient}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+      >
+        <View style={styles.authorityContent}>
+          <View style={styles.authorityIcon}>
+            <Image source={item.logo} style={styles.logoImage} resizeMode="contain" />
+          </View>
+          <View style={styles.authorityInfo}>
+            <Text style={styles.authorityName}>{item.name}</Text>
+            <Text style={styles.authorityDescription}>{item.description}</Text>
+            <View style={styles.feeCountContainer}>
+              <Text style={styles.feeCount}>
+                {licenseFees.filter(fee => {
+                  const tagMatch = fee.tags && fee.tags.some(tag => tag === item.tag);
+                  const authorityMatch = fee.data?.authority_code && fee.data.authority_code === item.tag;
+                  const authorityCodeMatch = fee.authorityCode && fee.authorityCode === item.tag;
+                  return tagMatch || authorityMatch || authorityCodeMatch;
+                }).length || 0} fees available
+              </Text>
+            </View>
+          </View>
+          <Ionicons name="chevron-forward" size={24} color="rgba(255,255,255,0.8)" />
         </View>
-        <View style={styles.authorityInfo}>
-          <Text style={styles.authorityName}>{item.name}</Text>
-          <Text style={styles.authorityShortName}>({item.shortName})</Text>
-          <Text style={styles.authorityDescription}>{item.description}</Text>
-        </View>
-        <View style={styles.authorityArrow}>
-          <Ionicons name="chevron-forward" size={20} color="#666" />
-        </View>
-      </View>
+      </LinearGradient>
     </TouchableOpacity>
   );
 
   const renderAuthoritiesScreen = () => (
-    <ScrollView 
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={styles.contentContainer}
-    >
-      <View style={styles.headerSection}>
-        <Text style={styles.title}>Select Authority</Text>
-        <Text style={styles.subtitle}>Choose your province or authority to view license fees</Text>
-      </View>
-
-      <View style={styles.authoritiesContainer}>
-        <FlatList
-          data={authorities}
-          renderItem={renderAuthorityCard}
-          keyExtractor={(item) => item.id}
-          showsVerticalScrollIndicator={false}
-          scrollEnabled={false}
-        />
-      </View>
-
-      <View style={styles.infoSection}>
-        <View style={styles.infoHeader}>
-          <Ionicons name="information-circle" size={24} color="#007AFF" />
-          <Text style={styles.infoTitle}>About License Fees</Text>
-        </View>
-        <Text style={styles.infoText}>
-          License fees vary by province and authority. Each region has its own fee structure based on local regulations and administrative costs.
-        </Text>
-      </View>
-    </ScrollView>
+    <View style={styles.authoritiesContainer}>
+      <FlatList
+        data={authorities}
+        renderItem={renderAuthorityCard}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.authoritiesList}
+        showsVerticalScrollIndicator={false}
+      />
+    </View>
   );
 
 
@@ -625,9 +619,9 @@ const LicenseFeesScreen = ({ navigation }) => {
         </View>
       ) : error ? (
         <View style={styles.errorContainer}>
-          <Ionicons name="alert-circle-outline" size={64} color="#e74c3c" />
-          <Text style={styles.errorText}>Failed to load license fees</Text>
-          <Text style={styles.errorSubtext}>{error}</Text>
+          <Ionicons name="alert-circle" size={48} color="#FF6B6B" />
+          <Text style={styles.errorTitle}>Error Loading Data</Text>
+          <Text style={styles.errorText}>{error}</Text>
           <TouchableOpacity
             style={styles.retryButton}
             onPress={fetchLicenseFees}
@@ -636,48 +630,15 @@ const LicenseFeesScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       ) : (
-        <View style={styles.content}>
-          <ScrollView 
+        <View style={styles.feesContainer}>
+          <FlatList
+            data={filteredFees}
+            renderItem={renderFeeCard}
+            keyExtractor={(item) => item.id}
+            contentContainerStyle={styles.feesList}
             showsVerticalScrollIndicator={false}
-            contentContainerStyle={styles.contentContainer}
-          >
-            <View style={styles.headerSection}>
-              <Text style={styles.title}>{selectedAuthority?.name} License Fees</Text>
-              <Text style={styles.subtitle}>License fees for {selectedAuthority?.shortName}</Text>
-            </View>
-
-
-
-            <View style={styles.resultHeader}>
-              <Text style={styles.resultCount}>
-                {filteredFees.length} fee{filteredFees.length !== 1 ? 's' : ''} found
-              </Text>
-            </View>
-
-            <FlatList
-              data={filteredFees}
-              renderItem={renderFeeCard}
-              keyExtractor={(item) => item.id}
-              showsVerticalScrollIndicator={false}
-              style={styles.feesList}
-              ListEmptyComponent={renderEmptyState}
-              scrollEnabled={false}
-            />
-
-
-
-            <View style={styles.actionSection}>
-              <TouchableOpacity
-                style={styles.backButton}
-                onPress={handleBackPress}
-              >
-                <Ionicons name="arrow-back" size={20} color="white" />
-                <Text style={styles.backButtonText}>
-                  {selectedAuthority ? `Back to Authorities` : `Back to General Info`}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </ScrollView>
+            ListEmptyComponent={renderEmptyState}
+          />
         </View>
       )}
     </View>
@@ -697,7 +658,12 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   headerButton: {
-    padding: 8,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   headerSection: {
     backgroundColor: 'white',
@@ -844,22 +810,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 32,
+    padding: 20,
   },
-  errorText: {
+  errorTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#e74c3c',
-    textAlign: 'center',
+    color: '#333',
     marginTop: 16,
     marginBottom: 8,
   },
-  errorSubtext: {
+  errorText: {
     fontSize: 14,
     color: '#666',
     textAlign: 'center',
+    lineHeight: 20,
     marginBottom: 24,
   },
+
   retryButton: {
     backgroundColor: '#115740',
     paddingHorizontal: 24,
@@ -910,31 +877,41 @@ const styles = StyleSheet.create({
 
   // Authority Selection Styles
   authoritiesContainer: {
-    marginBottom: 16,
+    flex: 1,
+    paddingHorizontal: 16,
+  },
+  authoritiesList: {
+    paddingVertical: 16,
   },
   authorityCard: {
-    backgroundColor: 'white',
-    borderRadius: 16,
     marginBottom: 16,
-    borderLeftWidth: 4,
-    elevation: 3,
+    borderRadius: 16,
+    elevation: 4,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-  authorityCardContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  authorityGradient: {
+    borderRadius: 16,
     padding: 20,
   },
-  authorityIconContainer: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
+  authorityContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  authorityIcon: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'rgba(255,255,255,0.2)',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 16,
+  },
+  logoImage: {
+    width: 40,
+    height: 40,
   },
   authorityInfo: {
     flex: 1,
@@ -942,21 +919,34 @@ const styles = StyleSheet.create({
   authorityName: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 2,
-  },
-  authorityShortName: {
-    fontSize: 14,
-    color: '#666',
+    color: 'white',
     marginBottom: 4,
   },
   authorityDescription: {
-    fontSize: 13,
-    color: '#888',
+    fontSize: 14,
+    color: 'rgba(255,255,255,0.9)',
     lineHeight: 18,
+    marginBottom: 8,
   },
-  authorityArrow: {
-    marginLeft: 12,
+  feeCountContainer: {
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 12,
+    alignSelf: 'flex-start',
+  },
+  feeCount: {
+    fontSize: 12,
+    color: 'white',
+    fontWeight: '600',
+  },
+
+  // Fees List Styles
+  feesContainer: {
+    flex: 1,
+  },
+  feesList: {
+    paddingVertical: 8,
   },
   infoSection: {
     backgroundColor: 'white',

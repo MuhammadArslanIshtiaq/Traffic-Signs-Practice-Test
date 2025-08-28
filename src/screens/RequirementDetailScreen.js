@@ -32,7 +32,7 @@ const RequirementDetailScreen = ({ navigation, route }) => {
       style={styles.headerButton}
       onPress={handleBackPress}
     >
-      <Ionicons name="arrow-back" size={24} color="#115740" />
+      <Ionicons name="arrow-back" size={24} color="white" />
     </TouchableOpacity>
   );
 
@@ -213,7 +213,12 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   headerButton: {
-    padding: 8,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   headerSection: {
     backgroundColor: 'white',

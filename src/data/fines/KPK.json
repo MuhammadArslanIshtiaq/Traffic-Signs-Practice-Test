@@ -1,0 +1,2201 @@
+[
+    {
+      "category": "moving_violation",
+      "violation": "Exceeding prescribed speed limit",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter at a speed exceeding the legally defined limit in Khyber Pakhtunkhwa (KPK), increasing the risk of accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Exceeding prescribed speed limit",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Driving a motorcar or jeep at a speed exceeding the legally defined limit in KPK, posing a risk to road safety and other drivers."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Exceeding prescribed speed limit",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating a Light Transport Vehicle (LTV) at a speed exceeding the legally defined limit in KPK, potentially endangering cargo and occupants."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Exceeding prescribed speed limit",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) at a speed exceeding the legally defined limit in KPK, a serious violation due to the vehicle's size and potential passenger count."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Carrying Passengers in a Public service vehicle exceeding permissible limit",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Transporting more individuals in a public service motorcar or jeep than its authorized seating capacity in KPK, leading to overcrowding and safety concerns."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Carrying Passengers in a Public service vehicle exceeding permissible limit",
+      "penalty_rs": 1500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Transporting more individuals in a public service Light Transport Vehicle (LTV) than its authorized seating capacity in KPK, leading to overcrowding and safety concerns."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Carrying Passengers in a Public service vehicle exceeding permissible limit",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Transporting more individuals in a public service Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) than its authorized seating capacity in KPK, a serious violation due to the large number of passengers."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Violation of Traffic signals (electronic or manual)",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Disregarding instructions from traffic lights or manual signals by traffic police in KPK while riding a motorcycle or scooter, increasing the risk of accidents at intersections."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Violation of Traffic signals (electronic or manual)",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Disregarding instructions from traffic lights or manual signals by traffic police in KPK while driving a motorcar or jeep, which can lead to collisions at intersections."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Violation of Traffic signals (electronic or manual)",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Disregarding instructions from traffic lights or manual signals by traffic police in KPK while operating an LTV, affecting traffic flow and safety."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Violation of Traffic signals (electronic or manual)",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Disregarding instructions from traffic lights or manual signals by traffic police in KPK while operating an HTV or PSV, potentially causing severe accidents due to vehicle size and weight."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading by public transport vehicles (Goods carriers) - 1 to 5 percent",
+      "penalty_rs": 2500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Overloading a Light Transport Vehicle (LTV) used for goods transport by 1 to 5 percent of its permissible limit in KPK. The vehicle is also subject to impoundment for fifteen days."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading by public transport vehicles (Goods carriers) - 5.1 to 10 percent",
+      "penalty_rs": 5000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Overloading a Light Transport Vehicle (LTV) used for goods transport by 5.1 to 10 percent of its permissible limit in KPK. The vehicle is also subject to impoundment for fifteen days."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading by public transport vehicles (Goods carriers) - 10.1 percent and above",
+      "penalty_rs": 7500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Overloading a Light Transport Vehicle (LTV) used for goods transport by 10.1 percent or more of its permissible limit in KPK. The vehicle is also subject to impoundment for fifteen days, indicating a severe violation."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading by public transport vehicles (Goods carriers) - 1 to 5 percent",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Overloading a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) used for goods transport by 1 to 5 percent of its permissible limit in KPK. The vehicle is also subject to impoundment for fifteen days."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading by public transport vehicles (Goods carriers) - 5.1 to 10 percent",
+      "penalty_rs": 10000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Overloading a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) used for goods transport by 5.1 to 10 percent of its permissible limit in KPK. The vehicle is also subject to impoundment for fifteen days."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading by public transport vehicles (Goods carriers) - 10.1 percent and above",
+      "penalty_rs": 15000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Overloading a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) used for goods transport by 10.1 percent or more of its permissible limit in KPK. The vehicle is also subject to impoundment for fifteen days, indicating a severe violation."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Overtaking where prohibited",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Overtaking another vehicle in a zone where it is explicitly prohibited while riding a motorcycle or scooter in KPK, leading to dangerous situations."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Overtaking where prohibited",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Overtaking another vehicle in a zone where it is explicitly prohibited while driving a motorcar or jeep in KPK, creating dangerous situations on the road."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Overtaking where prohibited",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Overtaking another vehicle in a zone where it is explicitly prohibited while operating an LTV in KPK, a risky maneuver due to the vehicle's size."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Overtaking where prohibited",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Overtaking another vehicle in a zone where it is explicitly prohibited while operating an HTV or PSV in KPK, a highly dangerous maneuver that can lead to severe accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to yield the right of way to another vehicles",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to grant priority to other vehicles when required by traffic rules while riding a motorcycle or scooter in KPK, leading to potential collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to yield the right of way to another vehicles",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to grant priority to other vehicles when required by traffic rules while driving a motorcar or jeep in KPK, potentially causing accidents at intersections or merges."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to yield the right of way to another vehicles",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to grant priority to other vehicles when required by traffic rules while operating an LTV in KPK, affecting smooth traffic flow and safety."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to yield the right of way to another vehicles",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to grant priority to other vehicles when required by traffic rules while operating an HTV or PSV in KPK, a critical error due to the impact of such large vehicles."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing movement of emergency vehicles",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to yield to emergency vehicles (e.g., ambulance, fire truck, police) while riding a motorcycle or scooter in KPK, delaying critical response."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing movement of emergency vehicles",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to yield to emergency vehicles (e.g., ambulance, fire truck, police) while driving a motorcar or jeep in KPK, thereby obstructing their passage and delaying critical response."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing movement of emergency vehicles",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to yield to emergency vehicles (e.g., ambulance, fire truck, police) while operating an LTV in KPK, potentially impeding life-saving services."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing movement of emergency vehicles",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to yield to emergency vehicles (e.g., ambulance, fire truck, police) while operating an HTV or PSV in KPK, a severe violation that can have dire consequences."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Leading the excess of the restriction of dimension of goods",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Transporting goods in an LTV that exceed the legally prescribed dimensions (height, width, length) in KPK, which can create hazards on the road and damage infrastructure."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Leading the excess of the restriction of dimension of goods",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Transporting goods in an HTV or PSV that exceed the legally prescribed dimensions in KPK, which can severely impede visibility, stability, and safety for all road users."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving at night without proper lights",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter during nighttime or low-visibility conditions without the required headlights or tail lights in KPK, reducing visibility for the rider and making it harder for others to see the vehicle."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving at night without proper lights",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep during nighttime or low-visibility conditions without the required headlights or tail lights in KPK, significantly reducing visibility for the driver and other road users."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving at night without proper lights",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating a Light Transport Vehicle (LTV) during nighttime or low-visibility conditions without the required lights in KPK, endangering cargo and occupants."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving at night without proper lights",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) during nighttime or low-visibility conditions without proper illumination in KPK, a severe risk due to the vehicle's size and mass."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving on the wrong side of the road",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter against the designated flow of traffic in KPK, a highly dangerous practice that significantly increases the risk of head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving on the wrong side of the road",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep against the designated flow of traffic in KPK, an extremely hazardous act that can cause severe head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving on the wrong side of the road",
+      "penalty_rs": 2000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating a Light Transport Vehicle (LTV) against the designated flow of traffic in KPK, a very dangerous violation due to the vehicle's size and impact potential."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving on the wrong side of the road",
+      "penalty_rs": 4000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) against the designated flow of traffic in KPK, a catastrophic violation that endangers many lives."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. A. Amber Flashing",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Disregarding a flashing amber traffic signal while riding a motorcycle or scooter in KPK, indicating a need for caution but often leading to rushed maneuvers."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. A. Amber Flashing",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Disregarding a flashing amber traffic signal while driving a motorcar or jeep in KPK, failing to exercise caution at an intersection."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. A. Amber Flashing",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Disregarding a flashing amber traffic signal while operating an LTV in KPK, potentially leading to accidents at intersections."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. A. Amber Flashing",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Disregarding a flashing amber traffic signal while operating an HTV or PSV in KPK, a risky action that can have severe consequences due to vehicle size and weight."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. b. Red Thinking",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Attempting to cross or proceed when a traffic signal is on a 'red thinking' phase (likely preceding a full red light) while riding a motorcycle or scooter in KPK, indicating impatience and increased risk."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. b. Red Thinking",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Attempting to cross or proceed when a traffic signal is on a 'red thinking' phase (likely preceding a full red light) while driving a motorcar or jeep in KPK, a dangerous anticipation of the signal change."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. b. Red Thinking",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Attempting to cross or proceed when a traffic signal is on a 'red thinking' phase while operating an LTV in KPK, a risky maneuver that can lead to intersection conflicts."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. b. Red Thinking",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Attempting to cross or proceed when a traffic signal is on a 'red thinking' phase while operating an HTV or PSV in KPK, a very dangerous action due to the potential for severe accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. c. Red Light",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Disregarding a solid red traffic light while riding a motorcycle or scooter in KPK, a direct violation that is highly dangerous and increases the risk of collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. c. Red Light",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Disregarding a solid red traffic light while driving a motorcar or jeep in KPK, a direct violation that is highly dangerous and significantly increases the risk of collisions at intersections."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. c. Red Light",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Disregarding a solid red traffic light while operating an LTV in KPK, a serious violation that can lead to severe accidents due to the vehicle's momentum."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Disobey traffic signals. c. Red Light",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Disregarding a solid red traffic light while operating an HTV or PSV in KPK, a critical safety violation with potentially catastrophic consequences."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper crossing of railway track",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Crossing railway tracks in an unsafe or unauthorized manner while riding a motorcycle or scooter in KPK, risking severe accidents with trains."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper crossing of railway track",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Crossing railway tracks in an unsafe or unauthorized manner while driving a motorcar or jeep in KPK, risking severe accidents with trains and endangering occupants."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper crossing of railway track",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Crossing railway tracks in an unsafe or unauthorized manner while operating an LTV in KPK, a serious violation that can lead to catastrophic consequences if a train approaches."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper crossing of railway track",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Crossing railway tracks in an unsafe or unauthorized manner while operating an HTV or PSV in KPK, an extremely dangerous act that can result in mass casualties and severe damage."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Following too closely or cutting too sharply",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter too close to the vehicle ahead or making abrupt, sharp cuts between lanes in KPK, increasing the risk of rear-end collisions or sideswipes."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Following too closely or cutting too sharply",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Driving a motorcar or jeep too close to the vehicle ahead (tailgating) or making abrupt, sharp cuts between lanes in KPK, significantly increasing the risk of rear-end collisions or sideswipes."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Following too closely or cutting too sharply",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV too close to the vehicle ahead or making abrupt, sharp cuts between lanes in KPK, a dangerous practice due to the vehicle's braking distance and size."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Following too closely or cutting too sharply",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV too close to the vehicle ahead or making abrupt, sharp cuts between lanes in KPK, an extremely dangerous maneuver that can lead to multi-vehicle pile-ups."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving with tinted or covered glasses obstructing visibility from within the vehicle",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep with excessively tinted or covered windows that obstruct the driver's visibility from within the vehicle in KPK, posing a safety risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving with tinted or covered glasses obstructing visibility from within the vehicle",
+      "penalty_rs": 1500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV with excessively tinted or covered windows that obstruct the driver's visibility from within the vehicle in KPK, a serious concern for road safety."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving with tinted or covered glasses obstructing visibility from within the vehicle",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV with excessively tinted or covered windows that obstruct the driver's visibility from within the vehicle in KPK, a major safety hazard due to the size and weight of the vehicle."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Jumping Traffic queue",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Cutting into a traffic line or queue impatiently while riding a motorcycle or scooter in KPK, causing disruption and potential road rage."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Jumping Traffic queue",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Cutting into a traffic line or queue impatiently while driving a motorcar or jeep in KPK, causing disruption, slowing traffic flow, and potentially leading to minor accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Jumping Traffic queue",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Cutting into a traffic line or queue impatiently while operating an LTV in KPK, causing disruption and potential hazards due to the vehicle's size."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Jumping Traffic queue",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Cutting into a traffic line or queue impatiently while operating an HTV or PSV in KPK, causing significant disruption and posing a high risk of collision due to the vehicle's mass."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failing to dip headlights for other traffic",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to switch from high beam to low beam headlights when encountering oncoming traffic while riding a motorcycle or scooter in KPK, causing glare and temporary blindness for other drivers."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failing to dip headlights for other traffic",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to switch from high beam to low beam headlights when encountering oncoming traffic while driving a motorcar or jeep in KPK, causing dangerous glare and obstructing the vision of other drivers."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failing to dip headlights for other traffic",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to switch from high beam to low beam headlights when encountering oncoming traffic while operating an LTV in KPK, which can be particularly blinding due to the vehicle's higher light position."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failing to dip headlights for other traffic",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to switch from high beam to low beam headlights when encountering oncoming traffic while operating an HTV or PSV in KPK, a dangerous act that can severely impair the vision of other drivers."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving wrong way in one way street",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter against the designated flow of traffic on a one-way street in KPK, a highly dangerous action that can lead to head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving wrong way in one way street",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep against the designated flow of traffic on a one-way street in KPK, an extremely hazardous act that significantly increases the risk of head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving wrong way in one way street",
+      "penalty_rs": 2000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV against the designated flow of traffic on a one-way street in KPK, a very dangerous violation due to the vehicle's size and potential impact."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving wrong way in one way street",
+      "penalty_rs": 4000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV against the designated flow of traffic on a one-way street in KPK, a catastrophic violation that endangers many lives and can cause severe accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Using turn indicator for any purpose other than those prescribed",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Using a turn indicator on a motorcycle or scooter for reasons other than signaling a turn or lane change in KPK, which can confuse other road users and lead to misinterpretations of intent."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Using turn indicator for any purpose other than those prescribed",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using a turn indicator on a motorcar or jeep for reasons other than signaling a turn or lane change in KPK, which can confuse other road users and lead to misinterpretations of intent."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Using turn indicator for any purpose other than those prescribed",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Using a turn indicator on an LTV for reasons other than signaling a turn or lane change in KPK, which can cause confusion and affect traffic flow."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Using turn indicator for any purpose other than those prescribed",
+      "penalty_rs": 700,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Using a turn indicator on an HTV or PSV for reasons other than signaling a turn or lane change in KPK, which can significantly confuse other drivers and lead to dangerous situations."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Playing where prohibited",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in areas where such activity is prohibited in KPK, which could be designated for pedestrians or other restricted purposes."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Playing where prohibited",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in areas where such activity is prohibited in KPK, violating designated traffic rules or land use regulations."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Playing where prohibited",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in areas where such activity is prohibited in KPK, often due to size restrictions or specific zone designations."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Playing where prohibited",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in areas where such activity is prohibited in KPK, a significant violation that can cause damage or severe disruption."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Improper loading of goods/ improper loaded goods",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Loading goods onto an LTV in an unsafe or improper manner in KPK, which can lead to shifting cargo, falling debris, and hazards for other road users."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Improper loading of goods/ improper loaded goods",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Loading goods onto an HTV or PSV in an unsafe or improper manner in KPK, a severe violation that can cause instability, accidents, and substantial damage due to the weight and volume of the cargo."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failing to observe lighting hours",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter without turning on the required lights during prescribed lighting hours in KPK, reducing visibility and increasing accident risk."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failing to observe lighting hours",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Driving a motorcar or jeep without turning on the required lights during prescribed lighting hours in KPK, reducing visibility and increasing accident risk for the driver and others."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failing to observe lighting hours",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV without turning on the required lights during prescribed lighting hours in KPK, affecting visibility and safety."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failing to observe lighting hours",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV without turning on the required lights during prescribed lighting hours in KPK, a significant safety hazard due to the vehicle's size and the importance of its visibility."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing traffic",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Blocking the free flow of vehicles or pedestrians with a motorcycle or scooter in KPK, often by parking illegally or stopping in a traffic lane."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing traffic",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Blocking the free flow of vehicles or pedestrians with a motorcar or jeep in KPK, typically by stopping or parking improperly, causing congestion and inconvenience."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing traffic",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Blocking the free flow of vehicles or pedestrians with an LTV in KPK, causing disruption and potential hazards due to the vehicle's size."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing traffic",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Blocking the free flow of traffic or pedestrian movement with an HTV or PSV in KPK, causing significant disruption and posing a high risk of collision due to the vehicle's mass."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to observe slow sign",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to reduce speed as indicated by a 'slow' traffic sign while riding a motorcycle or scooter in KPK, particularly in areas requiring caution."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to observe slow sign",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to reduce speed as indicated by a 'slow' traffic sign while driving a motorcar or jeep in KPK, often in areas like school zones or construction sites, increasing hazard."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to observe slow sign",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to reduce speed as indicated by a 'slow' traffic sign while operating an LTV in KPK, a violation that can be dangerous due to the vehicle's size and momentum."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to observe slow sign",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to reduce speed as indicated by a 'slow' traffic sign while operating an HTV or PSV in KPK, a critical safety violation given the vehicle's braking distance and impact potential."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Riding motorcycle without safety helmet",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle in KPK without wearing a safety helmet, significantly increasing the risk of severe head injuries in the event of an accident."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to stop for a school bus",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to stop for a stopped school bus with activated flashing lights while riding a motorcycle or scooter in KPK, endangering children who may be boarding or disembarking."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to stop for a school bus",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to stop for a stopped school bus with activated flashing lights while driving a motorcar or jeep in KPK, a serious violation that endangers children."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to stop for a school bus",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to stop for a stopped school bus with activated flashing lights while operating an LTV in KPK, posing a significant risk to children."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to stop for a school bus",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to stop for a stopped school bus with activated flashing lights while operating an HTV or PSV in KPK, a critical safety violation due to the high risk to children."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Turning where prohibited",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Making a turn (e.g., left, right, U-turn) in a location where such a maneuver is explicitly prohibited while riding a motorcycle or scooter in KPK, leading to traffic conflicts."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Turning where prohibited",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Making a turn (e.g., left, right, U-turn) in a location where such a maneuver is explicitly prohibited while driving a motorcar or jeep in KPK, causing traffic disruption and potential accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Turning where prohibited",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Making a turn in a prohibited location while operating an LTV in KPK, a violation that can be particularly difficult for larger vehicles to correct safely."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Turning where prohibited",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Making a turn in a prohibited location while operating an HTV or PSV in KPK, a severe violation given the large turning radius and potential for severe accidents."
+    },
+    {
+      "category": "driving_school",
+      "violation": "Failure to protect learner drivers",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to ensure the safety or proper supervision of a learner driver while riding a motorcycle or scooter in KPK, potentially exposing them to danger."
+    },
+    {
+      "category": "driving_school",
+      "violation": "Failure to protect learner drivers",
+      "penalty_rs": 400,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to ensure the safety or proper supervision of a learner driver while driving a motorcar or jeep in KPK, which is crucial for their training and road safety."
+    },
+    {
+      "category": "driving_school",
+      "violation": "Failure to protect learner drivers",
+      "penalty_rs": 400,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to ensure the safety or proper supervision of a learner driver while operating an LTV in KPK, a critical responsibility given the vehicle's size."
+    },
+    {
+      "category": "driving_school",
+      "violation": "Failure to protect learner drivers",
+      "penalty_rs": 600,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to ensure the safety or proper supervision of a learner driver while operating an HTV or PSV in KPK, a very serious responsibility due to the potential consequences of errors."
+    },
+    {
+      "category": "pedestrian_safety",
+      "violation": "Failure to yield right of way to pedestrians",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to grant priority to pedestrians at designated crossings or when required by law while riding a motorcycle or scooter in KPK, endangering their safety."
+    },
+    {
+      "category": "pedestrian_safety",
+      "violation": "Failure to yield right of way to pedestrians",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to grant priority to pedestrians at designated crossings or when required by law while driving a motorcar or jeep in KPK, posing a direct threat to pedestrian safety."
+    },
+    {
+      "category": "pedestrian_safety",
+      "violation": "Failure to yield right of way to pedestrians",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to grant priority to pedestrians at designated crossings or when required by law while operating an LTV in KPK, a significant risk due to the vehicle's size and potential impact."
+    },
+    {
+      "category": "pedestrian_safety",
+      "violation": "Failure to yield right of way to pedestrians",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to grant priority to pedestrians at designated crossings or when required by law while operating an HTV or PSV in KPK, a critical safety violation with potentially fatal consequences."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Reckless and negligent driving",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter with dangerous disregard for safety, exhibiting careless or irresponsible behavior in KPK that puts other road users at risk."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Reckless and negligent driving",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior in KPK that puts other road users at risk."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Reckless and negligent driving",
+      "penalty_rs": 2000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior in KPK that puts other road users at risk, especially given the vehicle's size."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Reckless and negligent driving",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior in KPK that puts passengers and other road users at severe risk."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without driving license",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK without possessing a valid and current driving license, indicating a lack of authorization and necessary riding skills."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without driving license",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK without possessing a valid and current driving license, indicating a lack of authorization and necessary driving skills."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without driving license",
+      "penalty_rs": 3000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK without possessing a valid and current driving license, a more serious offense due to the vehicle's commercial or larger nature."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without driving license",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK without possessing a valid and current driving license, a critical safety and regulatory violation due to the high responsibility involved."
+    },
+    {
+      "category": "registration",
+      "violation": "Driving an unregistered vehicle",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK that has not been officially registered with the relevant authorities, making it untraceable and potentially uninsured."
+    },
+    {
+      "category": "registration",
+      "violation": "Driving an unregistered vehicle",
+      "penalty_rs": 3000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK that has not been officially registered with the relevant authorities, making it untraceable and potentially uninsured."
+    },
+    {
+      "category": "registration",
+      "violation": "Driving an unregistered vehicle",
+      "penalty_rs": 5000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK that has not been officially registered, a serious violation for commercial or larger vehicles."
+    },
+    {
+      "category": "registration",
+      "violation": "Driving an unregistered vehicle",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK that has not been officially registered, a critical regulatory and safety violation due to the vehicle's public nature and size."
+    },
+    {
+      "category": "insurance",
+      "violation": "Driving a motor vehicle without insurance coverage",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK without valid insurance coverage, leaving the rider and others financially unprotected in case of an accident."
+    },
+    {
+      "category": "insurance",
+      "violation": "Driving a motor vehicle without insurance coverage",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK without valid insurance coverage, leaving the driver and others financially unprotected in case of an accident."
+    },
+    {
+      "category": "insurance",
+      "violation": "Driving a motor vehicle without insurance coverage",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK without valid insurance coverage, a significant financial risk for commercial vehicles."
+    },
+    {
+      "category": "insurance",
+      "violation": "Driving a motor vehicle without insurance coverage",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK without valid insurance coverage, a critical financial and regulatory violation given the potential for significant damage and injury."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving a transport vehicle without or with a defective speedometer",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK that has no speedometer or a malfunctioning one, making it difficult to maintain legal speed limits."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving a transport vehicle without or with a defective speedometer",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK that has no speedometer or a malfunctioning one, making it difficult for the driver to maintain legal speed limits."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving a transport vehicle without or with a defective speedometer",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK that has no speedometer or a malfunctioning one, hindering the driver's ability to monitor speed and adhere to regulations."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving a transport vehicle without or with a defective speedometer",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK that has no speedometer or a malfunctioning one, a critical safety violation as accurate speed monitoring is essential for large vehicles."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Opening door dangerously",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Opening a vehicle door in a manner that endangers or obstructs other road users or pedestrians in KPK, typically by opening it into traffic or without checking surroundings."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Opening door dangerously",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Opening an LTV door in a manner that endangers or obstructs other road users or pedestrians in KPK, particularly risky given the vehicle's larger size."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Opening door dangerously",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Opening an HTV or PSV door in a manner that endangers or obstructs other road users or pedestrians in KPK, a severe hazard due to the potential for serious injury."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper turning (Turn from wrong lane)",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Making a turn from an incorrect lane while riding a motorcycle or scooter in KPK, causing confusion and potential collisions with other vehicles."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper turning (Turn from wrong lane)",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Making a turn from an incorrect lane while driving a motorcar or jeep in KPK, causing confusion, disrupting traffic flow, and increasing the risk of accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper turning (Turn from wrong lane)",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Making a turn from an incorrect lane while operating an LTV in KPK, a violation that can be particularly problematic due to the vehicle's turning radius and size."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper turning (Turn from wrong lane)",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Making a turn from an incorrect lane while operating an HTV or PSV in KPK, a serious violation that can lead to severe accidents due to the vehicle's large size and potential impact."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper lane usage",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to stay within designated lanes or using lanes improperly while riding a motorcycle or scooter in KPK, leading to erratic movements and potential collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper lane usage",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to stay within designated lanes or using lanes improperly while driving a motorcar or jeep in KPK, disrupting traffic flow and increasing the risk of sideswipes."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper lane usage",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to stay within designated lanes or using lanes improperly while operating an LTV in KPK, a violation that can be particularly hazardous due to the vehicle's size and blind spots."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper lane usage",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to stay within designated lanes or using lanes improperly while operating an HTV or PSV in KPK, a severe violation that can lead to multi-vehicle accidents due to the vehicle's large size."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Blowing horn in silence zone",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Using a horn in a designated silence zone (e.g., near hospitals, schools) while riding a motorcycle or scooter in KPK, causing noise disturbance."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Blowing horn in silence zone",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using a horn in a designated silence zone (e.g., near hospitals, schools) while driving a motorcar or jeep in KPK, causing noise disturbance and disrespecting quiet areas."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Blowing horn in silence zone",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Using a horn in a designated silence zone while operating an LTV in KPK, contributing to noise pollution in sensitive areas."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Blowing horn in silence zone",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Using a horn in a designated silence zone while operating an HTV or PSV in KPK, a significant violation due to the louder sound of such vehicle horns."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper U-Turn",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Making a U-turn in an unauthorized or unsafe location while riding a motorcycle or scooter in KPK, creating dangerous situations for other traffic."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper U-Turn",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Making a U-turn in an unauthorized or unsafe location while driving a motorcar or jeep in KPK, causing disruption and increasing the risk of collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper U-Turn",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Making a U-turn in an unauthorized or unsafe location while operating an LTV in KPK, a risky maneuver due to the vehicle's size and turning radius."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper U-Turn",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Making a U-turn in an unauthorized or unsafe location while operating an HTV or PSV in KPK, a severe violation that can lead to major accidents due to the vehicle's large size and slow maneuverability."
+    },
+    {
+      "category": "licensing",
+      "violation": "Refusal to produce license",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Refusing or failing to present a valid driving license upon request by traffic police while riding a motorcycle or scooter in KPK, hindering law enforcement."
+    },
+    {
+      "category": "licensing",
+      "violation": "Refusal to produce license",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Refusing or failing to present a valid driving license upon request by traffic police while driving a motorcar or jeep in KPK, hindering law enforcement and suggesting a potential underlying issue."
+    },
+    {
+      "category": "licensing",
+      "violation": "Refusal to produce license",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Refusing or failing to present a valid driving license upon request by traffic police while operating an LTV in KPK, a serious impediment to regulatory checks."
+    },
+    {
+      "category": "licensing",
+      "violation": "Refusal to produce license",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Refusing or failing to present a valid driving license upon request by traffic police while operating an HTV or PSV in KPK, a critical legal and regulatory violation."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Failing to stop when required by the traffic police",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to stop a motorcycle or scooter when instructed to do so by traffic police in KPK, an act of defiance that can escalate situations."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Failing to stop when required by the traffic police",
+      "penalty_rs": 700,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to stop a motorcar or jeep when instructed to do so by traffic police in KPK, an act of defiance that can escalate situations and lead to further legal action."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Failing to stop when required by the traffic police",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to stop an LTV when instructed to do so by traffic police in KPK, a serious violation that can impede law enforcement duties."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Failing to stop when required by the traffic police",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to stop an HTV or PSV when instructed to do so by traffic police in KPK, a critical act of defiance with potentially severe legal repercussions, especially for public transport."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Driving without fitness certificate",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating a Light Transport Vehicle (LTV) in KPK without a valid fitness certificate, which attests to its roadworthiness and safety, thereby endangering cargo and occupants."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Driving without fitness certificate",
+      "penalty_rs": 2500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) in KPK without a valid fitness certificate, a critical safety and regulatory violation due to the potential for catastrophic failure."
+    },
+    {
+      "category": "overloading",
+      "violation": "Driving a vehicle exceeding prescribed weight limit",
+      "penalty_rs": 2500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating a Light Transport Vehicle (LTV) in KPK that exceeds its legally prescribed weight limit, impacting vehicle control, braking, and road infrastructure."
+    },
+    {
+      "category": "overloading",
+      "violation": "Driving a vehicle exceeding prescribed weight limit",
+      "penalty_rs": 15000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) in KPK that significantly exceeds its legally prescribed weight limit, a severe violation with high fines due to the potential for road damage and catastrophic accidents."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Using vehicle in unsafe condition",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK that is in a visibly unsafe condition (e.g., defective brakes, worn tires), posing a risk to the rider and others."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Using vehicle in unsafe condition",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK that is in a visibly unsafe condition (e.g., defective brakes, worn tires, broken lights), posing a risk to the driver, passengers, and other road users."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Using vehicle in unsafe condition",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK that is in a visibly unsafe condition, a serious concern given the vehicle's role in transport and potential impact."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Using vehicle in unsafe condition",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK that is in a visibly unsafe condition, a critical safety violation that can lead to severe mechanical failures and accidents."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using pressure/musical horns",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Using unauthorized pressure horns or musical horns on a motorcycle or scooter in KPK, contributing to noise pollution and potentially startling other road users."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using pressure/musical horns",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using unauthorized pressure horns or musical horns on a motorcar or jeep in KPK, contributing to noise pollution and being a nuisance to the public."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using pressure/musical horns",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Using unauthorized pressure horns or musical horns on an LTV in KPK, a significant contributor to noise pollution, especially in urban areas."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using pressure/musical horns",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Using unauthorized pressure horns or musical horns on an HTV or PSV in KPK, a severe violation due to the high decibel levels and widespread disturbance caused by such large vehicles."
+    },
+    {
+      "category": "general_violation",
+      "violation": "Driving vehicle in violation of law/rules not otherwise provided",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK in violation of general traffic laws or rules not specifically listed, covering various minor infractions."
+    },
+    {
+      "category": "general_violation",
+      "violation": "Driving vehicle in violation of law/rules not otherwise provided",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK in violation of general traffic laws or rules not specifically listed, covering various minor infractions or new regulations."
+    },
+    {
+      "category": "general_violation",
+      "violation": "Driving vehicle in violation of law/rules not otherwise provided",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK in violation of general traffic laws or rules not specifically listed, acting as a catch-all for various unclassified offenses."
+    },
+    {
+      "category": "general_violation",
+      "violation": "Driving vehicle in violation of law/rules not otherwise provided",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK in violation of general traffic laws or rules not specifically listed, covering any unclassified regulatory breaches."
+    },
+    {
+      "category": "environmental",
+      "violation": "Smoke emitting vehicle",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK that emits excessive smoke from its exhaust, indicating engine problems and contributing to air pollution."
+    },
+    {
+      "category": "environmental",
+      "violation": "Smoke emitting vehicle",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK that emits excessive smoke from its exhaust, indicating engine problems, poor maintenance, and contributing to air pollution."
+    },
+    {
+      "category": "environmental",
+      "violation": "Smoke emitting vehicle",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK that emits excessive smoke, a clear indication of engine issues and a contributor to environmental pollution."
+    },
+    {
+      "category": "environmental",
+      "violation": "Smoke emitting vehicle",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK that emits excessive smoke, a significant environmental violation due to the volume of emissions and public health impact."
+    },
+    {
+      "category": "age_limit",
+      "violation": "Juvenile driving",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK by an individual below the legally stipulated age for driving, indicating a lack of maturity, experience, and legal authorization."
+    },
+    {
+      "category": "age_limit",
+      "violation": "Juvenile driving",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK by an individual below the legally stipulated age for driving, indicating a lack of maturity, experience, and legal authorization, and posing a risk to public safety."
+    },
+    {
+      "category": "age_limit",
+      "violation": "Juvenile driving",
+      "penalty_rs": 5000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK by an individual below the legally stipulated age, a serious offense due to the nature of the vehicle and the enhanced risks."
+    },
+    {
+      "category": "age_limit",
+      "violation": "Juvenile driving",
+      "penalty_rs": 10000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK by an individual below the legally stipulated age, a critical and highly dangerous violation with severe legal consequences due to the immense responsibility."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using mobile phone while driving",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Using a mobile phone manually (e.g., talking, texting) while riding a motorcycle or scooter in KPK, a highly dangerous distraction that compromises balance and reaction time."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using mobile phone while driving",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using a mobile phone manually (e.g., talking, texting) while driving a motorcar or jeep in KPK, leading to significant driver distraction and increased accident risk."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using mobile phone while driving",
+      "penalty_rs": 3000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Using a mobile phone manually while operating an LTV in KPK, a serious distraction that can have severe consequences due to the vehicle's size and potential impact."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using mobile phone while driving",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Using a mobile phone manually while operating an HTV or PSV in KPK, a critical and highly dangerous act that endangers passengers and other road users, resulting in severe penalties."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "One wheeling by motorcyclist",
+      "penalty_rs": 5000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Performing 'one-wheeling' (riding a motorcycle on only its rear wheel) in KPK, an extremely dangerous stunt that endangers the rider and all other road users."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the same violations",
+      "penalty_rs": 1200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Committing a previously cited traffic violation again while riding a motorcycle or scooter in KPK, indicating a pattern of non-compliance."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the same violations",
+      "penalty_rs": 1200,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Committing a previously cited traffic violation again while driving a motorcar or jeep in KPK, indicating a pattern of non-compliance and potentially leading to escalating penalties."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the same violations",
+      "penalty_rs": 1200,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Committing a previously cited traffic violation again while operating an LTV in KPK, highlighting a repeated failure to adhere to traffic laws."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the same violations",
+      "penalty_rs": 1200,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Committing a previously cited traffic violation again while operating an HTV or PSV in KPK, a serious indication of persistent disregard for traffic regulations."
+    },
+    {
+      "category": "abetment",
+      "violation": "Abetment of the above violations",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Aiding, inciting, or encouraging others to commit any of the listed traffic violations while associated with a motorcycle or scooter in KPK, making one liable as an accomplice."
+    },
+    {
+      "category": "abetment",
+      "violation": "Abetment of the above violations",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Aiding, inciting, or encouraging others to commit any of the listed traffic violations while associated with a motorcar or jeep in KPK, making one liable as an accomplice."
+    },
+    {
+      "category": "abetment",
+      "violation": "Abetment of the above violations",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Aiding, inciting, or encouraging others to commit any of the listed traffic violations while associated with an LTV in KPK, holding one responsible for the facilitation of infractions."
+    },
+    {
+      "category": "abetment",
+      "violation": "Abetment of the above violations",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Aiding, inciting, or encouraging others to commit any of the listed traffic violations while associated with an HTV or PSV in KPK, a serious offense due to the potential for large-scale impact."
+    },
+    {
+      "category": "regulatory",
+      "violation": "Driving motor vehicle without route permit if any",
+      "penalty_rs": 5000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating a Light Transport Vehicle (LTV) in KPK without the necessary route permit, if one is required for its operational route, which is a regulatory violation."
+    },
+    {
+      "category": "regulatory",
+      "violation": "Driving motor vehicle without route permit if any",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) in KPK without the necessary route permit, if one is required for its operational route, a serious regulatory violation impacting public transport and commercial logistics."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the violation at serial No. 52 (Driving motor vehicle without route permit)",
+      "penalty_rs": 10000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Repeatedly operating a Light Transport Vehicle (LTV) in KPK without the necessary route permit, escalating the penalty for persistent regulatory non-compliance."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the violation at serial No. 52 (Driving motor vehicle without route permit)",
+      "penalty_rs": 10000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Repeatedly operating a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) in KPK without the necessary route permit, a severe penalty for continued disregard of critical transport regulations."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the violation at serial No. 4 (Overloading by public transport vehicles)",
+      "penalty_rs": 10000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Repeatedly overloading a Light Transport Vehicle (LTV) used for goods transport in KPK, incurring a significantly higher penalty for persistent and dangerous non-compliance with weight limits."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the violation at serial No. 4 (Overloading by public transport vehicles)",
+      "penalty_rs": 30000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Repeatedly overloading a Heavy Transport Vehicle (HTV) or Public Service Vehicle (PSV) used for goods transport in KPK, leading to a very severe penalty for chronic and extremely dangerous weight limit violations."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Driving without fastening seat belt",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK without fastening the seat belt, reducing protection in the event of a collision for the driver and potentially front-seat passengers."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Driving without fastening seat belt",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK without fastening the seat belt, which is a significant safety risk given the vehicle's operational context."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Driving without fastening seat belt",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK without fastening the seat belt, a critical safety violation for professional drivers and those responsible for public transport."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Taking part in an unauthorized race",
+      "penalty_rs": 2000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Participating in an unauthorized racing event on a motorcycle or scooter in KPK, an extremely dangerous and illegal activity that puts numerous lives at risk."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Taking part in an unauthorized race",
+      "penalty_rs": 3000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Participating in an unauthorized racing event in a motorcar or jeep in KPK, an extremely dangerous and illegal activity that puts numerous lives at risk."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Taking part in an unauthorized race",
+      "penalty_rs": 5000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Participating in an unauthorized racing event in an LTV in KPK, a very serious offense due to the vehicle's size and potential for severe accidents during high-speed maneuvers."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Taking part in an unauthorized race",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Participating in an unauthorized racing event in an HTV or PSV in KPK, a catastrophic and highly illegal activity that guarantees severe legal repercussions and potential for mass casualties."
+    },
+    {
+      "category": "registration",
+      "violation": "Use of illegal number plate or without number plate",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK with an illegal (non-standard, tampered) number plate or no number plate at all, hindering identification and enforcement."
+    },
+    {
+      "category": "registration",
+      "violation": "Use of illegal number plate or without number plate",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK with an illegal (non-standard, tampered) number plate or no number plate at all, hindering identification and enforcement."
+    },
+    {
+      "category": "registration",
+      "violation": "Use of illegal number plate or without number plate",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK with an illegal or missing number plate, a regulatory breach that impedes vehicle identification."
+    },
+    {
+      "category": "registration",
+      "violation": "Use of illegal number plate or without number plate",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK with an illegal or missing number plate, a serious regulatory violation that makes tracing the vehicle difficult."
+    },
+    {
+      "category": "commercial_transport",
+      "violation": "Charging extra fare",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "A driver of a public service motorcycle or scooter in KPK charging passengers more than the legally prescribed fare, exploiting customers."
+    },
+    {
+      "category": "commercial_transport",
+      "violation": "Charging extra fare",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "A driver of a public service motorcar or jeep in KPK charging passengers more than the legally prescribed fare, exploiting customers and violating transport regulations."
+    },
+    {
+      "category": "commercial_transport",
+      "violation": "Charging extra fare",
+      "penalty_rs": 2000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "A driver of a public service LTV in KPK charging passengers more than the legally prescribed fare, a breach of consumer protection regulations."
+    },
+    {
+      "category": "commercial_transport",
+      "violation": "Charging extra fare",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "A driver of a public service HTV or PSV in KPK charging passengers more than the legally prescribed fare, a severe violation given the larger number of passengers affected."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving any vehicle at night on high beam or using dazzling light/powerful lamps",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK at night using high beam headlights unnecessarily or powerful dazzling lamps, causing glare and temporary blindness for other road users."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving any vehicle at night on high beam or using dazzling light/powerful lamps",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK at night using high beam headlights unnecessarily or powerful dazzling lamps, causing severe glare and temporary blindness for other road users, significantly increasing accident risk."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving any vehicle at night on high beam or using dazzling light/powerful lamps",
+      "penalty_rs": 1500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK at night using high beam headlights unnecessarily or powerful dazzling lamps, a dangerous practice due to the vehicle's height and intense light output."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving any vehicle at night on high beam or using dazzling light/powerful lamps",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK at night using high beam headlights unnecessarily or powerful dazzling lamps, an extremely dangerous violation that can completely blind oncoming drivers of smaller vehicles."
+    },
+    {
+      "category": "driver_fitness",
+      "violation": "Driving when mentally or physically unfit to drive or under influence of drug or alcohol",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK while impaired by mental/physical unfitness, drugs, or alcohol, severely compromising judgment and reaction time, posing extreme danger."
+    },
+    {
+      "category": "driver_fitness",
+      "violation": "Driving when mentally or physically unfit to drive or under influence of drug or alcohol",
+      "penalty_rs": 3000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK while impaired by mental/physical unfitness, drugs, or alcohol, severely compromising judgment and reaction time, posing extreme danger to oneself and others."
+    },
+    {
+      "category": "driver_fitness",
+      "violation": "Driving when mentally or physically unfit to drive or under influence of drug or alcohol",
+      "penalty_rs": 5000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK while impaired by mental/physical unfitness, drugs, or alcohol, a serious offense due to the high risk of severe accidents and casualties associated with commercial vehicles."
+    },
+    {
+      "category": "driver_fitness",
+      "violation": "Driving when mentally or physically unfit to drive or under influence of drug or alcohol",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK while impaired by mental/physical unfitness, drugs, or alcohol, a catastrophic offense with the highest risk of mass casualties and severe legal repercussions."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Improper loading of goods (material/liquid spreading on the road/air)",
+      "penalty_rs": 3000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Loading goods onto an LTV in KPK such that material or liquid is unsecured and spreads onto the road or into the air, creating hazards for other drivers and pedestrians."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Improper loading of goods (material/liquid spreading on the road/air)",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Loading goods onto an HTV or PSV in KPK such that material or liquid is unsecured and spreads onto the road or into the air, creating extreme hazards, potential for accidents, and environmental contamination."
+    },
+    {
+      "category": "passenger_safety",
+      "violation": "Carrying Passengers/ Students outside cabin of the vehicle",
+      "penalty_rs": 3000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Transporting passengers or students outside the safe confines of the vehicle's cabin in an LTV in KPK, an extremely dangerous practice that exposes individuals to high risk of injury or fatality."
+    },
+    {
+      "category": "passenger_safety",
+      "violation": "Carrying Passengers/ Students outside cabin of the vehicle",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Transporting passengers or students outside the safe confines of the vehicle's cabin in an HTV or PSV in KPK, a catastrophic safety violation that poses an immediate and severe threat to human life, carrying maximum penalties."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Driving vehicle with out fastening seat belt by the driver and front seat passenger",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK without the driver and front-seat passenger fastening their seat belts, significantly reducing protection in the event of a collision."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Driving vehicle with out fastening seat belt by the driver and front seat passenger",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK without the driver and front-seat passenger fastening their seat belts, a serious safety lapse given the potential impact force in an accident."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Driving vehicle with out fastening seat belt by the driver and front seat passenger",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK without the driver and front-seat passenger fastening their seat belts, a critical safety violation for professional drivers and public transport, ensuring maximum protection."
+    },
+    {
+      "category": "child_safety",
+      "violation": "Driving vehicle having a person below twelve (12) years of age on front passenger seat",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK with a child under twelve years old in the front passenger seat, which is dangerous due to airbag deployment risks and reduced safety for young children."
+    },
+    {
+      "category": "child_safety",
+      "violation": "Driving vehicle having a person below twelve (12) years of age on front passenger seat",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK with a child under twelve years old in the front passenger seat, a safety concern due to the higher risk of injury in the front of a larger vehicle."
+    },
+    {
+      "category": "child_safety",
+      "violation": "Driving vehicle having a person below twelve (12) years of age on front passenger seat",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK with a child under twelve years old in the front passenger seat, a critical child safety violation given the severe potential for injury in a large vehicle accident."
+    },
+    {
+      "category": "regulatory",
+      "violation": "Driving of transport vehicle with expired Route Permit (impounding of vehicle till the production of renewed route permit)",
+      "penalty_rs": 2000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK for transport purposes with an expired route permit. The vehicle will be impounded until a renewed permit is produced, ensuring regulatory compliance."
+    },
+    {
+      "category": "regulatory",
+      "violation": "Driving of transport vehicle with expired Route Permit (impounding of vehicle till the production of renewed route permit)",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK for transport purposes with an expired route permit, a serious regulatory violation. The vehicle will be impounded until a renewed permit is produced, ensuring public safety and legal operation."
+    },
+    {
+      "category": "regulatory",
+      "violation": "Driving of transport vehicle with expired Fitness Certificate (impounding of vehicle till the production of renewed fitness certificate)",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK for transport purposes with an expired fitness certificate, indicating the vehicle may not be roadworthy. The vehicle will be impounded until a renewed certificate is produced, ensuring vehicle safety."
+    },
+    {
+      "category": "regulatory",
+      "violation": "Driving of transport vehicle with expired Fitness Certificate (impounding of vehicle till the production of renewed fitness certificate)",
+      "penalty_rs": 2500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK for transport purposes with an expired fitness certificate, a critical safety violation. The vehicle will be impounded until a renewed certificate is produced, ensuring the roadworthiness of large public/commercial vehicles."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Leaving vehicle in dangerous position",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking or leaving a motorcar or jeep in KPK in a location that creates a hazard or obstructs traffic flow, such as on a blind turn or in a narrow lane."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Leaving vehicle in dangerous position",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking or leaving an LTV in KPK in a location that creates a hazard or obstructs traffic flow, especially problematic due to the vehicle's size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Leaving vehicle in dangerous position",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking or leaving an HTV or PSV in KPK in a dangerous position, a severe violation due to the potential for significant obstruction and severe accidents involving large vehicles."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving vehicle on disqualified license",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK with a driving license that has been suspended, revoked, or is otherwise disqualified, a serious legal offense."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving vehicle on disqualified license",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK with a driving license that has been disqualified, a serious regulatory violation for commercial vehicle drivers."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving vehicle on disqualified license",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK with a driving license that has been disqualified, a critical legal and safety violation due to the high responsibility of driving such vehicles."
+    },
+    {
+      "category": "vehicle_modification",
+      "violation": "Illegal alteration /modification in vehicle",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Making unauthorized or illegal alterations or modifications to a motorcycle or scooter in KPK, which can compromise its safety or compliance with regulations."
+    },
+    {
+      "category": "vehicle_modification",
+      "violation": "Illegal alteration /modification in vehicle",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Making unauthorized or illegal alterations or modifications to a motorcar or jeep in KPK, which can compromise its safety, performance, or compliance with regulations."
+    },
+    {
+      "category": "vehicle_modification",
+      "violation": "Illegal alteration /modification in vehicle",
+      "penalty_rs": 2000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Making unauthorized or illegal alterations or modifications to an LTV in KPK, a serious regulatory and safety violation for commercial vehicles."
+    },
+    {
+      "category": "vehicle_modification",
+      "violation": "Illegal alteration /modification in vehicle",
+      "penalty_rs": 2500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Making unauthorized or illegal alterations or modifications to an HTV or PSV in KPK, a critical safety and regulatory violation due to the potential impact of changes on large vehicles."
+    },
+    {
+      "category": "post_accident",
+      "violation": "Failure to stop vehicle after accident",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Failing to stop a motorcycle or scooter immediately after being involved in an accident in KPK, which is a hit-and-run offense and prevents proper reporting or assistance."
+    },
+    {
+      "category": "post_accident",
+      "violation": "Failure to stop vehicle after accident",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to stop a motorcar or jeep immediately after being involved in an accident in KPK, which is a hit-and-run offense and prevents proper reporting or assistance."
+    },
+    {
+      "category": "post_accident",
+      "violation": "Failure to stop vehicle after accident",
+      "penalty_rs": 1500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Failing to stop an LTV immediately after being involved in an accident in KPK, a serious offense that hinders investigation and assistance."
+    },
+    {
+      "category": "post_accident",
+      "violation": "Failure to stop vehicle after accident",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Failing to stop an HTV or PSV immediately after being involved in an accident in KPK, a critical offense given the potential for severe damage or injury and the need for immediate response."
+    },
+    {
+      "category": "document_violation",
+      "violation": "Taking /playing vehicle without authority i.e. registration book, transfer deed, transfer letter, government certificates and route permit wherever applicable",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter in KPK without possessing the required legal documents, such as a registration book, transfer deed, or relevant government certificates and route permits, making its operation unauthorized."
+    },
+    {
+      "category": "document_violation",
+      "violation": "Taking /playing vehicle without authority i.e. registration book, transfer deed, transfer letter, government certificates and route permit wherever applicable",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a motorcar or jeep in KPK without possessing the required legal documents, such as a registration book, transfer deed, or relevant government certificates and route permits, making its operation unauthorized."
+    },
+    {
+      "category": "document_violation",
+      "violation": "Taking /playing vehicle without authority i.e. registration book, transfer deed, transfer letter, government certificates and route permit wherever applicable",
+      "penalty_rs": 1500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Operating an LTV in KPK without possessing the required legal documents, such as a registration book, transfer deed, or relevant government certificates and route permits, a serious regulatory violation for commercial vehicles."
+    },
+    {
+      "category": "document_violation",
+      "violation": "Taking /playing vehicle without authority i.e. registration book, transfer deed, transfer letter, government certificates and route permit wherever applicable",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating an HTV or PSV in KPK without possessing the required legal documents, such as a registration book, transfer deed, or relevant government certificates and route permits, a critical regulatory violation that can lead to vehicle impoundment."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Disobedience of order, obstruction and refusal of information",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Disobeying lawful orders, obstructing, or refusing to provide information to traffic police while associated with a motorcycle or scooter in KPK, hindering law enforcement duties."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Disobedience of order, obstruction and refusal of information",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Disobeying lawful orders, obstructing, or refusing to provide information to traffic police while associated with a motorcar or jeep in KPK, hindering law enforcement duties and potentially escalating the situation."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Disobedience of order, obstruction and refusal of information",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Disobeying lawful orders, obstructing, or refusing to provide information to traffic police while associated with an LTV in KPK, a serious impediment to regulatory and safety checks."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Disobedience of order, obstruction and refusal of information",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Disobeying lawful orders, obstructing, or refusing to provide information to traffic police while associated with an HTV or PSV in KPK, a critical legal violation that can have significant operational and safety implications."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Noise pollution (by illegal modification/ alteration)",
+      "penalty_rs": 2000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Causing excessive noise pollution with a motorcycle or scooter in KPK due to illegal modifications or alterations to the exhaust system, disturbing public peace."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Noise pollution (by illegal modification/ alteration)",
+      "penalty_rs": 3000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Causing excessive noise pollution with a motorcar or jeep in KPK due to illegal modifications or alterations to the exhaust system, disturbing public peace and violating environmental regulations."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Noise pollution (by illegal modification/ alteration)",
+      "penalty_rs": 3000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Causing excessive noise pollution with an LTV in KPK due to illegal modifications or alterations, contributing significantly to urban noise pollution."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Noise pollution (by illegal modification/ alteration)",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Causing excessive noise pollution with an HTV or PSV in KPK due to illegal modifications or alterations, a severe environmental violation with widespread impact."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking more than 0.5 meter from the kerb",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter in KPK more than half a meter away from the road curb, indicating improper parking and potential obstruction."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking more than 0.5 meter from the kerb",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep in KPK more than half a meter away from the road curb, indicating improper parking and potential obstruction of traffic flow."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking more than 0.5 meter from the kerb",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV in KPK more than half a meter away from the road curb, an improper parking method that can affect traffic or pedestrian movement."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking more than 0.5 meter from the kerb",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV in KPK more than half a meter away from the road curb, a significant parking violation due to the vehicle's size and potential to obstruct traffic."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a foot path",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter on a pedestrian footpath in KPK, obstructing pedestrian movement and creating a nuisance."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a foot path",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep on a pedestrian footpath in KPK, severely obstructing pedestrian movement and violating public space usage."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a foot path",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV on a pedestrian footpath in KPK, causing major obstruction and inconvenience to pedestrians."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a foot path",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV on a pedestrian footpath in KPK, a severe violation that completely blocks pedestrian access and can damage public property."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.5 meter from another car",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter in KPK less than half a meter from another parked car, indicating improper spacing and making it difficult for others to move their vehicles."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.5 meter from another car",
+      "penalty_rs": 200,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep in KPK less than half a meter from another parked car, indicating improper spacing and potentially causing difficulty for entry/exit or vehicle movement."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.5 meter from another car",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV in KPK less than half a meter from another parked car, a parking error that can hinder maneuverability for both vehicles."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.5 meter from another car",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV in KPK less than half a meter from another parked car, a significant parking violation that can severely restrict movement for adjacent vehicles."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a Zebra Crossing",
+      "penalty_rs": 300,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter directly on a zebra crossing in KPK, obstructing pedestrians and violating their right of way."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a Zebra Crossing",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep directly on a zebra crossing in KPK, severely obstructing pedestrians and creating a safety hazard."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a Zebra Crossing",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV directly on a zebra crossing in KPK, causing major obstruction and danger to pedestrians."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a Zebra Crossing",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV directly on a zebra crossing in KPK, a severe violation that completely blocks pedestrian access and creates extreme danger."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.3 meters from fire hydrant",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter in KPK less than 0.3 meters from a fire hydrant, obstructing access for emergency services and posing a public safety risk."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.3 meters from fire hydrant",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep in KPK less than 0.3 meters from a fire hydrant, obstructing access for emergency services and posing a significant public safety risk."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.3 meters from fire hydrant",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV in KPK less than 0.3 meters from a fire hydrant, a serious parking error that can hinder emergency response."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.3 meters from fire hydrant",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV in KPK less than 0.3 meters from a fire hydrant, a severe violation that can critically impede firefighting efforts due to the vehicle's size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from a stop sign",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter in KPK less than 10 meters from a stop sign, obstructing visibility for other drivers and potentially leading to accidents."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from a stop sign",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep in KPK less than 10 meters from a stop sign, obstructing visibility for other drivers approaching the intersection and creating a safety hazard."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from a stop sign",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV in KPK less than 10 meters from a stop sign, significantly reducing visibility for other road users and increasing the risk of accidents."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from a stop sign",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV in KPK less than 10 meters from a stop sign, a severe violation that can critically obstruct the view of approaching traffic and lead to major collisions."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from intersection",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter in KPK less than 10 meters from an intersection, obstructing visibility for other drivers and increasing the risk of accidents at the intersection."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from intersection",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep in KPK less than 10 meters from an intersection, obstructing visibility for other drivers and significantly increasing the risk of accidents at the intersection."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from intersection",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV in KPK less than 10 meters from an intersection, a significant parking error that can severely reduce visibility for other road users and lead to serious collisions."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from intersection",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV in KPK less than 10 meters from an intersection, a severe violation that can critically obstruct the view of approaching traffic and lead to major collisions due to the vehicle's size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in a No Parking Zone",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter in a designated 'No Parking' zone in KPK, obstructing traffic or violating local parking regulations."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in a No Parking Zone",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep in a designated 'No Parking' zone in KPK, obstructing traffic flow, causing inconvenience, and violating local parking regulations."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in a No Parking Zone",
+      "penalty_rs": 2000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV in a designated 'No Parking' zone in KPK, a serious parking violation that can significantly impede traffic due to the vehicle's size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in a No Parking Zone",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV in a designated 'No Parking' zone in KPK, a severe violation that can cause major traffic congestion and safety hazards due to the vehicle's large size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in front of an entrance to premises",
+      "penalty_rs": 500,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter directly in front of an entrance to premises in KPK, blocking access for residents, businesses, or emergency services."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in front of an entrance to premises",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep directly in front of an entrance to premises in KPK, blocking access for residents, businesses, or emergency services, causing significant inconvenience."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in front of an entrance to premises",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV directly in front of an entrance to premises in KPK, causing major obstruction and potential safety issues for access."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in front of an entrance to premises",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV directly in front of an entrance to premises in KPK, a severe violation that can completely block access for large vehicles or emergency services."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on Bus Stop",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter at a designated bus stop in KPK, obstructing public transport and preventing buses from safely picking up or dropping off passengers."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on Bus Stop",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep at a designated bus stop in KPK, obstructing public transport, causing inconvenience for bus passengers, and potentially forcing buses to stop in unsafe locations."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on Bus Stop",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV at a designated bus stop in KPK, seriously hindering public transport services and causing significant disruption."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on Bus Stop",
+      "penalty_rs": 700,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV at a designated bus stop in KPK, a severe violation that can completely block access for public buses and endanger passengers."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a bridge",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter on a bridge in KPK, which can obstruct traffic flow, create hazards, and potentially weaken the bridge structure over time."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a bridge",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep on a bridge in KPK, which can obstruct traffic flow, create hazards, and is often prohibited for safety reasons."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a bridge",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV on a bridge in KPK, a dangerous and obstructive act that can affect structural integrity and traffic flow."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a bridge",
+      "penalty_rs": 700,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV on a bridge in KPK, a severe violation that can compromise structural integrity, severely obstruct traffic, and pose a major safety risk."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a side walk",
+      "penalty_rs": 200,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Parking a motorcycle or scooter on a sidewalk in KPK, obstructing pedestrian movement and creating an unsafe environment."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a side walk",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a motorcar or jeep on a sidewalk in KPK, severely obstructing pedestrian movement, forcing them into the road, and violating public space usage."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a side walk",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking an LTV on a sidewalk in KPK, causing major obstruction and potential damage to the sidewalk infrastructure."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a side walk",
+      "penalty_rs": 700,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking an HTV or PSV on a sidewalk in KPK, a severe violation that completely blocks pedestrian access, can damage public property, and creates extreme hazards."
+    }
+  ]
+  

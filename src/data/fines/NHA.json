@@ -1,0 +1,101 @@
+[
+    {
+      "category": "moving_violation",
+      "violation": "Over-speeding",
+      "penalty_rs": 2500,
+      "Vehical type": "All Vehicles",
+      "Description": "Driving any vehicle at a speed higher than the legally allowed limit on National Highways or Motorways. Extreme cases (above 150 km/h) may also result in a First Information Report (FIR)."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving without a license",
+      "penalty_rs": 5000,
+      "Vehical type": "All Vehicles",
+      "Description": "Operating any motor vehicle on National Highways or Motorways without possessing a valid and current driving license, indicating a lack of legal authorization and necessary driving skills."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "M-Tag violations",
+      "penalty_rs": "25% additional toll fee (min. 50)",
+      "Vehical type": "All Vehicles",
+      "Description": "Violations related to M-Tag usage, specifically for vehicles entering Motorways without a valid M-Tag or with insufficient balance. As of February 1, 2025, a 25% additional toll fee, with a minimum of Rs. 50, applies."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Illegal overtaking",
+      "penalty_rs": 1500,
+      "Vehical type": "All Vehicles",
+      "Description": "Overtaking another vehicle in a manner that is prohibited or unsafe, such as in no-passing zones or without adequate clear distance, creating dangerous situations on the road."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Negligent or careless driving",
+      "penalty_rs": 1500,
+      "Vehical type": "All Vehicles",
+      "Description": "Operating a vehicle without due care and attention, exhibiting behavior that could endanger oneself or others, even if not intentionally reckless."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving on the wrong side of the road",
+      "penalty_rs": 2500,
+      "Vehical type": "All Vehicles",
+      "Description": "Operating a vehicle against the designated flow of traffic, a highly dangerous practice that significantly increases the risk of head-on collisions and severe accidents."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving unregistered vehicles",
+      "penalty_rs": 2000,
+      "Vehical type": "All Vehicles",
+      "Description": "Operating any motor vehicle that has not been officially registered with the relevant authorities, making it untraceable and potentially uninsured."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Using fancy number plates",
+      "penalty_rs": 1000,
+      "Vehical type": "All Vehicles",
+      "Description": "Using vehicle number plates that are not standard, difficult to read, or not machine-readable, hindering identification and enforcement."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Using unauthorized HID lights",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Installing or using High-Intensity Discharge (HID) lights on vehicles without official authorization, which can cause glare and obstruct the vision of oncoming drivers."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Using unlawful police lights",
+      "penalty_rs": 5000,
+      "Vehical type": "All Vehicles",
+      "Description": "Using lights that mimic those used by police or emergency services without official authorization, which is illegal and can confuse other road users."
+    },
+    {
+      "category": "mobile_seatbelt",
+      "violation": "Using a handheld device while driving",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeler while physically holding and using a mobile phone or other electronic device, leading to significant driver distraction and increased accident risk."
+    },
+    {
+      "category": "mobile_seatbelt",
+      "violation": "Failing to fasten a seatbelt",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to wear a seatbelt, applicable to both the driver and any front-seat passenger, while driving on National Highways or Motorways, reducing safety in the event of a collision."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading cargo",
+      "penalty_rs": "Fines and offloading",
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Loading commercial vehicles, particularly heavy goods vehicles, beyond their specified weight capacity. There is a strict drive against such overloaded vehicles, resulting in fines and mandatory offloading of excess cargo."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Interfering with emergency vehicles",
+      "penalty_rs": 5000,
+      "Vehical type": "All Vehicles",
+      "Description": "Failing to yield the right-of-way to emergency vehicles such as ambulances, fire trucks, or police vehicles, thereby obstructing their passage and delaying critical response."
+    }
+  ]
+  

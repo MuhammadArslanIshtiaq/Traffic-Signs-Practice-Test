@@ -21,6 +21,7 @@ import QuizPreStart from './src/screens/QuizPreStart';
 import RequirementDetailScreen from './src/screens/RequirementDetailScreen';
 import RequirementsScreen from './src/screens/RequirementsScreen';
 import RoadSignsScreen from './src/screens/RoadSignsScreen';
+import RulesContentScreen from './src/screens/RulesContentScreen';
 import RulesScreen from './src/screens/RulesScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignQuizScreen from './src/screens/SignQuizScreen';
@@ -75,6 +76,7 @@ export default function App() {
             <Stack.Screen name="LearningMaterial" component={LearningMaterialScreen} />
             <Stack.Screen name="RoadSigns" component={RoadSignsScreen} />
             <Stack.Screen name="Rules" component={RulesScreen} />
+            <Stack.Screen name="RulesContent" component={RulesContentScreen} />
             <Stack.Screen name="Videos" component={VideosScreen} />
             <Stack.Screen name="GeneralInfo" component={GeneralInfoScreen} />
             <Stack.Screen name="Requirements" component={RequirementsScreen} />

@@ -1,0 +1,143 @@
+[
+    {
+      "category": "licensing",
+      "violation": "Driving without a license",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a car without possessing a valid and current driving license in Islamabad. This is a serious offense, and the vehicle can also be seized."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without a license",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle without possessing a valid and current driving license in Islamabad. This is a serious offense, and the vehicle can also be seized."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without a license",
+      "penalty_rs": 8000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating a Heavy Transport Vehicle or Public Service Vehicle without possessing a valid and current driving license in Islamabad. This is a critical safety and regulatory violation, and the vehicle can be seized."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Illegal/Wrong Parking",
+      "penalty_rs": 5000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a car illegally or in a wrong manner in Islamabad, causing obstruction or violating designated parking zones. Vehicle impoundment is possible for this violation."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using a mobile phone while driving",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using a hand-held mobile phone while driving a car in Islamabad, leading to significant driver distraction and increased accident risk."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using a mobile phone while driving",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Using a hand-held mobile phone while riding a motorcycle in Islamabad, a dangerous distraction that compromises balance and reaction time."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using a mobile phone while driving",
+      "penalty_rs": 8000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Using a hand-held mobile phone while operating a Heavy Transport Vehicle or Public Service Vehicle in Islamabad, a critical and highly dangerous act that endangers passengers and other road users."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Wrong-way driving",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Driving a car against the designated flow of traffic (one-way violation) in Islamabad, an extremely hazardous act that can cause severe head-on collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Wrong-way driving",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle against the designated flow of traffic (one-way violation) in Islamabad, a highly dangerous practice that significantly increases the risk of head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Dangerous driving (reckless/negligent)",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a car with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior in Islamabad that puts other road users at risk."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Signal violation",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Disregarding instructions from traffic lights (signal violation) in Islamabad. The exact new value of the fine varies based on the vehicle and context, with a significant increase implemented from a previous Rs. 500."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Overloading a car with passengers or goods beyond its safe capacity in Islamabad, affecting vehicle control, braking, and safety."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Overloading a motorcycle with passengers or goods beyond its safe capacity in Islamabad, significantly affecting balance and increasing accident risk."
+    },
+    {
+      "category": "overloading",
+      "violation": "Overloading",
+      "penalty_rs": 8000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Overloading a Heavy Transport Vehicle or Public Service Vehicle beyond its permissible limit in Islamabad, a serious violation affecting vehicle stability, braking, and road infrastructure."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "No helmet (motorcycle rider)",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle in Islamabad without wearing a protective crash helmet, significantly increasing the risk of severe head injuries in the event of an accident."
+    },
+    {
+      "category": "registration",
+      "violation": "Driving an unregistered vehicle",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding an unregistered motorcycle or rickshaw in Islamabad that has not been officially registered with the relevant authorities, making it untraceable and potentially uninsured."
+    },
+    {
+      "category": "registration",
+      "violation": "Using unauthorized number plates",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using unauthorized or non-standard number plates on a car in Islamabad, hindering identification and law enforcement."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Over-speeding",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Driving a car at a speed exceeding the legally defined limit in Islamabad. Fines depend on the specific speed and type of road."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Over-speeding",
+      "penalty_rs": 1000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle at a speed exceeding the legally defined limit in Islamabad. Fines depend on the specific speed and type of road."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Over-speeding",
+      "penalty_rs": 2500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Operating a Heavy Transport Vehicle at a speed exceeding the legally defined limit in Islamabad. Fines depend on the specific speed and type of road, and are higher due to the vehicle's size and potential impact."
+    }
+  ]
+  

@@ -1,0 +1,1592 @@
+[
+    {
+      "category": "moving_violation",
+      "violation": "Exceeding speed limit",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle at a speed exceeding the legally defined limit in Balochistan, increasing the risk of accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Exceeding speed limit",
+      "penalty_rs": 800,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Driving a four-wheeled vehicle (car/jeep) at a speed exceeding the legally defined limit in Balochistan, posing a risk to road safety and other drivers."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Exceeding speed limit",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) at a speed exceeding the legally defined limit in Balochistan, a serious violation due to the vehicle's size and potential impact."
+    },
+    {
+      "category": "overloading",
+      "violation": "Carrying passengers in public service vehicles exceeding permissible limit",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Transporting more individuals in a public service two-wheeled or three-wheeled vehicle than its authorized seating capacity in Balochistan, leading to overcrowding and safety concerns."
+    },
+    {
+      "category": "overloading",
+      "violation": "Carrying passengers in public service vehicles exceeding permissible limit",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers (MCR Only)",
+      "Description": "Transporting more individuals in a motorcar (MCR) used for public service than its authorized seating capacity in Balochistan, leading to overcrowding and safety concerns."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Violation of traffic Signals (Manual and Electrical)",
+      "penalty_rs": 600,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Disregarding instructions from traffic lights or manual signals by traffic police in Balochistan while riding a two-wheeled or three-wheeled vehicle, increasing the risk of accidents at intersections."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Violation of traffic Signals (Manual and Electrical)",
+      "penalty_rs": 800,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Disregarding instructions from traffic lights or manual signals by traffic police in Balochistan while driving a four-wheeled vehicle, which can lead to collisions at intersections."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Violation of traffic Signals (Manual and Electrical)",
+      "penalty_rs": 1200,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Disregarding instructions from traffic lights or manual signals by traffic police in Balochistan while operating a Heavy Vehicle (LTV/HTV/PSV), potentially causing severe accidents due to vehicle size and weight."
+    },
+    {
+      "category": "overloading",
+      "violation": "Carrying goods in excess of permissible load",
+      "penalty_rs": 600,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Loading a two-wheeled or three-wheeled vehicle with goods beyond its specified weight capacity in Balochistan, affecting vehicle control and increasing accident risk."
+    },
+    {
+      "category": "overloading",
+      "violation": "Carrying goods in excess of permissible load",
+      "penalty_rs": 700,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Loading a four-wheeled vehicle with goods beyond its specified weight capacity in Balochistan, affecting vehicle control, braking, and road infrastructure."
+    },
+    {
+      "category": "overloading",
+      "violation": "Carrying goods in excess of permissible load",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Loading a Heavy Vehicle (LTV/HTV/PSV) with goods beyond its specified weight capacity in Balochistan, seriously affecting vehicle stability, braking, and road infrastructure, and potentially leading to severe accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Over taking where prohibited",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Overtaking another vehicle in a zone where it is explicitly prohibited while riding a two-wheeled or three-wheeled vehicle in Balochistan, leading to dangerous situations."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Over taking where prohibited",
+      "penalty_rs": 800,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Overtaking another vehicle in a zone where it is explicitly prohibited while driving a four-wheeled vehicle in Balochistan, creating dangerous situations on the road."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Over taking where prohibited",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Overtaking another vehicle in a zone where it is explicitly prohibited while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a highly dangerous maneuver that can lead to severe accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to yield the right of way to others Vehicle.",
+      "penalty_rs": 300,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to grant priority to other vehicles when required by traffic rules while riding a two-wheeled or three-wheeled vehicle in Balochistan, leading to potential collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to yield the right of way to others Vehicle.",
+      "penalty_rs": 400,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to grant priority to other vehicles when required by traffic rules while driving a four-wheeled vehicle in Balochistan, potentially causing accidents at intersections or merges."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to yield the right of way to others Vehicle.",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to grant priority to other vehicles when required by traffic rules while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a critical error due to the impact of such large vehicles."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Interfering with an emergency vehicle",
+      "penalty_rs": 400,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to yield to emergency vehicles (e.g., ambulance, fire truck, police) while riding a two-wheeled or three-wheeled vehicle in Balochistan, delaying critical response."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Interfering with an emergency vehicle",
+      "penalty_rs": 700,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to yield to emergency vehicles (e.g., ambulance, fire truck, police) while driving a four-wheeled vehicle in Balochistan, thereby obstructing their passage and delaying critical response."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Interfering with an emergency vehicle",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to yield to emergency vehicles (e.g., ambulance, fire truck, police) while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a severe violation that can have dire consequences."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Loading in excess of restrictions of dimension of goods",
+      "penalty_rs": 600,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Transporting goods in a two-wheeled or three-wheeled vehicle that exceed the legally prescribed dimensions (height, width, length) in Balochistan, which can create hazards on the road."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Loading in excess of restrictions of dimension of goods",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Transporting goods in a four-wheeled vehicle that exceed the legally prescribed dimensions in Balochistan, which can create hazards on the road and affect visibility."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Loading in excess of restrictions of dimension of goods",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Transporting goods in a Heavy Vehicle (LTV/HTV/PSV) that exceed the legally prescribed dimensions in Balochistan, which can severely impede visibility, stability, and safety for all road users."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving at night without proper lights",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle during nighttime or low-visibility conditions without the required headlights or tail lights in Balochistan, reducing visibility for the rider and making it harder for others to see the vehicle."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving at night without proper lights",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle during nighttime or low-visibility conditions without the required headlights or tail lights in Balochistan, significantly reducing visibility for the driver and other road users."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving at night without proper lights",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) during nighttime or low-visibility conditions without proper illumination in Balochistan, a severe risk due to the vehicle's size and mass."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving on wrong side of the road",
+      "penalty_rs": 700,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle against the designated flow of traffic in Balochistan, a highly dangerous practice that significantly increases the risk of head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving on wrong side of the road",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle against the designated flow of traffic in Balochistan, an extremely hazardous act that can cause severe head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving on wrong side of the road",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) against the designated flow of traffic in Balochistan, a catastrophic violation that endangers many lives."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Improper crossing of railway crossing",
+      "penalty_rs": 300,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Crossing railway tracks in an unsafe or unauthorized manner while riding a two-wheeled or three-wheeled vehicle in Balochistan, risking severe accidents with trains."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Improper crossing of railway crossing",
+      "penalty_rs": 600,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Crossing railway tracks in an unsafe or unauthorized manner while driving a four-wheeled vehicle in Balochistan, risking severe accidents with trains and endangering occupants."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Improper crossing of railway crossing",
+      "penalty_rs": 1200,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Crossing railway tracks in an unsafe or unauthorized manner while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, an extremely dangerous act that can result in mass casualties and severe damage."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Following too closely or cutting in too sharply",
+      "penalty_rs": 300,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle too close to the vehicle ahead or making abrupt, sharp cuts between lanes in Balochistan, increasing the risk of rear-end collisions or sideswipes."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Following too closely or cutting in too sharply",
+      "penalty_rs": 600,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Driving a four-wheeled vehicle too close to the vehicle ahead (tailgating) or making abrupt, sharp cuts between lanes in Balochistan, significantly increasing the risk of rear-end collisions or sideswipes."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Following too closely or cutting in too sharply",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) too close to the vehicle ahead or making abrupt, sharp cuts between lanes in Balochistan, an extremely dangerous maneuver that can lead to multi-vehicle pile-ups."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving with tinted/covered glasses",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle with excessively tinted or covered windows in Balochistan, reducing visibility for the rider and making it difficult for law enforcement to identify occupants."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving with tinted/covered glasses",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle with excessively tinted or covered windows in Balochistan, reducing visibility for the driver and making it difficult for law enforcement to identify occupants."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving with tinted/covered glasses",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) with excessively tinted or covered windows in Balochistan, a major safety hazard due to the vehicle's size and obscured vision."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Jumping traffic lane",
+      "penalty_rs": 300,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Changing lanes abruptly or improperly while riding a two-wheeled or three-wheeled vehicle in Balochistan, causing disruption and potential collisions with other vehicles."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Jumping traffic lane",
+      "penalty_rs": 600,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Changing lanes abruptly or improperly while driving a four-wheeled vehicle in Balochistan, disrupting traffic flow and increasing the risk of sideswipes."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Jumping traffic lane",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Changing lanes abruptly or improperly while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a serious violation that can lead to multi-vehicle accidents due to the vehicle's large size."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Failing to dip head lights for other traffic",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to switch from high beam to low beam headlights when encountering oncoming traffic while riding a two-wheeled or three-wheeled vehicle in Balochistan, causing glare and temporary blindness for other drivers."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Failing to dip head lights for other traffic",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to switch from high beam to low beam headlights when encountering oncoming traffic while driving a four-wheeled vehicle in Balochistan, causing dangerous glare and obstructing the vision of other drivers."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Failing to dip head lights for other traffic",
+      "penalty_rs": 2500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to switch from high beam to low beam headlights when encountering oncoming traffic while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, an extremely dangerous violation that can severely impair the vision of other drivers due to the vehicle's height and intense light output."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving wrong way in one-way street",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle against the designated flow of traffic on a one-way street in Balochistan, a highly dangerous action that can lead to head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving wrong way in one-way street",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle against the designated flow of traffic on a one-way street in Balochistan, an extremely hazardous act that significantly increases the risk of head-on collisions."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Driving wrong way in one-way street",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) against the designated flow of traffic on a one-way street in Balochistan, a catastrophic violation that endangers many lives and can cause severe accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Using turn indicators for any purpose other than those prescribed",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Using a turn indicator on a two-wheeled or three-wheeled vehicle for reasons other than signaling a turn or lane change in Balochistan, which can confuse other road users and lead to misinterpretations of intent."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Using turn indicators for any purpose other than those prescribed",
+      "penalty_rs": 700,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using a turn indicator on a four-wheeled vehicle for reasons other than signaling a turn or lane change in Balochistan, which can confuse other road users and lead to misinterpretations of intent."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Using turn indicators for any purpose other than those prescribed",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Using a turn indicator on a Heavy Vehicle (LTV/HTV/PSV) for reasons other than signaling a turn or lane change in Balochistan, which can significantly confuse other drivers and lead to dangerous situations due to the vehicle's size."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Improper loading of goods",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Loading goods onto a two-wheeled or three-wheeled vehicle in an unsafe or improper manner in Balochistan, which can lead to shifting cargo, falling debris, and hazards for other road users."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Improper loading of goods",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Loading goods onto a four-wheeled vehicle in an unsafe or improper manner in Balochistan, which can lead to shifting cargo, falling debris, and hazards for other road users."
+    },
+    {
+      "category": "goods_transport",
+      "violation": "Improper loading of goods",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Loading goods onto a Heavy Vehicle (LTV/HTV/PSV) in an unsafe or improper manner in Balochistan, a severe violation that can cause instability, accidents, and substantial damage due to the weight and volume of the cargo."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Failing to turn-on head light where required by law",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle without turning on the required headlights during specific times or conditions mandated by law in Balochistan, reducing visibility and increasing accident risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Failing to turn-on head light where required by law",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle without turning on the required headlights during specific times or conditions mandated by law in Balochistan, reducing visibility and increasing accident risk for the driver and others."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Failing to turn-on head light where required by law",
+      "penalty_rs": 2500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) without turning on the required headlights during specific times or conditions mandated by law in Balochistan, a significant safety hazard due to the vehicle's size and the importance of its visibility."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing traffic",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Blocking the free flow of vehicles or pedestrians with a two-wheeled or three-wheeled vehicle in Balochistan, often by parking illegally or stopping in a traffic lane."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing traffic",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Blocking the free flow of vehicles or pedestrians with a four-wheeled vehicle in Balochistan, typically by stopping or parking improperly, causing congestion and inconvenience."
+    },
+    {
+      "category": "obstruction",
+      "violation": "Obstructing traffic",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Blocking the free flow of traffic or pedestrian movement with a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, causing significant disruption and posing a high risk of collision due to the vehicle's mass."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to observe road traffic signs (slow, stop, horn etc.)",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to adhere to instructions from road traffic signs such as 'slow', 'stop', or 'horn prohibited' while riding a two-wheeled or three-wheeled vehicle in Balochistan, particularly in areas requiring caution."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to observe road traffic signs (slow, stop, horn etc.)",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to adhere to instructions from road traffic signs such as 'slow', 'stop', or 'horn prohibited' while driving a four-wheeled vehicle in Balochistan, often in areas like school zones or construction sites, increasing hazard."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Failure to observe road traffic signs (slow, stop, horn etc.)",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to adhere to instructions from road traffic signs such as 'slow', 'stop', or 'horn prohibited' while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a critical safety violation given the vehicle's braking distance and impact potential."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Riding of M/Cycle without safety helmet",
+      "penalty_rs": 2000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a motorcycle or a two-wheeled/three-wheeled vehicle in Balochistan without wearing a safety helmet, significantly increasing the risk of severe head injuries in the event of an accident."
+    },
+    {
+      "category": "child_safety",
+      "violation": "Failure to stop for a school bus",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to stop for a stopped school bus with activated flashing lights while riding a two-wheeled or three-wheeled vehicle in Balochistan, endangering children who may be boarding or disembarking."
+    },
+    {
+      "category": "child_safety",
+      "violation": "Failure to stop for a school bus",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to stop for a stopped school bus with activated flashing lights while driving a four-wheeled vehicle in Balochistan, a serious violation that endangers children."
+    },
+    {
+      "category": "child_safety",
+      "violation": "Failure to stop for a school bus",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to stop for a stopped school bus with activated flashing lights while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a critical safety violation due to the high risk to children from large vehicles."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Playing where prohibited",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in areas where such activity is prohibited in Balochistan, which could be designated for pedestrians or other restricted purposes."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Playing where prohibited",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in areas where such activity is prohibited in Balochistan, violating designated traffic rules or land use regulations."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Playing where prohibited",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in areas where such activity is prohibited in Balochistan, a significant violation that can cause damage or severe disruption."
+    },
+    {
+      "category": "driving_school",
+      "violation": "Failure to protect beginner drivers etc.",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to ensure the safety or proper supervision of a beginner driver while riding a two-wheeled or three-wheeled vehicle in Balochistan, potentially exposing them to danger."
+    },
+    {
+      "category": "driving_school",
+      "violation": "Failure to protect beginner drivers etc.",
+      "penalty_rs": 800,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to ensure the safety or proper supervision of a beginner driver while driving a four-wheeled vehicle in Balochistan, which is crucial for their training and road safety."
+    },
+    {
+      "category": "driving_school",
+      "violation": "Failure to protect beginner drivers etc.",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to ensure the safety or proper supervision of a beginner driver while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a very serious responsibility due to the potential consequences of errors with large vehicles."
+    },
+    {
+      "category": "pedestrian_safety",
+      "violation": "Failure to yield right of way to pedestrians",
+      "penalty_rs": 700,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to grant priority to pedestrians at designated crossings or when required by law while riding a two-wheeled or three-wheeled vehicle in Balochistan, endangering their safety."
+    },
+    {
+      "category": "pedestrian_safety",
+      "violation": "Failure to yield right of way to pedestrians",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to grant priority to pedestrians at designated crossings or when required by law while driving a four-wheeled vehicle in Balochistan, posing a direct threat to pedestrian safety."
+    },
+    {
+      "category": "pedestrian_safety",
+      "violation": "Failure to yield right of way to pedestrians",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to grant priority to pedestrians at designated crossings or when required by law while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a critical safety violation with potentially fatal consequences due to the vehicle's size."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Reckless & negligent driving",
+      "penalty_rs": 2000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle with dangerous disregard for safety, exhibiting careless or irresponsible behavior in Balochistan that puts other road users at risk."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Reckless & negligent driving",
+      "penalty_rs": 3500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior in Balochistan that puts other road users at risk."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Reckless & negligent driving",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior in Balochistan that puts passengers and other road users at severe risk."
+    },
+    {
+      "category": "licensing",
+      "violation": "Failure in producing/keeping driving license",
+      "penalty_rs": 100,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to present a valid driving license upon request or not having it on hand while riding a two-wheeled or three-wheeled vehicle in Balochistan, hindering law enforcement."
+    },
+    {
+      "category": "licensing",
+      "violation": "Failure in producing/keeping driving license",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to present a valid driving license upon request or not having it on hand while driving a four-wheeled vehicle in Balochistan, hindering law enforcement and suggesting a potential underlying issue."
+    },
+    {
+      "category": "licensing",
+      "violation": "Failure in producing/keeping driving license",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to present a valid driving license upon request or not having it on hand while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a serious impediment to regulatory checks."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without issued license",
+      "penalty_rs": 1500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan without ever having been issued a valid driving license, indicating a lack of authorization and necessary riding skills."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without issued license",
+      "penalty_rs": 2500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan without ever having been issued a valid driving license, indicating a lack of authorization and necessary driving skills, posing a risk to public safety."
+    },
+    {
+      "category": "licensing",
+      "violation": "Driving without issued license",
+      "penalty_rs": 4000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan without ever having been issued a valid driving license, a critical safety and regulatory violation due to the high responsibility involved."
+    },
+    {
+      "category": "registration",
+      "violation": "Driving an unregistered vehicle",
+      "penalty_rs": 2000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan that has not been officially registered with the relevant authorities, making it untraceable and potentially uninsured."
+    },
+    {
+      "category": "registration",
+      "violation": "Driving an unregistered vehicle",
+      "penalty_rs": 4000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan that has not been officially registered with the relevant authorities, making it untraceable and potentially uninsured."
+    },
+    {
+      "category": "registration",
+      "violation": "Driving an unregistered vehicle",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan that has not been officially registered, a critical regulatory and safety violation due to the vehicle's public nature and size."
+    },
+    {
+      "category": "insurance",
+      "violation": "Driving motor vehicle without insurance coverage",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan without valid insurance coverage, leaving the rider and others financially unprotected in case of an accident."
+    },
+    {
+      "category": "insurance",
+      "violation": "Driving motor vehicle without insurance coverage",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan without valid insurance coverage, leaving the driver and others financially unprotected in case of an accident."
+    },
+    {
+      "category": "insurance",
+      "violation": "Driving motor vehicle without insurance coverage",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan without valid insurance coverage, a critical financial and regulatory violation given the potential for significant damage and injury."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving a transport vehicle without or with defective Speedo meter",
+      "penalty_rs": 300,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan that has no speedometer or a malfunctioning one, making it difficult to maintain legal speed limits."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving a transport vehicle without or with defective Speedo meter",
+      "penalty_rs": 600,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan that has no speedometer or a malfunctioning one, making it difficult for the driver to maintain legal speed limits."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Driving a transport vehicle without or with defective Speedo meter",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan that has no speedometer or a malfunctioning one, a critical safety violation as accurate speed monitoring is essential for large vehicles."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Opening door dangerously",
+      "penalty_rs": 400,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Opening a vehicle door in a manner that endangers or obstructs other road users or pedestrians in Balochistan, typically by opening it into traffic or without checking surroundings."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Opening door dangerously",
+      "penalty_rs": 600,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Opening a vehicle door in a manner that endangers or obstructs other road users or pedestrians in Balochistan, typically by opening it into traffic or without checking surroundings."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Opening door dangerously",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Opening a Heavy Vehicle (LTV/HTV/PSV) door in a manner that endangers or obstructs other road users or pedestrians in Balochistan, a severe hazard due to the potential for serious injury."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper turn (turning from the wrong lane)",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Making a turn from an incorrect lane while riding a two-wheeled or three-wheeled vehicle in Balochistan, causing confusion and potential collisions with other vehicles."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper turn (turning from the wrong lane)",
+      "penalty_rs": 1200,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Making a turn from an incorrect lane while driving a four-wheeled vehicle in Balochistan, causing confusion, disrupting traffic flow, and increasing the risk of accidents."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper turn (turning from the wrong lane)",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Making a turn from an incorrect lane while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a serious violation that can lead to severe accidents due to the vehicle's large size and potential impact."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper lane usage",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to stay within designated lanes or using lanes improperly while riding a two-wheeled or three-wheeled vehicle in Balochistan, leading to erratic movements and potential collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper lane usage",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to stay within designated lanes or using lanes improperly while driving a four-wheeled vehicle in Balochistan, disrupting traffic flow and increasing the risk of sideswipes."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper lane usage",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to stay within designated lanes or using lanes improperly while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a severe violation that can lead to multi-vehicle accidents due to the vehicle's large size."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using horn in silence zone",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Using a horn in a designated silence zone (e.g., near hospitals, schools) while riding a two-wheeled or three-wheeled vehicle in Balochistan, causing noise disturbance."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using horn in silence zone",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using a horn in a designated silence zone (e.g., near hospitals, schools) while driving a four-wheeled vehicle in Balochistan, causing noise disturbance and disrespecting quiet areas."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using horn in silence zone",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Using a horn in a designated silence zone while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a significant violation due to the louder sound of such vehicle horns and widespread disturbance."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper u turn",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Making a U-turn in an unauthorized or unsafe location while riding a two-wheeled or three-wheeled vehicle in Balochistan, creating dangerous situations for other traffic."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper u turn",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Making a U-turn in an unauthorized or unsafe location while driving a four-wheeled vehicle in Balochistan, causing disruption and increasing the risk of collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Improper u turn",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Making a U-turn in an unauthorized or unsafe location while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a severe violation that can lead to major accidents due to the vehicle's large size and slow maneuverability."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Refusal to show license",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Refusing or failing to present a valid driving license upon request by traffic police while riding a two-wheeled or three-wheeled vehicle in Balochistan, hindering law enforcement."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Refusal to show license",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Refusing or failing to present a valid driving license upon request by traffic police while driving a four-wheeled vehicle in Balochistan, hindering law enforcement and suggesting a potential underlying issue."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Refusal to show license",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Refusing or failing to present a valid driving license upon request by traffic police while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a critical legal and regulatory violation."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Failure to stop when ordered by a police officer in uniform",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to stop a two-wheeled or three-wheeled vehicle when instructed to do so by a uniformed police officer in Balochistan, an act of defiance that can escalate situations."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Failure to stop when ordered by a police officer in uniform",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to stop a four-wheeled vehicle when instructed to do so by a uniformed police officer in Balochistan, an act of defiance that can escalate situations and lead to further legal action."
+    },
+    {
+      "category": "obstruction_of_justice",
+      "violation": "Failure to stop when ordered by a police officer in uniform",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to stop a Heavy Vehicle (LTV/HTV/PSV) when instructed to do so by a uniformed police officer in Balochistan, a critical act of defiance with potentially severe legal repercussions, especially for public transport."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Driving without fitness certificate",
+      "penalty_rs": 2000,
+      "Vehical type": "Two/Three-Wheelers (MCR Only)",
+      "Description": "Operating a motorcycle (MCR) without a valid fitness certificate in Balochistan, indicating the vehicle may not be roadworthy and posing a safety risk."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Driving without fitness certificate",
+      "penalty_rs": 5000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle without a valid fitness certificate in Balochistan, indicating the vehicle may not be roadworthy and posing a safety risk to occupants and other road users."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Driving without fitness certificate",
+      "penalty_rs": 8000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) without a valid fitness certificate in Balochistan, a critical safety and regulatory violation due to the potential for catastrophic failure of large vehicles."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Using vehicle in unsafe condition",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan that is in a visibly unsafe condition (e.g., defective brakes, worn tires), posing a risk to the rider and others."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Using vehicle in unsafe condition",
+      "penalty_rs": 2500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan that is in a visibly unsafe condition (e.g., defective brakes, worn tires, broken lights), posing a risk to the driver, passengers, and other road users."
+    },
+    {
+      "category": "vehicle_maintenance",
+      "violation": "Using vehicle in unsafe condition",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan that is in a visibly unsafe condition, a critical safety violation that can lead to severe mechanical failures and accidents due to the vehicle's size and weight."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using pressure/musical horns",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Using unauthorized pressure horns or musical horns on a two-wheeled or three-wheeled vehicle in Balochistan, contributing to noise pollution and potentially startling other road users."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using pressure/musical horns",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using unauthorized pressure horns or musical horns on a four-wheeled vehicle in Balochistan, contributing to noise pollution and being a nuisance to the public."
+    },
+    {
+      "category": "noise_pollution",
+      "violation": "Using pressure/musical horns",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Using unauthorized pressure horns or musical horns on a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a severe violation due to the high decibel levels and widespread disturbance caused by such large vehicles."
+    },
+    {
+      "category": "environmental",
+      "violation": "Smoke emitting vehicles",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan that emits excessive smoke from its exhaust, indicating engine problems and contributing to air pollution."
+    },
+    {
+      "category": "environmental",
+      "violation": "Smoke emitting vehicles",
+      "penalty_rs": 2500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan that emits excessive smoke from its exhaust, indicating engine problems, poor maintenance, and contributing to air pollution."
+    },
+    {
+      "category": "environmental",
+      "violation": "Smoke emitting vehicles",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan that emits excessive smoke, a significant environmental violation due to the volume of emissions and public health impact."
+    },
+    {
+      "category": "age_limit",
+      "violation": "Juvenile driving",
+      "penalty_rs": 1500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan by an individual below the legally stipulated age for driving, indicating a lack of maturity, experience, and legal authorization."
+    },
+    {
+      "category": "age_limit",
+      "violation": "Juvenile driving",
+      "penalty_rs": 2500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan by an individual below the legally stipulated age for driving, indicating a lack of maturity, experience, and legal authorization, and posing a risk to public safety."
+    },
+    {
+      "category": "age_limit",
+      "violation": "Juvenile driving",
+      "penalty_rs": 6000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan by an individual below the legally stipulated age, a critical and highly dangerous violation with severe legal consequences due to the immense responsibility."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the same violation",
+      "penalty_rs": 1500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Committing a previously cited traffic violation again while riding a two-wheeled or three-wheeled vehicle in Balochistan, indicating a pattern of non-compliance."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the same violation",
+      "penalty_rs": 3000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Committing a previously cited traffic violation again while driving a four-wheeled vehicle in Balochistan, indicating a pattern of non-compliance and potentially leading to escalating penalties."
+    },
+    {
+      "category": "repeated_violation",
+      "violation": "Repeating the same violation",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Committing a previously cited traffic violation again while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a serious indication of persistent disregard for traffic regulations."
+    },
+    {
+      "category": "general_violation",
+      "violation": "Driving vehicle in violation of law /rules not otherwise provided.",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan in violation of general traffic laws or rules not specifically listed, covering various minor infractions."
+    },
+    {
+      "category": "general_violation",
+      "violation": "Driving vehicle in violation of law /rules not otherwise provided.",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan in violation of general traffic laws or rules not specifically listed, covering various minor infractions or new regulations."
+    },
+    {
+      "category": "general_violation",
+      "violation": "Driving vehicle in violation of law /rules not otherwise provided.",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan in violation of general traffic laws or rules not specifically listed, acting as a catch-all for various unclassified offenses."
+    },
+    {
+      "category": "regulatory",
+      "violation": "Driving without route permit",
+      "penalty_rs": 5000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan without the necessary route permit, if one is required for its operational route, which is a regulatory violation."
+    },
+    {
+      "category": "regulatory",
+      "violation": "Driving without route permit",
+      "penalty_rs": 8000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan without the necessary route permit, if one is required for its operational route, a serious regulatory violation impacting public transport and commercial logistics."
+    },
+    {
+      "category": "commercial_transport",
+      "violation": "Misbehaving with the passengers",
+      "penalty_rs": 1500,
+      "Vehical type": "Two/Three-Wheelers (MCR Only)",
+      "Description": "A driver of a public service motorcycle or rickshaw in Balochistan misbehaving with passengers, demonstrating unprofessional conduct and violating service standards."
+    },
+    {
+      "category": "commercial_transport",
+      "violation": "Misbehaving with the passengers",
+      "penalty_rs": 5000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "A driver of a public service four-wheeled vehicle in Balochistan misbehaving with passengers, demonstrating unprofessional conduct and violating service standards, leading to a higher penalty."
+    },
+    {
+      "category": "passenger_safety",
+      "violation": "Carrying passengers in dangerous position in a transport vehicle (Only for MCR)",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers (MCR Only)",
+      "Description": "Transporting passengers in a dangerous position (e.g., outside the cabin) in a public service motorcycle or rickshaw in Balochistan, an extremely unsafe practice that exposes individuals to high risk of injury or fatality."
+    },
+    {
+      "category": "passenger_safety",
+      "violation": "Carrying passengers in dangerous position in a transport vehicle (Only for MCR)",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Transporting passengers in a dangerous position (e.g., outside the cabin) in a public service four-wheeled vehicle in Balochistan, an extremely unsafe practice that exposes individuals to high risk of injury or fatality."
+    },
+    {
+      "category": "passenger_safety",
+      "violation": "Carrying passengers in dangerous position in a transport vehicle (Only for MCR)",
+      "penalty_rs": 2500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Transporting passengers in a dangerous position (e.g., outside the cabin) in a public service Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a catastrophic safety violation that poses an immediate and severe threat to human life, carrying maximum penalties."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Unauthorized racing, one wheeling, acrobatic acts and over speeding",
+      "penalty_rs": 5000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Participating in unauthorized racing, performing one-wheeling or acrobatic acts, or extreme over-speeding on a two-wheeled or three-wheeled vehicle in Balochistan, an extremely dangerous and illegal activity that puts numerous lives at risk."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Unauthorized racing, one wheeling, acrobatic acts and over speeding",
+      "penalty_rs": 7000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Participating in unauthorized racing, performing acrobatic acts, or extreme over-speeding in a four-wheeled vehicle in Balochistan, an extremely dangerous and illegal activity that puts numerous lives at risk."
+    },
+    {
+      "category": "dangerous_driving",
+      "violation": "Unauthorized racing, one wheeling, acrobatic acts and over speeding",
+      "penalty_rs": 10000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Participating in unauthorized racing, performing acrobatic acts, or extreme over-speeding in a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a catastrophic and highly illegal activity that guarantees severe legal repercussions and potential for mass casualties."
+    },
+    {
+      "category": "driver_fitness",
+      "violation": "Driving, when mentally/physically unfit or under influence of drugs/alcohol",
+      "penalty_rs": 2000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan while impaired by mental/physical unfitness, drugs, or alcohol, severely compromising judgment and reaction time, posing extreme danger."
+    },
+    {
+      "category": "driver_fitness",
+      "violation": "Driving, when mentally/physically unfit or under influence of drugs/alcohol",
+      "penalty_rs": 3000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan while impaired by mental/physical unfitness, drugs, or alcohol, severely compromising judgment and reaction time, posing extreme danger to oneself and others."
+    },
+    {
+      "category": "driver_fitness",
+      "violation": "Driving, when mentally/physically unfit or under influence of drugs/alcohol",
+      "penalty_rs": 10000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan while impaired by mental/physical unfitness, drugs, or alcohol, a catastrophic offense with the highest risk of mass casualties and severe legal repercussions."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using mobile phone while driving",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Using a mobile phone manually (e.g., talking, texting) while riding a two-wheeled or three-wheeled vehicle in Balochistan, a highly dangerous distraction that compromises balance and reaction time."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using mobile phone while driving",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using a mobile phone manually (e.g., talking, texting) while driving a four-wheeled vehicle in Balochistan, leading to significant driver distraction and increased accident risk."
+    },
+    {
+      "category": "distracted_driving",
+      "violation": "Using mobile phone while driving",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Using a mobile phone manually while operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan, a critical and highly dangerous act that endangers passengers and other road users, resulting in severe penalties."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Failure to use seat belt by driver, passenger",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan without the driver and/or passengers fastening their seat belts, significantly reducing protection in the event of a collision."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Failure to use seat belt by driver, passenger",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan without the driver and/or passengers fastening their seat belts, a critical safety violation for professional drivers and those responsible for public transport."
+    },
+    {
+      "category": "passenger_safety",
+      "violation": "Pillion riding",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Carrying a passenger (pillion rider) on a two-wheeled or three-wheeled vehicle in Balochistan in a manner that violates regulations, potentially including carrying too many passengers or unsafe seating, affecting balance and safety."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Misuse of high beam",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Using high beam headlights unnecessarily while riding a two-wheeled or three-wheeled vehicle at night in Balochistan, causing glare and temporary blindness for other road users."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Misuse of high beam",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using high beam headlights unnecessarily while driving a four-wheeled vehicle at night in Balochistan, causing severe glare and temporary blindness for other road users, significantly increasing accident risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Misuse of high beam",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Using high beam headlights unnecessarily while operating a Heavy Vehicle (LTV/HTV/PSV) at night in Balochistan, an extremely dangerous violation that can completely blind oncoming drivers of smaller vehicles due to the vehicle's height and intense light output."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Failure to use accident triangle when needed",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Failing to deploy an accident warning triangle when a two-wheeled or three-wheeled vehicle is broken down or involved in an accident on the road in Balochistan, failing to warn approaching traffic."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Failure to use accident triangle when needed",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Failing to deploy an accident warning triangle when a four-wheeled vehicle is broken down or involved in an accident on the road in Balochistan, failing to warn approaching traffic and creating a hazard."
+    },
+    {
+      "category": "safety_equipment",
+      "violation": "Failure to use accident triangle when needed",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Failing to deploy an accident warning triangle when a Heavy Vehicle (LTV/HTV/PSV) is broken down or involved in an accident on the road in Balochistan, a critical safety lapse that can lead to further severe accidents due to the vehicle's size and potential obstruction."
+    },
+    {
+      "category": "vehicle_modification",
+      "violation": "Using CNG Kit without obtaining fitness Certificate/approved from competent authority",
+      "penalty_rs": 2000,
+      "Vehical type": "Two/Three-Wheelers (MCR Only)",
+      "Description": "Using a CNG (Compressed Natural Gas) kit in a motorcycle (MCR) without a valid fitness certificate or approval from the competent authority in Balochistan, posing a safety risk due to unverified installation."
+    },
+    {
+      "category": "vehicle_modification",
+      "violation": "Using CNG Kit without obtaining fitness Certificate/approved from competent authority",
+      "penalty_rs": 3000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Using a CNG (Compressed Natural Gas) kit in a four-wheeled vehicle without a valid fitness certificate or approval from the competent authority in Balochistan, posing a significant safety risk due to unverified installation and potential hazards."
+    },
+    {
+      "category": "vehicle_modification",
+      "violation": "Using CNG Kit without obtaining fitness Certificate/approved from competent authority",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles (MCR Only)",
+      "Description": "Using a CNG (Compressed Natural Gas) kit in a Heavy Vehicle (MCR) without a valid fitness certificate or approval from the competent authority in Balochistan, a critical safety violation due to the explosive nature of CNG and potential for severe accidents if not properly installed and maintained."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Unavailability of reflector/lights on the back side of slows moving Traffic",
+      "penalty_rs": null,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "The absence of reflectors or lights on the rear of slow-moving two-wheeled or three-wheeled vehicles in Balochistan, significantly reducing their visibility to other drivers, especially at night or in low light conditions, and posing a collision risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Unavailability of reflector/lights on the back side of slows moving Traffic",
+      "penalty_rs": 1500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "The absence of reflectors or lights on the rear of slow-moving four-wheeled vehicles in Balochistan, significantly reducing their visibility to other drivers, especially at night or in low light conditions, and posing a collision risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Unavailability of reflector/lights on the back side of slows moving Traffic",
+      "penalty_rs": 5000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "The absence of reflectors or lights on the rear of slow-moving Heavy Vehicles (LTV/HTV/PSV) in Balochistan, a critical safety violation that makes these large vehicles extremely difficult to see, especially at night, and significantly increases the risk of severe rear-end collisions."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Violation of Traffic signals by Cyclist",
+      "penalty_rs": 500,
+      "Vehical type": "Others (Cyclists)",
+      "Description": "Cyclists disregarding instructions given by traffic lights or manual signals in Balochistan, which can cause collisions and endanger themselves and other road users."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective break lights",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan with malfunctioning or non-functional brake lights, preventing other drivers from being warned when the vehicle is slowing down or stopping, significantly increasing the risk of rear-end collisions."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective break lights",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan with malfunctioning or non-functional brake lights, preventing other drivers from being warned when the vehicle is slowing down or stopping, significantly increasing the risk of rear-end collisions."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective break lights",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan with malfunctioning or non-functional brake lights, a critical safety violation that significantly increases the risk of severe rear-end collisions due to the vehicle's size and stopping distance."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective indicators",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan with malfunctioning or non-functional turn indicators, preventing the rider from signaling turns or lane changes effectively, leading to confusion and potential collisions."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective indicators",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan with malfunctioning or non-functional turn indicators, preventing the driver from signaling turns or lane changes effectively, leading to confusion and potential collisions."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective indicators",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan with malfunctioning or non-functional turn indicators, a critical safety violation that can lead to severe accidents due to the inability to signal intentions for large vehicles."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective wipers",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Operating a two-wheeled or three-wheeled vehicle in Balochistan with defective or non-functional windshield wipers (if applicable), significantly impairing visibility during rain or adverse weather conditions, increasing accident risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective wipers",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan with defective or non-functional windshield wipers, significantly impairing visibility during rain or adverse weather conditions, increasing accident risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective wipers",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan with defective or non-functional windshield wipers, a critical safety violation that severely impairs visibility during adverse weather, increasing the risk of major accidents."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective headlights",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Riding a two-wheeled or three-wheeled vehicle in Balochistan with malfunctioning or non-functional headlights, severely impairing visibility for the rider and making the vehicle difficult for others to see, especially at night or in low light, significantly increasing accident risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective headlights",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a four-wheeled vehicle in Balochistan with malfunctioning or non-functional headlights, severely impairing visibility for the driver and making the vehicle difficult for others to see, especially at night or in low light, significantly increasing accident risk."
+    },
+    {
+      "category": "vehicle_equipment",
+      "violation": "Defective headlights",
+      "penalty_rs": 4000,
+      "Vehical type": "Heavy Vehicles",
+      "Description": "Operating a Heavy Vehicle (LTV/HTV/PSV) in Balochistan with malfunctioning or non-functional headlights, a critical safety violation that severely impairs visibility for the driver and makes the large vehicle nearly invisible to others, especially at night, greatly increasing the risk of catastrophic accidents."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking more than 0.5 meter from the kerb",
+      "penalty_rs": 200,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle in Balochistan more than half a meter away from the road curb, indicating improper parking and potential obstruction."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking more than 0.5 meter from the kerb",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle in Balochistan more than half a meter away from the road curb, indicating improper parking and potential obstruction of traffic flow."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking more than 0.5 meter from the kerb",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) in Balochistan more than half a meter away from the road curb, an improper parking method that can affect traffic or pedestrian movement."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking more than 0.5 meter from the kerb",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) in Balochistan more than half a meter away from the road curb, a significant parking violation due to the vehicle's size and potential to obstruct traffic."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a foot path",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle on a pedestrian footpath in Balochistan, obstructing pedestrian movement and creating a nuisance."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a foot path",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle on a pedestrian footpath in Balochistan, severely obstructing pedestrian movement and violating public space usage."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a foot path",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) on a pedestrian footpath in Balochistan, causing major obstruction and inconvenience to pedestrians."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a foot path",
+      "penalty_rs": 1500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) on a pedestrian footpath in Balochistan, a severe violation that completely blocks pedestrian access and can damage public property."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.5 meter from another car",
+      "penalty_rs": 200,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle in Balochistan less than half a meter from another parked car, indicating improper spacing and making it difficult for others to move their vehicles."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.5 meter from another car",
+      "penalty_rs": 200,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle in Balochistan less than half a meter from another parked car, indicating improper spacing and potentially causing difficulty for entry/exit or vehicle movement."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.5 meter from another car",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) in Balochistan less than half a meter from another parked car, a parking error that can hinder maneuverability for both vehicles."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.5 meter from another car",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) in Balochistan less than half a meter from another parked car, a significant parking violation that can severely restrict movement for adjacent vehicles."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a Zebra Crossing",
+      "penalty_rs": 300,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle directly on a zebra crossing in Balochistan, obstructing pedestrians and violating their right of way."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a Zebra Crossing",
+      "penalty_rs": 500,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle directly on a zebra crossing in Balochistan, severely obstructing pedestrians and creating a safety hazard."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a Zebra Crossing",
+      "penalty_rs": 700,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) directly on a zebra crossing in Balochistan, causing major obstruction and danger to pedestrians."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a Zebra Crossing",
+      "penalty_rs": 1000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) directly on a zebra crossing in Balochistan, a severe violation that completely blocks pedestrian access and creates extreme danger."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.3 meters from fire hydrant",
+      "penalty_rs": 200,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle in Balochistan less than 0.3 meters from a fire hydrant, obstructing access for emergency services and posing a public safety risk."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.3 meters from fire hydrant",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle in Balochistan less than 0.3 meters from a fire hydrant, obstructing access for emergency services and posing a significant public safety risk."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.3 meters from fire hydrant",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) in Balochistan less than 0.3 meters from a fire hydrant, a serious parking error that can hinder emergency response."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 0.3 meters from fire hydrant",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) in Balochistan less than 0.3 meters from a fire hydrant, a severe violation that can critically impede firefighting efforts due to the vehicle's size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from a stop sign",
+      "penalty_rs": 200,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle in Balochistan less than 10 meters from a stop sign, obstructing visibility for other drivers and potentially leading to accidents."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from a stop sign",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle in Balochistan less than 10 meters from a stop sign, obstructing visibility for other drivers approaching the intersection and creating a safety hazard."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from a stop sign",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) in Balochistan less than 10 meters from a stop sign, significantly reducing visibility for other road users and increasing the risk of accidents."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from a stop sign",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) in Balochistan less than 10 meters from a stop sign, a severe violation that can critically obstruct the view of approaching traffic and lead to major collisions."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from intersection",
+      "penalty_rs": 200,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle in Balochistan less than 10 meters from an intersection, obstructing visibility for other drivers and increasing the risk of accidents at the intersection."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from intersection",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle in Balochistan less than 10 meters from an intersection, obstructing visibility for other drivers and significantly increasing the risk of accidents at the intersection."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from intersection",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) in Balochistan less than 10 meters from an intersection, a significant parking error that can severely reduce visibility for other road users and lead to serious collisions."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking less than 10 meters from intersection",
+      "penalty_rs": 500,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) in Balochistan less than 10 meters from an intersection, a severe violation that can critically obstruct the view of approaching traffic and lead to major collisions due to the vehicle's size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in a No Parking Zone",
+      "penalty_rs": 1000,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle in a designated 'No Parking' zone in Balochistan, obstructing traffic or violating local parking regulations."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in a No Parking Zone",
+      "penalty_rs": 2000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle in a designated 'No Parking' zone in Balochistan, obstructing traffic flow, causing inconvenience, and violating local parking regulations."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in a No Parking Zone",
+      "penalty_rs": 2000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) in a designated 'No Parking' zone in Balochistan, a serious parking violation that can significantly impede traffic due to the vehicle's size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in a No Parking Zone",
+      "penalty_rs": 3000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) in a designated 'No Parking' zone in Balochistan, a severe violation that can cause major traffic congestion and safety hazards due to the vehicle's large size."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in front of an entrance to premises",
+      "penalty_rs": 500,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle directly in front of an entrance to premises in Balochistan, blocking access for residents, businesses, or emergency services."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in front of an entrance to premises",
+      "penalty_rs": 1000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle directly in front of an entrance to premises in Balochistan, blocking access for residents, businesses, or emergency services, causing significant inconvenience."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in front of an entrance to premises",
+      "penalty_rs": 1000,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) directly in front of an entrance to premises in Balochistan, causing major obstruction and potential safety issues for access."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking in front of an entrance to premises",
+      "penalty_rs": 2000,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) directly in front of an entrance to premises in Balochistan, a severe violation that can completely block access for large vehicles or emergency services."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on Bus Stop",
+      "penalty_rs": 200,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle at a designated bus stop in Balochistan, obstructing public transport and preventing buses from safely picking up or dropping off passengers."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on Bus Stop",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle at a designated bus stop in Balochistan, obstructing public transport, causing inconvenience for bus passengers, and potentially forcing buses to stop in unsafe locations."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on Bus Stop",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) at a designated bus stop in Balochistan, seriously hindering public transport services and causing significant disruption."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on Bus Stop",
+      "penalty_rs": 700,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) at a designated bus stop in Balochistan, a severe violation that can completely block access for public buses and endanger passengers."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a bridge",
+      "penalty_rs": 200,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle on a bridge in Balochistan, which can obstruct traffic flow, create hazards, and potentially weaken the bridge structure over time."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a bridge",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle on a bridge in Balochistan, which can obstruct traffic flow, create hazards, and is often prohibited for safety reasons."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a bridge",
+      "penalty_rs": 500,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) on a bridge in Balochistan, a dangerous and obstructive act that can affect structural integrity and traffic flow."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a bridge",
+      "penalty_rs": 700,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) on a bridge in Balochistan, a severe violation that can compromise structural integrity, severely obstruct traffic, and pose a major safety risk."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a side walk",
+      "penalty_rs": 200,
+      "Vehical type": "Two/Three-Wheelers",
+      "Description": "Parking a two-wheeled or three-wheeled vehicle on a sidewalk in Balochistan, obstructing pedestrian movement and creating an unsafe environment."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a side walk",
+      "penalty_rs": 300,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Parking a four-wheeled vehicle on a sidewalk in Balochistan, severely obstructing pedestrian movement, forcing them into the road, and violating public space usage."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a side walk",
+      "penalty_rs": 300,
+      "Vehical type": "Light Transport Vehicles (LTV)",
+      "Description": "Parking a Light Transport Vehicle (LTV) on a sidewalk in Balochistan, causing major obstruction and potential damage to the sidewalk infrastructure."
+    },
+    {
+      "category": "parking_violation",
+      "violation": "Parking on a side walk",
+      "penalty_rs": 700,
+      "Vehical type": "Heavy Transport Vehicles/Public Service Vehicles (HTV/PSV)",
+      "Description": "Parking a Heavy Transport Vehicle or Public Service Vehicle (HTV/PSV) on a sidewalk in Balochistan, a severe violation that completely blocks pedestrian access, can damage public property, and creates extreme hazards."
+    }
+  ]
+  

@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../components/Header';
 import { useUser } from '../contexts/UserContext';
 
@@ -9,8 +10,7 @@ const RequirementsScreen = ({ navigation }) => {
   const [requirements, setRequirements] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedTags, setSelectedTags] = useState([]);
-  const [allTags, setAllTags] = useState([]);
+
 
   const handleBackPress = () => {
     navigation.goBack();
@@ -30,16 +30,78 @@ const RequirementsScreen = ({ navigation }) => {
       const data = await response.json();
       
       if (data.success && data.requirements) {
-        setRequirements(data.requirements);
-        
-        // Extract all unique tags
-        const tags = new Set();
-        data.requirements.forEach(req => {
-          if (req.tags && Array.isArray(req.tags)) {
-            req.tags.forEach(tag => tags.add(tag));
+        // Sort requirements by authority order first, then by date
+        const sortedRequirements = data.requirements.sort((a, b) => {
+          // Authority order matching Fines/Fees screens
+          const authorityOrder = ['ITP', 'PUN', 'PUNJAB', 'KPK', 'BAL', 'BALOCHISTAN', 'SND', 'SINDH', 'NHA'];
+          
+          const getAuthorityIndex = (tags) => {
+            if (tags && Array.isArray(tags)) {
+              for (let i = 0; i < authorityOrder.length; i++) {
+                const authority = authorityOrder[i];
+                for (const tag of tags) {
+                  const tagUpper = tag.toUpperCase();
+                  const authorityUpper = authority.toUpperCase();
+                  
+                  // Exact match first
+                  if (tagUpper === authorityUpper) {
+                    return i;
+                  }
+                  
+                  // Specific matching patterns to avoid conflicts
+                  if (authorityUpper === 'ITP' && tagUpper.includes('ITP')) {
+                    return i;
+                  }
+                  if ((authorityUpper === 'PUN' || authorityUpper === 'PUNJAB') && 
+                      (tagUpper.includes('PUNJAB') || tagUpper === 'PUN')) {
+                    return i;
+                  }
+                  if (authorityUpper === 'KPK' && tagUpper.includes('KPK')) {
+                    return i;
+                  }
+                  if ((authorityUpper === 'BAL' || authorityUpper === 'BALOCHISTAN') && 
+                      (tagUpper.includes('BALOCHISTAN') || tagUpper === 'BAL')) {
+                    return i;
+                  }
+                  if ((authorityUpper === 'SND' || authorityUpper === 'SINDH') && 
+                      (tagUpper.includes('SINDH') || tagUpper === 'SND')) {
+                    return i;
+                  }
+                  if (authorityUpper === 'NHA' && tagUpper.includes('NHA')) {
+                    return i;
+                  }
+                }
+              }
+            }
+            return 999; // Put non-authority items at the end
+          };
+          
+          const aIndex = getAuthorityIndex(a.tags);
+          const bIndex = getAuthorityIndex(b.tags);
+          
+          // Sort by authority order first
+          if (aIndex !== bIndex) {
+            return aIndex - bIndex;
           }
+          
+          // Within same authority, sort by date (newest first)
+          const aDate = new Date(a.updated_at || a.created_at || 0);
+          const bDate = new Date(b.updated_at || b.created_at || 0);
+          
+          if (aDate.getTime() !== bDate.getTime()) {
+            return bDate.getTime() - aDate.getTime(); // Descending by date
+          }
+          
+          // If dates are equal, sort by title descending
+          if (a.title && b.title) {
+            return b.title.localeCompare(a.title);
+          }
+          
+          // Final fallback: sort by ID descending
+          return (b.id || '').toString().localeCompare((a.id || '').toString());
         });
-        setAllTags(Array.from(tags));
+        
+        setRequirements(sortedRequirements);
       } else {
         throw new Error('Invalid response format');
       }
@@ -78,15 +140,78 @@ const RequirementsScreen = ({ navigation }) => {
         }
       ];
       
-      setRequirements(mockData);
-      
-      const tags = new Set();
-      mockData.forEach(req => {
-        if (req.tags) {
-          req.tags.forEach(tag => tags.add(tag));
+      // Sort mock data by authority order first, then by date
+      const sortedMockData = mockData.sort((a, b) => {
+        // Authority order matching Fines/Fees screens
+        const authorityOrder = ['ITP', 'PUN', 'PUNJAB', 'KPK', 'BAL', 'BALOCHISTAN', 'SND', 'SINDH', 'NHA'];
+        
+        const getAuthorityIndex = (tags) => {
+          if (tags && Array.isArray(tags)) {
+            for (let i = 0; i < authorityOrder.length; i++) {
+              const authority = authorityOrder[i];
+              for (const tag of tags) {
+                const tagUpper = tag.toUpperCase();
+                const authorityUpper = authority.toUpperCase();
+                
+                // Exact match first
+                if (tagUpper === authorityUpper) {
+                  return i;
+                }
+                
+                // Specific matching patterns to avoid conflicts
+                if (authorityUpper === 'ITP' && tagUpper.includes('ITP')) {
+                  return i;
+                }
+                if ((authorityUpper === 'PUN' || authorityUpper === 'PUNJAB') && 
+                    (tagUpper.includes('PUNJAB') || tagUpper === 'PUN')) {
+                  return i;
+                }
+                if (authorityUpper === 'KPK' && tagUpper.includes('KPK')) {
+                  return i;
+                }
+                if ((authorityUpper === 'BAL' || authorityUpper === 'BALOCHISTAN') && 
+                    (tagUpper.includes('BALOCHISTAN') || tagUpper === 'BAL')) {
+                  return i;
+                }
+                if ((authorityUpper === 'SND' || authorityUpper === 'SINDH') && 
+                    (tagUpper.includes('SINDH') || tagUpper === 'SND')) {
+                  return i;
+                }
+                if (authorityUpper === 'NHA' && tagUpper.includes('NHA')) {
+                  return i;
+                }
+              }
+            }
+          }
+          return 999; // Put non-authority items at the end
+        };
+        
+        const aIndex = getAuthorityIndex(a.tags);
+        const bIndex = getAuthorityIndex(b.tags);
+        
+        // Sort by authority order first
+        if (aIndex !== bIndex) {
+          return aIndex - bIndex;
         }
+        
+        // Within same authority, sort by date (newest first)
+        const aDate = new Date(a.updated_at || a.created_at || 0);
+        const bDate = new Date(b.updated_at || b.created_at || 0);
+        
+        if (aDate.getTime() !== bDate.getTime()) {
+          return bDate.getTime() - aDate.getTime(); // Descending by date
+        }
+        
+        // If dates are equal, sort by title descending
+        if (a.title && b.title) {
+          return b.title.localeCompare(a.title);
+        }
+        
+        // Final fallback: sort by ID descending
+        return (b.id || '').toString().localeCompare((a.id || '').toString());
       });
-      setAllTags(Array.from(tags));
+      
+      setRequirements(sortedMockData);
     } finally {
       setLoading(false);
     }
@@ -96,103 +221,170 @@ const RequirementsScreen = ({ navigation }) => {
     fetchRequirements();
   }, []);
 
-  const toggleTag = (tag) => {
-    setSelectedTags(prev => {
-      if (prev.includes(tag)) {
-        return prev.filter(t => t !== tag);
-      } else {
-        return [...prev, tag];
-      }
-    });
-  };
 
-  const clearFilters = () => {
-    setSelectedTags([]);
-  };
-
-  const filteredRequirements = selectedTags.length > 0 
-    ? requirements.filter(req => 
-        req.tags && req.tags.some(tag => selectedTags.includes(tag))
-      )
-    : requirements;
 
   const renderHeaderRight = () => (
     <TouchableOpacity 
       style={styles.headerButton}
       onPress={handleBackPress}
     >
-      <Ionicons name="arrow-back" size={24} color="#115740" />
+      <Ionicons name="arrow-back" size={24} color="white" />
     </TouchableOpacity>
   );
 
-  const renderTagFilter = () => (
-    <View style={styles.filterContainer}>
-      <View style={styles.filterHeader}>
-        <Text style={styles.filterTitle}>Filter by Tags</Text>
-        {selectedTags.length > 0 && (
-          <TouchableOpacity onPress={clearFilters} style={styles.clearButton}>
-            <Text style={styles.clearButtonText}>Clear All</Text>
-          </TouchableOpacity>
-        )}
-      </View>
-      <ScrollView 
-        horizontal 
-        showsHorizontalScrollIndicator={false}
-        style={styles.tagsScrollView}
-        contentContainerStyle={styles.tagsContainer}
+
+
+  const getLogoByTag = (tags) => {
+    // Authority order matching Fines/Fees screens: ITP, PUN, KPK, BAL, SND, NHA
+    // TAG = LOGONAME mapping as specified by user:
+    const logoMap = {
+      'ITP': require('../../assets/images/gov-logos/GOGB.png'),    // ITP = GOPAK -> using GOGB
+      'PUN': require('../../assets/images/gov-logos/GOPUN.png'),   // PUN = GOPUN
+      'PUNJAB': require('../../assets/images/gov-logos/GOPUN.png'),
+      'KPK': require('../../assets/images/gov-logos/GOPKPK.png'),  // KPK = GOPKPK
+      'BAL': require('../../assets/images/gov-logos/GOBALOCH.png'), // BAL = GOBALOCH
+      'BALOCHISTAN': require('../../assets/images/gov-logos/GOBALOCH.png'),
+      'SND': require('../../assets/images/gov-logos/GOSINDH.png'), // SND = GOSINDH
+      'SINDH': require('../../assets/images/gov-logos/GOSINDH.png'),
+      'NHA': require('../../assets/images/gov-logos/NHA.png'),     // NHA = NHA
+    };
+
+    // Find the first matching tag in authority order
+    const authorityOrder = ['ITP', 'PUN', 'PUNJAB', 'KPK', 'BAL', 'BALOCHISTAN', 'SND', 'SINDH', 'NHA'];
+    
+    if (tags && Array.isArray(tags)) {
+      for (const authority of authorityOrder) {
+        for (const tag of tags) {
+          const tagUpper = tag.toUpperCase();
+          const authorityUpper = authority.toUpperCase();
+          
+          // Exact match first
+          if (tagUpper === authorityUpper) {
+            return logoMap[authority];
+          }
+          
+          // Specific matching patterns to avoid conflicts
+          if (authorityUpper === 'ITP' && tagUpper.includes('ITP')) {
+            return logoMap[authority];
+          }
+          if ((authorityUpper === 'PUN' || authorityUpper === 'PUNJAB') && 
+              (tagUpper.includes('PUNJAB') || tagUpper === 'PUN')) {
+            return logoMap[authority];
+          }
+          if (authorityUpper === 'KPK' && tagUpper.includes('KPK')) {
+            return logoMap[authority];
+          }
+          if ((authorityUpper === 'BAL' || authorityUpper === 'BALOCHISTAN') && 
+              (tagUpper.includes('BALOCHISTAN') || tagUpper === 'BAL')) {
+            return logoMap[authority];
+          }
+          if ((authorityUpper === 'SND' || authorityUpper === 'SINDH') && 
+              (tagUpper.includes('SINDH') || tagUpper === 'SND')) {
+            return logoMap[authority];
+          }
+          if (authorityUpper === 'NHA' && tagUpper.includes('NHA')) {
+            return logoMap[authority];
+          }
+        }
+      }
+    }
+    
+    // Default to GOP logo if no authority match found
+    return require('../../assets/images/gov-logos/GOP.png');
+  };
+
+  const getRequirementGradient = (tags) => {
+    // Authority order matching Fines/Fees screens
+    const authorityOrder = ['ITP', 'PUN', 'PUNJAB', 'KPK', 'BAL', 'BALOCHISTAN', 'SND', 'SINDH', 'NHA'];
+    const gradients = [
+      ['#FF6B6B', '#FF8E53'],    // ITP - Red to Orange
+      ['#4ECDC4', '#44A08D'],    // PUN/PUNJAB - Teal to Green
+      ['#4ECDC4', '#44A08D'],    // PUNJAB - Teal to Green (same as PUN)
+      ['#45B7D1', '#96C93D'],    // KPK - Blue to Lime
+      ['#F093FB', '#F5576C'],    // BAL - Pink to Red
+      ['#F093FB', '#F5576C'],    // BALOCHISTAN - Pink to Red (same as BAL)
+      ['#4facfe', '#00f2fe'],    // SND - Blue to Cyan
+      ['#4facfe', '#00f2fe'],    // SINDH - Blue to Cyan (same as SND)
+      ['#77ede8', '#fa98b8'],    // NHA - Teal to Pink
+    ];
+
+    if (tags && Array.isArray(tags)) {
+      for (let i = 0; i < authorityOrder.length; i++) {
+        const authority = authorityOrder[i];
+        for (const tag of tags) {
+          const tagUpper = tag.toUpperCase();
+          const authorityUpper = authority.toUpperCase();
+          
+          // Exact match first
+          if (tagUpper === authorityUpper) {
+            return gradients[i];
+          }
+          
+          // Specific matching patterns to avoid conflicts
+          if (authorityUpper === 'ITP' && tagUpper.includes('ITP')) {
+            return gradients[i];
+          }
+          if ((authorityUpper === 'PUN' || authorityUpper === 'PUNJAB') && 
+              (tagUpper.includes('PUNJAB') || tagUpper === 'PUN')) {
+            return gradients[i];
+          }
+          if (authorityUpper === 'KPK' && tagUpper.includes('KPK')) {
+            return gradients[i];
+          }
+          if ((authorityUpper === 'BAL' || authorityUpper === 'BALOCHISTAN') && 
+              (tagUpper.includes('BALOCHISTAN') || tagUpper === 'BAL')) {
+            return gradients[i];
+          }
+          if ((authorityUpper === 'SND' || authorityUpper === 'SINDH') && 
+              (tagUpper.includes('SINDH') || tagUpper === 'SND')) {
+            return gradients[i];
+          }
+          if (authorityUpper === 'NHA' && tagUpper.includes('NHA')) {
+            return gradients[i];
+          }
+        }
+      }
+    }
+    
+    // Default gradient for general requirements
+    return ['#a18cd1', '#fbc2eb']; // Purple to Pink
+  };
+
+  const renderRequirementCard = ({ item, index }) => {
+    const gradientColors = getRequirementGradient(item.tags);
+    const logoSource = getLogoByTag(item.tags);
+    
+    return (
+      <TouchableOpacity
+        style={styles.requirementCard}
+        onPress={() => navigation.navigate('RequirementDetail', { requirement: item })}
       >
-        {allTags.map((tag, index) => (
-          <TouchableOpacity
-            key={index}
-            style={[
-              styles.tagChip,
-              selectedTags.includes(tag) && styles.selectedTagChip
-            ]}
-            onPress={() => toggleTag(tag)}
-          >
-            <Text style={[
-              styles.tagText,
-              selectedTags.includes(tag) && styles.selectedTagText
-            ]}>
-              {tag}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    </View>
-  );
-
-  const renderRequirementCard = ({ item }) => (
-    <TouchableOpacity
-      style={styles.requirementCard}
-      onPress={() => navigation.navigate('RequirementDetail', { requirement: item })}
-      activeOpacity={0.7}
-    >
-      <View style={styles.cardHeader}>
-        <Text style={styles.requirementTitle}>{item.title}</Text>
-        <View style={styles.cardArrow}>
-          <Ionicons name="chevron-forward" size={20} color="#666" />
-        </View>
-      </View>
-      
-      <Text style={styles.requirementDescription} numberOfLines={2}>
-        {item.description}
-      </Text>
-      
-      {item.tags && item.tags.length > 0 && (
-        <View style={styles.tagsRow}>
-          {item.tags.slice(0, 3).map((tag, index) => (
-            <View key={index} style={styles.tagBadge}>
-              <Text style={styles.tagBadgeText}>{tag}</Text>
+        <LinearGradient
+          colors={gradientColors}
+          style={styles.requirementGradient}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+        >
+          <View style={styles.requirementContent}>
+            <View style={styles.requirementIcon}>
+              <Image 
+                source={logoSource} 
+                style={styles.logoImage} 
+                resizeMode="contain" 
+              />
             </View>
-          ))}
-          {item.tags.length > 3 && (
-            <Text style={styles.moreTagsText}>+{item.tags.length - 3} more</Text>
-          )}
-        </View>
-      )}
-    </TouchableOpacity>
-  );
+            <View style={styles.requirementInfo}>
+              <Text style={styles.requirementTitle}>{item.title}</Text>
+              <Text style={styles.requirementDescription} numberOfLines={3}>
+                {item.description}
+              </Text>
+            </View>
+            <Ionicons name="chevron-forward" size={24} color="rgba(255,255,255,0.8)" />
+          </View>
+        </LinearGradient>
+      </TouchableOpacity>
+    );
+  };
 
   const renderEmptyState = () => (
     <View style={styles.emptyContainer}>
@@ -230,9 +422,9 @@ const RequirementsScreen = ({ navigation }) => {
         </View>
       ) : error ? (
         <View style={styles.errorContainer}>
-          <Ionicons name="alert-circle-outline" size={64} color="#e74c3c" />
-          <Text style={styles.errorText}>Failed to load requirements</Text>
-          <Text style={styles.errorSubtext}>{error}</Text>
+          <Ionicons name="alert-circle" size={48} color="#FF6B6B" />
+          <Text style={styles.errorTitle}>Error Loading Data</Text>
+          <Text style={styles.errorText}>{error}</Text>
           <TouchableOpacity
             style={styles.retryButton}
             onPress={fetchRequirements}
@@ -242,10 +434,8 @@ const RequirementsScreen = ({ navigation }) => {
         </View>
       ) : (
         <View style={styles.content}>
-          {allTags.length > 0 && renderTagFilter()}
-          
           <FlatList
-            data={filteredRequirements}
+            data={requirements}
             renderItem={renderRequirementCard}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
@@ -267,7 +457,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerButton: {
-    padding: 8,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   loadingContainer: {
     flex: 1,
@@ -284,20 +479,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 32,
+    padding: 20,
   },
-  errorText: {
+  errorTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#e74c3c',
-    textAlign: 'center',
+    color: '#333',
     marginTop: 16,
     marginBottom: 8,
   },
-  errorSubtext: {
+  errorText: {
     fontSize: 14,
     color: '#666',
     textAlign: 'center',
+    lineHeight: 20,
     marginBottom: 24,
   },
   retryButton: {
@@ -311,127 +506,56 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-  filterContainer: {
-    backgroundColor: 'white',
-    marginHorizontal: 16,
-    marginTop: 16,
-    marginBottom: 8,
-    borderRadius: 12,
-    padding: 16,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-  },
-  filterHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  filterTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  clearButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 6,
-  },
-  clearButtonText: {
-    fontSize: 12,
-    color: '#115740',
-    fontWeight: '600',
-  },
-  tagsScrollView: {
-    marginHorizontal: -4,
-  },
-  tagsContainer: {
-    paddingHorizontal: 4,
-  },
-  tagChip: {
-    backgroundColor: '#f8f9fa',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
-    marginRight: 8,
-    borderWidth: 1,
-    borderColor: '#e9ecef',
-  },
-  selectedTagChip: {
-    backgroundColor: '#115740',
-    borderColor: '#115740',
-  },
-  tagText: {
-    fontSize: 12,
-    color: '#666',
-    fontWeight: '500',
-  },
-  selectedTagText: {
-    color: 'white',
-  },
+
   listContainer: {
     padding: 16,
     paddingTop: 8,
   },
   requirementCard: {
-    backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
-    elevation: 2,
+    marginBottom: 16,
+    borderRadius: 16,
+    elevation: 4,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
-    shadowRadius: 2,
+    shadowRadius: 4,
   },
-  cardHeader: {
+  requirementGradient: {
+    borderRadius: 16,
+    padding: 20,
+  },
+  requirementContent: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 8,
+  },
+  requirementIcon: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  logoImage: {
+    width: 35,
+    height: 35,
+  },
+  requirementInfo: {
+    flex: 1,
   },
   requirementTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
-    flex: 1,
-  },
-  cardArrow: {
-    marginLeft: 12,
+    color: 'white',
+    marginBottom: 6,
   },
   requirementDescription: {
     fontSize: 14,
-    color: '#666',
+    color: 'rgba(255,255,255,0.9)',
     lineHeight: 20,
-    marginBottom: 12,
   },
-  tagsRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-  },
-  tagBadge: {
-    backgroundColor: '#e3f2fd',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
-    marginRight: 6,
-    marginBottom: 4,
-  },
-  tagBadgeText: {
-    fontSize: 11,
-    color: '#1976d2',
-    fontWeight: '500',
-  },
-  moreTagsText: {
-    fontSize: 11,
-    color: '#666',
-    fontStyle: 'italic',
-  },
+
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',

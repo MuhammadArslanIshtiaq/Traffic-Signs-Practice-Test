@@ -21,11 +21,11 @@ const LearningMaterialScreen = ({ navigation, route }) => {
     {
       id: '2',
       title: 'Rules',
-      titleUrdu: 'قوانین',
+      titleUrdu: 'قواعد و ضوابط',
       icon: 'document-text-outline',
       description: 'Study driving rules and regulations',
       color: '#3498db',
-      onPress: () => navigation.navigate('Rules', { authority })
+      onPress: () => navigation.navigate('RulesContent', { authority })
     },
     {
       id: '3',
@@ -178,7 +178,12 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   headerButton: {
-    padding: 8,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

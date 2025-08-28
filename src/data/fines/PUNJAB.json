@@ -1,0 +1,408 @@
+[
+  {
+    "category": "moving_violation",
+    "violation": "Over-speeding",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Driving a four-wheeler (motorcar/jeep) at a speed exceeding the legally defined limit, posing a risk to road safety and other drivers."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Over-speeding",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler (motorcycle/scooter) at a speed exceeding the legally defined limit, increasing the risk of accidents."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Over-speeding",
+    "penalty_rs": 750,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Driving a public service vehicle (e.g., bus, taxi) at a speed exceeding the legally defined limit, endangering passengers and other road users."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Carrying passengers in a public service vehicle exceeding permissible limit",
+    "penalty_rs": 750,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Transporting more individuals in a public service vehicle than its authorized seating capacity, leading to overcrowding and safety concerns for all occupants."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of traffic signals (Electronic/Manual)",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Disregarding instructions from traffic lights or manual signals by traffic police, which can lead to collisions at intersections."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of traffic signals (Electronic/Manual)",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Disregarding instructions from traffic lights or manual signals by traffic police, increasing the risk of accidents for two-wheelers at intersections."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of traffic signals (Electronic/Manual)",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Disregarding instructions from traffic lights or manual signals by traffic police while operating a public service vehicle, potentially causing severe accidents."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Overloading a goods vehicle",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Loading a goods vehicle (e.g., truck, pickup) beyond its specified weight capacity, affecting vehicle control, braking, and road infrastructure, and potentially leading to accidents."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Overloading a goods vehicle",
+    "penalty_rs": 500,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Loading a public service goods vehicle beyond its specified weight capacity, compromising vehicle stability and safety."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle at night without proper lights",
+    "penalty_rs": 300,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler during nighttime or low-visibility conditions without the required headlights or tail lights, significantly reducing visibility."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle at night without proper lights",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler during nighttime or low-visibility conditions without the required lights, making it harder for others to see the motorcycle or scooter."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle at night without proper lights",
+    "penalty_rs": 500,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle during nighttime or low-visibility conditions without proper illumination, endangering passengers and other road users."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle on the wrong side of the road",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler against the designated flow of traffic, which is extremely dangerous and can cause head-on collisions."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle on the wrong side of the road",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler against the designated flow of traffic, a hazardous practice that significantly increases the risk of accidents."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle on the wrong side of the road",
+    "penalty_rs": 750,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle against the designated flow of traffic, a serious violation that endangers many lives."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle with tinted/covered glasses",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler with excessively tinted or covered windows, reducing visibility for the driver and potentially aiding in illicit activities."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of line/lane/zebra crossing etc.",
+    "penalty_rs": 300,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Failing to adhere to road markings such as solid lines, lane dividers, or pedestrian zebra crossings while driving a four-wheeler, leading to unsafe maneuvers."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of line/lane/zebra crossing etc.",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Failing to adhere to road markings like lane dividers or zebra crossings while riding a two-wheeler, which can endanger pedestrians and other vehicles."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of line/lane/zebra crossing etc.",
+    "penalty_rs": 500,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Failing to adhere to road markings, including lane discipline and zebra crossings, while operating a public service vehicle, affecting traffic flow and safety."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Plying a motor vehicle where and when prohibited",
+    "penalty_rs": 300,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler in areas or during times when vehicle access is restricted, often to manage traffic or protect specific zones."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Plying a motor vehicle where and when prohibited",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler in prohibited areas or during restricted times, which can disrupt public order or traffic management."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Plying a motor vehicle where and when prohibited",
+    "penalty_rs": 750,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle in restricted zones or times, which can lead to congestion or violation of transport regulations."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Obstructing traffic",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Blocking the free flow of vehicles or pedestrians with a four-wheeler, typically by stopping or parking improperly, causing congestion and inconvenience."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Obstructing traffic",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Blocking the free flow of vehicles or pedestrians with a two-wheeler, often by parking illegally or stopping in a traffic lane."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Obstructing traffic",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Blocking the free flow of traffic or pedestrian movement with a public service vehicle, causing significant disruption and inconvenience."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Reckless and negligent driving",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior that puts other road users at risk."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Reckless and negligent driving",
+    "penalty_rs": 300,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior that puts other road users at risk."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Reckless and negligent driving",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle with dangerous disregard for safety, exhibiting careless, dangerous, or irresponsible behavior that puts passengers and other road users at severe risk."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle without a driving licence",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler without possessing a valid and current driving license, indicating a lack of authorization and potentially necessary driving skills."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle without a driving licence",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler without possessing a valid and current driving license, indicating a lack of authorization and potentially necessary driving skills."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle without a driving licence",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle without possessing a valid and current driving license, a serious offense that jeopardizes public safety."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Using a pressure horn, musical horn or using any other horn in a silence zone",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Using unauthorized or excessively loud horns, or any horn within designated silence zones (e.g., near hospitals, schools) while riding a two-wheeler, causing noise pollution."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Using a pressure horn, musical horn or using any other horn in a silence zone",
+    "penalty_rs": 300,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Using unauthorized or excessively loud horns, or any horn within designated silence zones (e.g., near hospitals, schools) while driving a four-wheeler, causing noise pollution."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Using a pressure horn, musical horn or using any other horn in a silence zone",
+    "penalty_rs": 750,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Using unauthorized or excessively loud horns, or any horn within designated silence zones (e.g., near hospitals, schools) while operating a public service vehicle, causing significant noise disturbance."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Emitting excessive smoke",
+    "penalty_rs": 300,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler that releases an abnormal amount of smoke or pollutants from its exhaust, indicating engine problems and contributing to air pollution."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Emitting excessive smoke",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler that releases an abnormal amount of smoke or pollutants from its exhaust, indicating engine problems and contributing to air pollution."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Emitting excessive smoke",
+    "penalty_rs": 750,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle that releases an abnormal amount of smoke or pollutants, contributing significantly to air pollution and indicating poor vehicle maintenance."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving an unregistered motor vehicle",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler that has not been officially registered with the relevant authorities, making it untraceable and potentially uninsured."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving an unregistered motor vehicle",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler that has not been officially registered with the relevant authorities, making it untraceable and potentially uninsured."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving an unregistered motor vehicle",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle that has not been officially registered, a serious violation impacting public safety and regulation."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving in violation of age limit",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Operating a four-wheeler when the driver is below the legally stipulated age, indicating a lack of maturity or experience."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving in violation of age limit",
+    "penalty_rs": 300,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheeler when the driver is below the legally stipulated age, indicating a lack of maturity or experience."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving in violation of age limit",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle when the driver is below the legally stipulated age, a serious offense due to the responsibility of carrying passengers."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving a motor vehicle without fitness certificate",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a commercial or public service vehicle without a valid fitness certificate, which attests to its roadworthiness and safety, thereby endangering passengers."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Driving without or in violation of conditions of route permit",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Operating a public service vehicle without the necessary route permit or not adhering to the specified conditions of such a permit, often for commercial routes, which is a regulatory violation."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Riding a two wheel motorcycle without crash helmet",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Riding a two-wheel motorcycle without wearing a protective crash helmet, significantly increasing the risk of head injuries in the event of an accident."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Pillion riding by more than two persons",
+    "penalty_rs": 300,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Carrying more than one passenger (pillion rider) on a motorcycle, exceeding its safe carrying capacity and making the vehicle unstable, leading to a higher risk of accidents."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Use of hand-held mobile phone while driving",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Using a hand-held mobile phone (e.g., talking, texting) while operating a four-wheeler, leading to significant driver distraction and increased accident risk."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Use of hand-held mobile phone while driving",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Using a hand-held mobile phone while riding a two-wheeler, a dangerous distraction that compromises balance and reaction time."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Use of hand-held mobile phone while driving",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Using a hand-held mobile phone while driving a public service vehicle, a highly dangerous act that endangers passengers and other road users."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Non-fastening of seatbelt while driving on a notified road",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Failing to wear a seatbelt while driving a four-wheeler on designated roads, which significantly reduces protection in the event of a collision."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Non-fastening of seatbelt while driving on a notified road",
+    "penalty_rs": 750,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Failing to fasten a seatbelt while operating a public service vehicle on notified roads, reducing driver safety in case of an accident."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of parking rules",
+    "penalty_rs": 500,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Parking a four-wheeler in a prohibited area, blocking access, or exceeding permitted parking times, causing obstruction or inconvenience to others."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of parking rules",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Parking a two-wheeler in a prohibited area or inappropriately, leading to obstruction or traffic flow issues."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of parking rules",
+    "penalty_rs": 1000,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Parking a public service vehicle in a prohibited area or in a manner that obstructs traffic or public access, leading to significant disruption."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of any other provision of the ordinance or the rules made there under punishable under section 112",
+    "penalty_rs": 300,
+    "Vehical type": "Four-Wheelers",
+    "Description": "Breaching any traffic law or regulation for four-wheelers not specifically listed, which falls under the general penalties outlined in Section 112 of the relevant ordinance."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of any other provision of the ordinance or the rules made there under punishable under section 112",
+    "penalty_rs": 200,
+    "Vehical type": "Two-Wheelers",
+    "Description": "Breaching any traffic law or regulation for two-wheelers not specifically listed, which falls under the general penalties outlined in Section 112 of the relevant ordinance."
+  },
+  {
+    "category": "moving_violation",
+    "violation": "Violation of any other provision of the ordinance or the rules made there under punishable under section 112",
+    "penalty_rs": 500,
+    "Vehical type": "Public Service Vehicles",
+    "Description": "Breaching any traffic law or regulation for public service vehicles not specifically listed, which falls under the general penalties outlined in Section 112 of the relevant ordinance."
+  }
+]

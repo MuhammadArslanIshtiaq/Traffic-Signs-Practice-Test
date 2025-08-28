@@ -1,0 +1,52 @@
+[
+    {
+      "category": "moving_violation",
+      "violation": "Driving without a license",
+      "penalty_rs": 50000,
+      "Vehical type": "Four-Wheelers",
+      "Description": "Operating a car or jeep without possessing a valid and current driving license, a serious offense indicating a lack of legal authorization and necessary driving skills."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Driving without a license",
+      "penalty_rs": 25000,
+      "Vehical type": "Two-Wheelers",
+      "Description": "Riding a motorcycle or scooter without possessing a valid and current driving license, a serious offense indicating a lack of legal authorization and necessary riding skills."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Wrong-way driving (First Offense)",
+      "penalty_rs": 10000,
+      "Vehical type": "All Vehicles",
+      "Description": "Driving a vehicle against the designated flow of traffic for the first time, a highly dangerous act that significantly increases the risk of head-on collisions. This penalty is for the initial violation."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Wrong-way driving (Second Offense)",
+      "penalty_rs": 15000,
+      "Vehical type": "All Vehicles",
+      "Description": "Driving a vehicle against the designated flow of traffic for the second time, indicating a repeated dangerous act with an increased penalty."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Wrong-way driving (Third Offense)",
+      "penalty_rs": 20000,
+      "Vehical type": "All Vehicles",
+      "Description": "Driving a vehicle against the designated flow of traffic for the third or subsequent time, a severe and repeated violation with the highest penalty for this offense type."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Dangerous driving (One-wheeling or drifting) - First Offense",
+      "penalty_rs": 100000,
+      "Vehical type": "All Vehicles",
+      "Description": "Engaging in extremely hazardous driving behaviors such as one-wheeling (on motorcycles) or drifting (in cars) for the first time. Fines can increase significantly for subsequent violations."
+    },
+    {
+      "category": "moving_violation",
+      "violation": "Reckless driving",
+      "penalty_rs": null,
+      "Vehical type": "All Vehicles",
+      "Description": "Driving in a careless or dangerous manner that demonstrates willful disregard for the safety of others or property. Increased fines apply for this violation, with exact amounts varying based on the severity and context of the offense."
+    }
+  ]
+  
