@@ -71,10 +71,6 @@ const RoadSignsScreen = ({ navigation, route }) => {
     navigation.goBack();
   };
 
-  const handleExitPress = () => {
-    navigation.navigate('LearningMaterial', { authority });
-  };
-
   const handleNextSign = () => {
     if (currentIndex < signs.length - 1) {
       setCurrentIndex(currentIndex + 1);
@@ -90,9 +86,9 @@ const RoadSignsScreen = ({ navigation, route }) => {
   const renderHeaderRight = () => (
     <TouchableOpacity 
       style={styles.headerButton}
-      onPress={handleExitPress}
+      onPress={handleBackPress}
     >
-      <Ionicons name="close" size={28} color="white" />
+      <Ionicons name="arrow-back" size={28} color="white" />
     </TouchableOpacity>
   );
 

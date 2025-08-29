@@ -70,14 +70,14 @@ const AuthorityScreen = ({ navigation, route }) => {
       >
         <View style={styles.cardContent}>
           <View style={styles.iconContainer}>
-            {typeof item.icon === 'string' ? (
+            {typeof item.icon === 'string' && !item.icon.includes('/') ? (
               <Ionicons name={item.icon} size={32} color="#115740" />
             ) : (
-                             <Image 
-                 source={item.icon} 
-                 style={styles.iconImage} 
-                 resizeMode="contain"
-               />
+              <Image 
+                source={item.icon} 
+                style={styles.iconImage} 
+                resizeMode="contain"
+              />
             )}
           </View>
           <View style={styles.textContainer}>

@@ -50,14 +50,6 @@ const SignTestsScreen = ({ navigation, route }) => {
     }
   ];
 
-  const handleProfilePress = () => {
-    if (!user) {
-      navigation.navigate('SignIn');
-      return;
-    }
-    navigation.navigate('Profile');
-  };
-
   const renderHeaderRight = () => (
     <TouchableOpacity 
       style={styles.headerButton}

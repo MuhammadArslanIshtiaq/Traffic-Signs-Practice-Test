@@ -99,8 +99,8 @@ export const UserProvider = ({ children }) => {
         );
         
         const historySnapshot = await getDocs(historyQuery);
+        
         if (historySnapshot.empty) {
-          console.log('No quiz history found for user');
           setQuizHistory([]);
         } else {
           const history = historySnapshot.docs.map(doc => {
@@ -116,6 +116,7 @@ export const UserProvider = ({ children }) => {
               timestamp
             };
           });
+          
           setQuizHistory(history);
         }
       } catch (historyError) {

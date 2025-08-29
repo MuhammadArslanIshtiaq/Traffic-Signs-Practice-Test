@@ -231,7 +231,7 @@ const HomeScreen = ({ navigation }) => {
     >
       <View style={styles.cardContent}>
         <View style={styles.iconContainer}>
-          {typeof item.icon === 'string' ? (
+          {typeof item.icon === 'string' && !item.icon.includes('/') ? (
             <Ionicons name={item.icon} size={32} color="#115740" />
           ) : (
             <Image 

@@ -2,15 +2,14 @@ import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, Image, Modal, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../components/Header';
-import { fetchQuizQuestions, inspectQuizzesTable, saveQuizResult } from '../config/supabase';
+import { fetchQuizQuestions, inspectQuizzesTable } from '../config/supabase';
 import { useUser } from '../contexts/UserContext';
 
 const SignQuizScreen = ({ navigation, route }) => {
-  const { user } = useUser();
+  const { user, saveQuizResult } = useUser();
   const { authority, category, categoryName } = route.params;
   
-  console.log('🎯 SignQuizScreen params:', { authority, category, categoryName });
-  console.log('🎯 Authority object:', authority);
+
   
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -23,6 +22,7 @@ const SignQuizScreen = ({ navigation, route }) => {
   const [error, setError] = useState(null);
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [startTime] = useState(Date.now());
 
   // Function to shuffle array (Fisher-Yates algorithm)
   const shuffleArray = (array) => {
@@ -241,16 +241,20 @@ const SignQuizScreen = ({ navigation, route }) => {
   };
 
   const finishQuizNow = async () => {
-    // Save quiz result to Supabase if user is logged in
+    // Save quiz result to Firebase if user is logged in
     if (user?.uid) {
       try {
-        await saveQuizResult(
-          user.uid,
-          authority?.code || authority?.name || 'unknown',
-          category,
-          score,
-          questions.length
-        );
+        const percentage = Math.round((score / questions.length) * 100);
+        const timeSpent = Math.round((Date.now() - startTime) / 1000); // Calculate time spent
+        
+        await saveQuizResult({
+          quizId: `${authority?.code || authority?.name || 'unknown'}-${category}`,
+          title: `${categoryName || category} - ${authority?.name || authority?.code || 'Unknown Authority'}`,
+          score: percentage,
+          totalQuestions: questions.length,
+          correctAnswers: score,
+          timeSpent: timeSpent
+        });
       } catch (error) {
         console.log('❌ Error saving quiz result:', error);
       }
@@ -268,42 +272,26 @@ const SignQuizScreen = ({ navigation, route }) => {
     navigation.navigate('Home');
   };
 
-  const handleProfilePress = () => {
-    if (!user) {
-      navigation.navigate('SignIn');
-      return;
-    }
-    navigation.navigate('Profile');
-  };
-
   const renderHeaderRight = () => (
-    <View style={styles.headerButtons}>
-      <TouchableOpacity 
-        style={styles.headerButton}
-        onPress={() => {
-          if (!showResult && currentQuestionIndex > 0) {
-            Alert.alert(
-              'Leave Quiz?',
-              'Are you sure you want to leave? Your progress will be lost.',
-              [
-                { text: 'Cancel', style: 'cancel' },
-                { text: 'Leave Quiz', style: 'destructive', onPress: () => navigation.goBack() }
-              ]
-            );
-          } else {
-            navigation.goBack();
-          }
-        }}
-      >
-        <Ionicons name="arrow-back" size={28} color="white" />
-      </TouchableOpacity>
-      <TouchableOpacity 
-        style={styles.headerButton}
-        onPress={handleProfilePress}
-      >
-        <Ionicons name="person-circle-outline" size={28} color="white" />
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity 
+      style={styles.headerButton}
+      onPress={() => {
+        if (!showResult && currentQuestionIndex > 0) {
+          Alert.alert(
+            'Leave Quiz?',
+            'Are you sure you want to leave? Your progress will be lost.',
+            [
+              { text: 'Cancel', style: 'cancel' },
+              { text: 'Leave Quiz', style: 'destructive', onPress: () => navigation.goBack() }
+            ]
+          );
+        } else {
+          navigation.goBack();
+        }
+      }}
+    >
+      <Ionicons name="arrow-back" size={28} color="white" />
+    </TouchableOpacity>
   );
 
   // Check if this is a rules quiz (no images needed)
@@ -926,9 +914,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#115740',
     marginBottom: 16,
-    textShadowColor: 'rgba(0, 0, 0, 0.1)',
-    textShadowOffset: { width: 0, height: 2 },
-    textShadowRadius: 4,
+    textShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   },
   resultMessage: {
     fontSize: 16,
