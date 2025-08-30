@@ -5,6 +5,7 @@ import { Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import app from './src/config/firebase';
 import { AuthorityProvider } from './src/contexts/AuthorityContext';
+import { QuizProvider } from './src/contexts/QuizContext';
 import { UserProvider } from './src/contexts/UserContext';
 import TabNavigator from './src/navigation/TabNavigator';
 
@@ -14,6 +15,7 @@ import GeneralInfoScreen from './src/screens/GeneralInfoScreen';
 import LearningMaterialScreen from './src/screens/LearningMaterialScreen';
 import LicenseFeeDetailScreen from './src/screens/LicenseFeeDetailScreen';
 import LicenseFeesScreen from './src/screens/LicenseFeesScreen';
+import MockQuizScreen from './src/screens/MockQuizScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import Quiz from './src/screens/Quiz';
 import QuizHistoryScreen from './src/screens/QuizHistoryScreen';
@@ -54,7 +56,8 @@ export default function App() {
     <SafeAreaProvider>
       <UserProvider>
         <AuthorityProvider>
-          <NavigationContainer>
+          <QuizProvider>
+            <NavigationContainer>
           <Stack.Navigator 
             screenOptions={{ 
               headerShown: false,
@@ -73,6 +76,7 @@ export default function App() {
             <Stack.Screen name="Profile" component={ProfileScreen} />
             <Stack.Screen name="SignTests" component={SignTestsScreen} />
             <Stack.Screen name="SignQuiz" component={SignQuizScreen} />
+            <Stack.Screen name="MockQuiz" component={MockQuizScreen} />
             <Stack.Screen name="LearningMaterial" component={LearningMaterialScreen} />
             <Stack.Screen name="RoadSigns" component={RoadSignsScreen} />
             <Stack.Screen name="Rules" component={RulesScreen} />
@@ -85,7 +89,8 @@ export default function App() {
             <Stack.Screen name="LicenseFeeDetail" component={LicenseFeeDetailScreen} />
             <Stack.Screen name="Fines" component={FinesScreen} />
           </Stack.Navigator>
-        </NavigationContainer>
+            </NavigationContainer>
+          </QuizProvider>
         </AuthorityProvider>
       </UserProvider>
     </SafeAreaProvider>

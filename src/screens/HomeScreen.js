@@ -126,7 +126,50 @@ const HomeScreen = ({ navigation }) => {
 
   const [selectedOption, setSelectedOption] = React.useState(null);
 
+  // Function to determine mock test type based on authority
+  const getMockTestInfo = () => {
+    const authorityCode = selectedAuthority?.code?.toLowerCase() || selectedAuthority?.name?.toLowerCase() || '';
+    
+    if (authorityCode.includes('nha') || authorityCode.includes('motorway')) {
+      return {
+        title: 'Mock Test - NHA',
+        titleUrdu: 'نمونہ ٹیسٹ - این ایچ اے',
+        description: 'Combined signs and rules test for NHA',
+        quizType: 'nha'
+      };
+    } else if (authorityCode.includes('sindh')) {
+      return {
+        title: 'Mock Test - Sindh',
+        titleUrdu: 'نمونہ ٹیسٹ - سندھ',
+        description: 'Combined signs and rules test for Sindh',
+        quizType: 'sindh'
+      };
+    } else {
+      // For ITP, Punjab, KPK, Balochistan
+      return {
+        title: 'Mock Test - Multiple',
+        titleUrdu: 'نمونہ ٹیسٹ - متعدد',
+        description: 'Combined signs and rules test for multiple authorities',
+        quizType: 'multiple'
+      };
+    }
+  };
+
+  const mockTestInfo = getMockTestInfo();
+
   const authorityOptions = [
+    {
+      id: '0',
+      title: 'Take Mock Test',
+      titleUrdu: 'نمونہ ٹیسٹ لیں',
+      icon: require('../../assets/images/MockTest.png'),
+      description: 'Take Mock Test to check your knowledge',
+      onPress: () => navigation.navigate('MockQuiz', { 
+        authority: selectedAuthority, 
+        quizType: mockTestInfo.quizType,
+        title: mockTestInfo.title
+      })
+    },
     {
       id: '1',
       title: 'Sign Tests',
@@ -224,34 +267,36 @@ const HomeScreen = ({ navigation }) => {
     </TouchableOpacity>
   );
 
-  const renderOptionItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.optionCard}
-      onPress={item.onPress}
-    >
-      <View style={styles.cardContent}>
-        <View style={styles.iconContainer}>
-          {typeof item.icon === 'string' && !item.icon.includes('/') ? (
-            <Ionicons name={item.icon} size={32} color="#115740" />
-          ) : (
-            <Image 
-              source={item.icon} 
-              style={styles.iconImage} 
-              resizeMode="contain"
-            />
-          )}
+  const renderOptionItem = ({ item }) => {
+    return (
+      <TouchableOpacity
+        style={styles.optionCard}
+        onPress={item.onPress}
+      >
+        <View style={styles.cardContent}>
+          <View style={[styles.iconContainer, item.color && { backgroundColor: item.color }]}>
+            {typeof item.icon === 'string' && !item.icon.includes('/') ? (
+              <Ionicons name={item.icon} size={32} color={item.color ? "white" : "#115740"} />
+            ) : (
+              <Image 
+                source={item.icon} 
+                style={styles.iconImage} 
+                resizeMode="contain"
+              />
+            )}
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.optionTitle}>{item.title}</Text>
+            <Text style={styles.optionTitleUrdu}>{item.titleUrdu}</Text>
+            <Text style={styles.optionDescription}>{item.description}</Text>
+          </View>
+          <View style={styles.arrowContainer}>
+            <Ionicons name="chevron-forward" size={24} color="#115740" />
+          </View>
         </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.optionTitle}>{item.title}</Text>
-          <Text style={styles.optionTitleUrdu}>{item.titleUrdu}</Text>
-          <Text style={styles.optionDescription}>{item.description}</Text>
-        </View>
-        <View style={styles.arrowContainer}>
-          <Ionicons name="chevron-forward" size={24} color="#115740" />
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
+      </TouchableOpacity>
+    );
+  };
 
   const renderSignCategoryItem = ({ item }) => (
     <TouchableOpacity
@@ -259,8 +304,8 @@ const HomeScreen = ({ navigation }) => {
       onPress={item.onPress}
     >
       <View style={styles.cardContent}>
-        <View style={[styles.iconContainer, { backgroundColor: `${item.color}20` }]}>
-          <Ionicons name={item.icon} size={32} color={item.color} />
+        <View style={[styles.iconContainer, { backgroundColor: item.color }]}>
+          <Ionicons name={item.icon} size={32} color="white" />
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.categoryTitle}>{item.title}</Text>
@@ -462,6 +507,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
 });
 
 export default HomeScreen; 

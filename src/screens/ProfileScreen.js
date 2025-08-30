@@ -1,9 +1,9 @@
 import { Ionicons } from '@expo/vector-icons';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as ImagePicker from 'expo-image-picker';
-import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
-import { ActivityIndicator, Alert, Image, Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Alert, Image, Modal, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import Header from '../components/Header';
 import { useUser } from '../contexts/UserContext';
 
 const defaultAvatar = require('../../assets/images/avatar.png');
@@ -19,15 +19,28 @@ const ProfileScreen = ({ navigation }) => {
   const [confirmValue, setConfirmValue] = useState('');
 
   const handleSignOut = async () => {
-    try {
-      await signout();
-      navigation.reset({
-        index: 0,
-        routes: [{ name: 'Welcome' }],
-      });
-    } catch (error) {
-      Alert.alert('Error', 'Failed to sign out. Please try again.');
-    }
+    Alert.alert(
+      'Sign Out',
+      'Are you sure you want to sign out?',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Sign Out',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await signout();
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'Welcome' }],
+              });
+            } catch (error) {
+              Alert.alert('Error', 'Failed to sign out. Please try again.');
+            }
+          }
+        }
+      ]
+    );
   };
 
   const handleImagePick = async () => {
@@ -183,157 +196,168 @@ const ProfileScreen = ({ navigation }) => {
     </Modal>
   );
 
-  return (
-    <LinearGradient
-              colors={['#115740', '#1a7a5a']}
-      style={styles.container}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
+  const renderHeaderRight = () => (
+    <TouchableOpacity 
+      style={styles.headerButton}
+      onPress={handleSignOut}
     >
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        <View style={styles.header}>
-          <TouchableOpacity
-            style={styles.backButton}
-            onPress={() => navigation.goBack()}
-          >
-            <Ionicons name="arrow-back" size={24} color="white" />
-          </TouchableOpacity>
-          <Text style={styles.title}>Profile</Text>
-          <TouchableOpacity
-            style={styles.signOutButton}
-            onPress={handleSignOut}
-          >
-            <Ionicons name="log-out-outline" size={24} color="white" />
-          </TouchableOpacity>
-        </View>
+      <Ionicons name="log-out-outline" size={28} color="white" />
+    </TouchableOpacity>
+  );
 
-        <View style={styles.profileSection}>
-          <View style={styles.avatarContainer}>
-            {isUpdating ? (
-              <View style={styles.loadingContainer}>
-                <ActivityIndicator size="large" color="white" />
-              </View>
-            ) : (
-              <>
-                <Image
-                  source={user?.photoURL ? { uri: user.photoURL } : defaultAvatar}
-                  style={styles.avatar}
-                />
+  return (
+    <View style={styles.container}>
+      <StatusBar barStyle="dark-content" />
+      <Header 
+        username={user?.displayName} 
+        navigation={navigation}
+        pageTitle="Profile"
+      >
+        {renderHeaderRight()}
+      </Header>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+
+        <View style={styles.content}>
+          {/* Profile Card */}
+          <View style={styles.profileCard}>
+            <View style={styles.avatarContainer}>
+              {isUpdating ? (
+                <View style={styles.loadingContainer}>
+                  <ActivityIndicator size="large" color="#115740" />
+                </View>
+              ) : (
+                <>
+                  <Image
+                    source={user?.photoURL ? { uri: user.photoURL } : defaultAvatar}
+                    style={styles.avatar}
+                  />
+                  <TouchableOpacity
+                    style={styles.cameraIconContainer}
+                    onPress={handleImagePick}
+                  >
+                    <Ionicons name="camera" size={20} color="white" />
+                  </TouchableOpacity>
+                </>
+              )}
+            </View>
+            
+            <View style={styles.userInfo}>
+              <View style={styles.infoRow}>
+                <Text style={styles.name}>{user?.displayName}</Text>
                 <TouchableOpacity
-                  style={styles.cameraIconContainer}
-                  onPress={handleImagePick}
+                  style={styles.editButton}
+                  onPress={() => handleEdit('name')}
                 >
-                  <Ionicons name="camera" size={20} color="white" />
+                  <Ionicons name="pencil" size={18} color="#115740" />
                 </TouchableOpacity>
-              </>
-            )}
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.email}>{user?.email}</Text>
+                <TouchableOpacity
+                  style={styles.editButton}
+                  onPress={() => handleEdit('email')}
+                >
+                  <Ionicons name="pencil" size={18} color="#115740" />
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
-          <View style={styles.infoContainer}>
-            <View style={styles.infoRow}>
-              <Text style={styles.name}>{user?.displayName}</Text>
-              <TouchableOpacity
-                style={styles.editButton}
-                onPress={() => handleEdit('name')}
-              >
-                <Ionicons name="pencil" size={20} color="white" />
-              </TouchableOpacity>
+
+          {/* Stats Card */}
+          <View style={styles.statsCard}>
+            <Text style={styles.sectionTitle}>Your Statistics</Text>
+            <View style={styles.statsGrid}>
+              <View style={styles.statItem}>
+                <Text style={styles.statNumber}>{userStats.quizzesTaken}</Text>
+                <Text style={styles.statLabel}>Quizzes Taken</Text>
+              </View>
+              <View style={styles.statItem}>
+                <Text style={styles.statNumber}>{userStats.totalPoints}</Text>
+                <Text style={styles.statLabel}>Total Points</Text>
+              </View>
+              <View style={styles.statItem}>
+                <Text style={styles.statNumber}>{userStats.averageScore.toFixed(1)}%</Text>
+                <Text style={styles.statLabel}>Average Score</Text>
+              </View>
             </View>
-            <View style={styles.infoRow}>
-              <Text style={styles.email}>{user?.email}</Text>
-              <TouchableOpacity
-                style={styles.editButton}
-                onPress={() => handleEdit('email')}
-              >
-                <Ionicons name="pencil" size={20} color="white" />
-              </TouchableOpacity>
-            </View>
+          </View>
+
+          {/* Action Buttons */}
+          <View style={styles.actionsCard}>
             <TouchableOpacity
-              style={styles.passwordButton}
+              style={styles.actionButton}
               onPress={() => handleEdit('password')}
             >
-              <Ionicons name="lock-closed" size={20} color="white" />
-              <Text style={styles.passwordButtonText}>Change Password</Text>
+              <Ionicons name="lock-closed-outline" size={24} color="#115740" />
+              <Text style={styles.actionButtonText}>Change Password</Text>
+              <Ionicons name="chevron-forward" size={20} color="#115740" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.actionButton}
+              onPress={() => navigation.navigate('QuizHistory')}
+            >
+              <Ionicons name="time-outline" size={24} color="#115740" />
+              <Text style={styles.actionButtonText}>Quiz History</Text>
+              <Ionicons name="chevron-forward" size={20} color="#115740" />
             </TouchableOpacity>
           </View>
         </View>
-
-        <View style={styles.statsContainer}>
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>{userStats.quizzesTaken}</Text>
-            <Text style={styles.statLabel}>Quizzes Taken</Text>
-          </View>
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>{userStats.totalPoints}</Text>
-            <Text style={styles.statLabel}>Total Points</Text>
-          </View>
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>{userStats.averageScore}%</Text>
-            <Text style={styles.statLabel}>Average Score</Text>
-          </View>
-        </View>
-
-        <TouchableOpacity
-          style={styles.historyButton}
-          onPress={() => navigation.navigate('QuizHistory')}
-        >
-          <Ionicons name="time-outline" size={24} color="white" />
-          <Text style={styles.historyButtonText}>View Quiz History</Text>
-        </TouchableOpacity>
       </ScrollView>
       {renderEditModal()}
-    </LinearGradient>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#f5f5f5',
   },
-  scrollContent: {
-    flexGrow: 1,
-    paddingBottom: 20,
+  scrollView: {
+    flex: 1,
   },
-  header: {
-    flexDirection: 'row',
+  content: {
+    padding: 16,
+    paddingBottom: 32,
+  },
+  headerButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingTop: 60,
-    paddingBottom: 20,
   },
-  backButton: {
-    padding: 8,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'white',
-  },
-  signOutButton: {
-    padding: 8,
-  },
-  profileSection: {
+  
+  // Profile Card
+  profileCard: {
+    backgroundColor: 'white',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 20,
+    elevation: 3,
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
     alignItems: 'center',
-    marginTop: 20,
   },
   avatarContainer: {
     position: 'relative',
-    marginBottom: 20,
+    marginBottom: 16,
   },
   avatar: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
     borderWidth: 3,
-    borderColor: 'white',
+    borderColor: '#115740',
   },
   loadingContainer: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
     borderWidth: 3,
-    borderColor: 'white',
-    backgroundColor: 'rgba(0,0,0,0.1)',
+    borderColor: '#115740',
+    backgroundColor: '#f5f5f5',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -341,56 +365,57 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     bottom: 0,
-    backgroundColor: '#1B5E20',
-    borderRadius: 20,
+    backgroundColor: '#115740',
+    borderRadius: 18,
     padding: 8,
     borderWidth: 2,
     borderColor: 'white',
   },
-  infoContainer: {
+  userInfo: {
     alignItems: 'center',
     width: '100%',
-    paddingHorizontal: 20,
   },
   infoRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 10,
+    marginBottom: 8,
   },
   name: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
-    color: 'white',
-    marginRight: 10,
+    color: '#333',
+    marginRight: 8,
   },
   email: {
     fontSize: 16,
-    color: 'rgba(255, 255, 255, 0.8)',
-    marginRight: 10,
+    color: '#666',
+    marginRight: 8,
   },
   editButton: {
-    padding: 8,
+    padding: 6,
+    borderRadius: 6,
+    backgroundColor: '#f0f0f0',
   },
-  passwordButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#1B5E20',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 20,
-    marginTop: 10,
+
+  // Stats Card
+  statsCard: {
+    backgroundColor: 'white',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 20,
+    elevation: 3,
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   },
-  passwordButtonText: {
-    color: 'white',
-    marginLeft: 8,
-    fontSize: 16,
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 16,
+    textAlign: 'center',
   },
-  statsContainer: {
+  statsGrid: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingHorizontal: 20,
-    marginVertical: 30,
   },
   statItem: {
     alignItems: 'center',
@@ -398,28 +423,39 @@ const styles = StyleSheet.create({
   statNumber: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
-    marginBottom: 5,
+    color: '#115740',
+    marginBottom: 4,
   },
   statLabel: {
     fontSize: 14,
-    color: 'rgba(255, 255, 255, 0.8)',
+    color: '#666',
+    textAlign: 'center',
   },
-  historyButton: {
+
+  // Actions Card
+  actionsCard: {
+    backgroundColor: 'white',
+    borderRadius: 16,
+    padding: 4,
+    elevation: 3,
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+  },
+  actionButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#1B5E20',
-    marginHorizontal: 20,
-    padding: 15,
-    borderRadius: 10,
+    padding: 16,
+    borderRadius: 12,
+    marginVertical: 2,
   },
-  historyButtonText: {
-    color: 'white',
+  actionButtonText: {
+    flex: 1,
     fontSize: 16,
-    fontWeight: 'bold',
-    marginLeft: 10,
+    color: '#333',
+    marginLeft: 12,
+    fontWeight: '500',
   },
+  
+  // Modal Styles
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -428,10 +464,12 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 20,
+    borderRadius: 16,
+    padding: 24,
     width: '90%',
     maxWidth: 400,
+    elevation: 8,
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
   },
   modalTitle: {
     fontSize: 20,
@@ -442,29 +480,30 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 10,
-    padding: 12,
-    marginBottom: 15,
+    borderColor: '#e0e0e0',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 16,
     fontSize: 16,
+    backgroundColor: '#f9f9f9',
   },
   modalButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 10,
+    marginTop: 8,
   },
   modalButton: {
     flex: 1,
-    padding: 15,
-    borderRadius: 10,
+    padding: 16,
+    borderRadius: 12,
     alignItems: 'center',
-    marginHorizontal: 5,
+    marginHorizontal: 6,
   },
   cancelButton: {
-    backgroundColor: '#ccc',
+    backgroundColor: '#e0e0e0',
   },
   saveButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#115740',
   },
   modalButtonText: {
     color: 'white',

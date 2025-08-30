@@ -3,12 +3,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../components/Header';
+import QuizLoadingScreen from '../components/QuizLoadingScreen';
 import { useAuthority } from '../contexts/AuthorityContext';
+import { useQuiz } from '../contexts/QuizContext';
 import { useUser } from '../contexts/UserContext';
 import HomeScreen from '../screens/HomeScreen';
 import LearningMaterialScreen from '../screens/LearningMaterialScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 import ProgressScreen from '../screens/ProgressScreen';
-import SettingsScreen from '../screens/SettingsScreen';
 import TestScreen from '../screens/TestScreen';
 
 const Tab = createBottomTabNavigator();
@@ -34,7 +36,7 @@ const GuestRestrictedScreen = ({ children, navigation, screenName }) => {
           <Ionicons name="lock-closed-outline" size={64} color="#ccc" />
           <Text style={styles.guestTitle}>Sign In Required</Text>
           <Text style={styles.guestMessage}>
-            You need to sign in to access {screenName.toLowerCase()}. Create an account or sign in to track your progress and customize your settings.
+            You need to sign in to access {screenName.toLowerCase()}. Create an account or sign in to track your progress and manage your profile.
           </Text>
           <TouchableOpacity style={styles.signInButton} onPress={handleSignInPress}>
             <Text style={styles.signInButtonText}>Sign In</Text>
@@ -54,15 +56,21 @@ const WrappedProgressScreen = (props) => (
   </GuestRestrictedScreen>
 );
 
-// Wrapped Settings Screen
-const WrappedSettingsScreen = (props) => (
-  <GuestRestrictedScreen {...props} screenName="Settings">
-    <SettingsScreen {...props} />
+// Wrapped Profile Screen
+const WrappedProfileScreen = (props) => (
+  <GuestRestrictedScreen {...props} screenName="Profile">
+    <ProfileScreen {...props} />
   </GuestRestrictedScreen>
 );
 
 const TabNavigator = () => {
   const { selectedAuthority } = useAuthority();
+  const { loading, error, refetchQuizzes } = useQuiz();
+  
+  // Show loading screen while quizzes are being fetched
+  if (loading || error) {
+    return <QuizLoadingScreen error={error} onRetry={refetchQuizzes} />;
+  }
   
   return (
     <Tab.Navigator
@@ -105,6 +113,7 @@ const TabNavigator = () => {
       <Tab.Screen 
         name="Test" 
         component={TestScreen}
+        initialParams={{ authority: selectedAuthority }}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons 
@@ -129,12 +138,12 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen 
-        name="Settings" 
-        component={WrappedSettingsScreen}
+        name="Profile" 
+        component={WrappedProfileScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons 
-              name={focused ? 'settings' : 'settings-outline'} 
+              name={focused ? 'person' : 'person-outline'} 
               size={size} 
               color={color} 
             />

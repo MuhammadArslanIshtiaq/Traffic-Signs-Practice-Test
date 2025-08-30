@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, Image, Modal, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../components/Header';
 import { fetchQuizQuestions, inspectQuizzesTable } from '../config/supabase';
+import { useQuiz } from '../contexts/QuizContext';
 import { useUser } from '../contexts/UserContext';
 
 const SignQuizScreen = ({ navigation, route }) => {
   const { user, saveQuizResult } = useUser();
+  const { getCategoryQuiz, shuffleArray } = useQuiz();
   const { authority, category, categoryName } = route.params;
   
 
@@ -24,15 +26,7 @@ const SignQuizScreen = ({ navigation, route }) => {
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [startTime] = useState(Date.now());
 
-  // Function to shuffle array (Fisher-Yates algorithm)
-  const shuffleArray = (array) => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  };
+
 
   // Function to reset quiz state
   const resetQuiz = () => {
@@ -44,30 +38,46 @@ const SignQuizScreen = ({ navigation, route }) => {
     setShowReviewModal(false);
   };
 
-  // Fetch questions from Supabase on component mount
+  // Fetch questions from cached data first, fallback to API
   useEffect(() => {
     const loadQuestions = async () => {
       try {
         setLoading(true);
+        console.log(`🎯 Loading questions for category: ${category}`);
         
-        // First, let's inspect the table structure
-        await inspectQuizzesTable();
+        // Try to get cached quiz data first
+        const cachedQuestions = getCategoryQuiz(category);
         
-        const quizData = await fetchQuizQuestions(category);
-        console.log('Fetched quiz data:', quizData);
-        
-        if (quizData && quizData.length > 0) {
-          console.log('📋 Quiz data loaded:', quizData.length, 'questions');
-          console.log('🔍 Sample question structure:', quizData[0]);
+        if (cachedQuestions && cachedQuestions.length > 0) {
+          console.log(`📋 Using cached quiz data: ${cachedQuestions.length} questions`);
+          console.log('🔍 Sample cached question structure:', cachedQuestions[0]);
           
           // Shuffle options for each question to randomize order
-          const shuffledQuizData = quizData.map(question => ({
+          const shuffledQuizData = cachedQuestions.map(question => ({
             ...question,
             options: shuffleArray(question.options || [])
           }));
           setQuestions(shuffledQuizData);
         } else {
-          // Fallback to sample questions if no data from Supabase
+          console.log('⚠️ No cached data found, falling back to API...');
+          
+          // Fallback to API call if no cached data
+          await inspectQuizzesTable();
+          const quizData = await fetchQuizQuestions(category);
+          console.log('Fetched quiz data from API:', quizData);
+          
+          if (quizData && quizData.length > 0) {
+            console.log('📋 API Quiz data loaded:', quizData.length, 'questions');
+            console.log('🔍 Sample API question structure:', quizData[0]);
+            
+            // Shuffle options for each question to randomize order
+            const shuffledQuizData = quizData.map(question => ({
+              ...question,
+              options: shuffleArray(question.options || [])
+            }));
+            setQuestions(shuffledQuizData);
+          } else {
+            // Fallback to sample questions if no data from API
           const fallbackQuestions = [
     {
       id: 1,
@@ -103,6 +113,7 @@ const SignQuizScreen = ({ navigation, route }) => {
             options: shuffleArray(question.options || [])
           }));
           setQuestions(shuffledFallbackQuestions);
+          }
         }
       } catch (err) {
         console.error('Error loading questions:', err);
@@ -273,8 +284,8 @@ const SignQuizScreen = ({ navigation, route }) => {
   };
 
   const renderHeaderRight = () => (
-    <TouchableOpacity 
-      style={styles.headerButton}
+      <TouchableOpacity 
+        style={styles.headerButton}
       onPress={() => {
         if (!showResult && currentQuestionIndex > 0) {
           Alert.alert(
@@ -289,9 +300,9 @@ const SignQuizScreen = ({ navigation, route }) => {
           navigation.goBack();
         }
       }}
-    >
-      <Ionicons name="arrow-back" size={28} color="white" />
-    </TouchableOpacity>
+      >
+        <Ionicons name="arrow-back" size={28} color="white" />
+      </TouchableOpacity>
   );
 
   // Check if this is a rules quiz (no images needed)
@@ -307,60 +318,170 @@ const SignQuizScreen = ({ navigation, route }) => {
     return '#dc3545'; // Red for poor
   };
 
+  const getLocalImageMap = () => {
+    // Exact copy from working RoadSignsScreen
+    return {
+      // Mandatory Road Signs
+      'Stop.png': require('../../assets/images/signs/mandatory road signs/Stop.png'),
+      'Slow.png': require('../../assets/images/signs/mandatory road signs/Slow.png'),
+      'No Entry.png': require('../../assets/images/signs/mandatory road signs/No Entry.png'),
+      'No Entry 02.png': require('../../assets/images/signs/mandatory road signs/No Entry 02.png'),
+      'No Parking.png': require('../../assets/images/signs/mandatory road signs/No Parking.png'),
+      'No Left Turn.png': require('../../assets/images/signs/mandatory road signs/No Left Turn.png'),
+      'No Right Turn.png': require('../../assets/images/signs/mandatory road signs/No Right Turn.png'),
+      'No Uturn.png': require('../../assets/images/signs/mandatory road signs/No Uturn.png'),
+      'No Stopping - Clearway.png': require('../../assets/images/signs/mandatory road signs/No Stopping - Clearway.png'),
+      'Audible Warning Devices Prohibited.png': require('../../assets/images/signs/mandatory road signs/Audible Warning Devices Prohibited.png'),
+      'Overtaking Prohibited.png': require('../../assets/images/signs/mandatory road signs/Overtaking Prohibited.png'),
+      'Overtaking by  Good Vehicles Prohibited.png': require('../../assets/images/signs/mandatory road signs/Overtaking by  Good Vehicles Prohibited.png'),
+      'Keep to the Left.png': require('../../assets/images/signs/mandatory road signs/Keep to the Left.png'),
+      'Keep to the Right.png': require('../../assets/images/signs/mandatory road signs/Keep to the Right.png'),
+      'Compulsory Round About.png': require('../../assets/images/signs/mandatory road signs/Compulsory Round About.png'),
+      'Go Straight Ahead.png': require('../../assets/images/signs/mandatory road signs/Go Straight Ahead.png'),
+      'Go Straigh or Left.png': require('../../assets/images/signs/mandatory road signs/Go Straigh or Left.png'),
+      'Go Straigh or Right.png': require('../../assets/images/signs/mandatory road signs/Go Straigh or Right.png'),
+      'Turn to the Left.png': require('../../assets/images/signs/mandatory road signs/Turn to the Left.png'),
+      'Turn to the Left 02.png': require('../../assets/images/signs/mandatory road signs/Turn to the Left 02.png'),
+      'Turn to the Right.png': require('../../assets/images/signs/mandatory road signs/Turn to the Right.png'),
+      'Turn to the Right 02.png': require('../../assets/images/signs/mandatory road signs/Turn to the Right 02.png'),
+      'Give Way or Stop Completely.png': require('../../assets/images/signs/mandatory road signs/Give Way or Stop Completely.png'),
+      'Max Speed Limit 80KMH.png': require('../../assets/images/signs/mandatory road signs/Max Speed Limit 80KMH.png'),
+      'National Speed Limit Applies.png': require('../../assets/images/signs/mandatory road signs/National Speed Limit Applies.png'),
+      'Entry to 30KMH Zone.png': require('../../assets/images/signs/mandatory road signs/Entry to 30KMH Zone.png'),
+      'End of 30KMH Zone.png': require('../../assets/images/signs/mandatory road signs/End of 30KMH Zone.png'),
+      'End of Speed Limit Imposed.png': require('../../assets/images/signs/mandatory road signs/End of Speed Limit Imposed.png'),
+      'End of Prohibitation of Overtaking.png': require('../../assets/images/signs/mandatory road signs/End of Prohibitation of Overtaking.png'),
+      'Dual Carriageway Ahead.png': require('../../assets/images/signs/mandatory road signs/Dual Carriageway Ahead.png'),
+      'Dual Carriageway End.png': require('../../assets/images/signs/mandatory road signs/Dual Carriageway End.png'),
+      'Lane Control Sign.png': require('../../assets/images/signs/mandatory road signs/Lane Control Sign.png'),
+      'Road Close.png': require('../../assets/images/signs/mandatory road signs/Road Close.png'),
+      'Stop For Police Post.png': require('../../assets/images/signs/mandatory road signs/Stop For Police Post.png'),
+      'Passing Police Custom Post without Stopping.png': require('../../assets/images/signs/mandatory road signs/Passing Police Custom Post without Stopping.png'),
+      'No Entry for Agricultural Vehicle.png': require('../../assets/images/signs/mandatory road signs/No Entry for Agricultural Vehicle.png'),
+      'No Entry for Animal Drawn Vehicle.png': require('../../assets/images/signs/mandatory road signs/No Entry for Animal Drawn Vehicle.png'),
+      'No Entry for Cycle.png': require('../../assets/images/signs/mandatory road signs/No Entry for Cycle.png'),
+      'No Entry for Goods Vehicles.png': require('../../assets/images/signs/mandatory road signs/No Entry for Goods Vehicles.png'),
+      'No Entry for Hand Carts.png': require('../../assets/images/signs/mandatory road signs/No Entry for Hand Carts.png'),
+      'No Entry for Motor Cycle.png': require('../../assets/images/signs/mandatory road signs/No Entry for Motor Cycle.png'),
+      'No Entry for Motor Vehical.png': require('../../assets/images/signs/mandatory road signs/No Entry for Motor Vehical.png'),
+      'No Entry for Pedestrains.png': require('../../assets/images/signs/mandatory road signs/No Entry for Pedestrains.png'),
+      'No Entry for Vehicles Exceeding 10 Meter in Length.png': require('../../assets/images/signs/mandatory road signs/No Entry for Vehicles Exceeding 10 Meter in Length.png'),
+      'No Entry for Vehicles Exceeding 6 Ton One Axle.png': require('../../assets/images/signs/mandatory road signs/No Entry for Vehicles Exceeding 6 Ton One Axle.png'),
+      'No Entry for Vehicles Exceeding 7 Ton Laden Weight (2).png': require('../../assets/images/signs/mandatory road signs/No Entry for Vehicles Exceeding 7 Ton Laden Weight (2).png'),
+      'No Entry for Vehicles Exceeding 7 Ton Laden Weight.png': require('../../assets/images/signs/mandatory road signs/No Entry for Vehicles Exceeding 7 Ton Laden Weight.png'),
+      'No Entry for Vehicles Exceeding Width more than 86.png': require('../../assets/images/signs/mandatory road signs/No Entry for Vehicles Exceeding Width more than 86.png'),
+      
+      // Warning Road Signs
+      'Wild Animal Crossing.png': require('../../assets/images/signs/warning road signs/Wild Animal Crossing.png'),
+      'Give Way.png': require('../../assets/images/signs/warning road signs/Give Way.png'),
+      'Yield ti the Traffic approaching from the right on the any leg of the intersection.png': require('../../assets/images/signs/warning road signs/Yield ti the Traffic approaching from the right on the any leg of the intersection.png'),
+      'Yield ti the Traffic approaching from the right on the cross road.png': require('../../assets/images/signs/warning road signs/Yield ti the Traffic approaching from the right on the cross road.png'),
+      'Road Works.png': require('../../assets/images/signs/warning road signs/Road Works.png'),
+      'Pedestrain Crossing.png': require('../../assets/images/signs/warning road signs/Pedestrain Crossing.png'),
+      'Children Crossing.png': require('../../assets/images/signs/warning road signs/Children Crossing.png'),
+      'Cattle Crossing.png': require('../../assets/images/signs/warning road signs/Cattle Crossing.png'),
+      'Cyclists.png': require('../../assets/images/signs/warning road signs/Cyclists.png'),
+      'Level Crossing with Gate.png': require('../../assets/images/signs/warning road signs/Level Crossing with Gate.png'),
+      'Level Crossing without Gate.png': require('../../assets/images/signs/warning road signs/Level Crossing without Gate.png'),
+      'Steep Ascent.png': require('../../assets/images/signs/warning road signs/Steep Ascent.png'),
+      'Dangerous Descent.png': require('../../assets/images/signs/warning road signs/Dangerous Descent.png'),
+      'Slippery Roads.png': require('../../assets/images/signs/warning road signs/Slippery Roads.png'),
+      'Uneven Road.png': require('../../assets/images/signs/warning road signs/Uneven Road.png'),
+      'Lose Gravel.png': require('../../assets/images/signs/warning road signs/Lose Gravel.png'),
+      'Falling Rock.png': require('../../assets/images/signs/warning road signs/Falling Rock.png'),
+      'Strong Cross Wind.png': require('../../assets/images/signs/warning road signs/Strong Cross Wind.png'),
+      'Two way traffic.png': require('../../assets/images/signs/warning road signs/Two way traffic.png'),
+      'Cariageway Narrows.png': require('../../assets/images/signs/warning road signs/Cariageway Narrows.png'),
+      'Road Dips.png': require('../../assets/images/signs/warning road signs/Road Dips.png'),
+      'Road Leads on to River Bank.png': require('../../assets/images/signs/warning road signs/Road Leads on to River Bank.png'),
+      'Swing Bridge.png': require('../../assets/images/signs/warning road signs/Swing Bridge.png'),
+      'Left Bend.png': require('../../assets/images/signs/warning road signs/Left Bend.png'),
+      'Right Bend.png': require('../../assets/images/signs/warning road signs/Right Bend.png'),
+      'Double Bend to Left.png': require('../../assets/images/signs/warning road signs/Double Bend to Left.png'),
+      'Double Bend to Right.png': require('../../assets/images/signs/warning road signs/Double Bend to Right.png'),
+      'Uturn.png': require('../../assets/images/signs/warning road signs/Uturn.png'),
+      'Other Dangers.png': require('../../assets/images/signs/warning road signs/Other Dangers.png'),
+      'Danger Ahead.png': require('../../assets/images/signs/warning road signs/Danger Ahead.png'),
+      'Light signals.png': require('../../assets/images/signs/warning road signs/Light signals.png'),
+      'Air Field.png': require('../../assets/images/signs/warning road signs/Air Field.png'),
+      'Minor Crossing Road.png': require('../../assets/images/signs/warning road signs/Minor Crossing Road.png'),
+      'Minor Crossing Road from Left.png': require('../../assets/images/signs/warning road signs/Minor Crossing Road from Left.png'),
+      'Minor Crossing Road from Right.png': require('../../assets/images/signs/warning road signs/Minor Crossing Road from Right.png'),
+      'Minor Crossing Road from Left to Right Respectively.png': require('../../assets/images/signs/warning road signs/Minor Crossing Road from Left to Right Respectively.png'),
+      'Minor Crossing Road from Right to Left Respectively.png': require('../../assets/images/signs/warning road signs/Minor Crossing Road from Right to Left Respectively.png'),
+      'Minor Crossing On The Left.png': require('../../assets/images/signs/warning road signs/Minor Crossing On The Left.png'),
+      'Minor Crossing On The Right.png': require('../../assets/images/signs/warning road signs/Minor Crossing On The Right.png'),
+      'Minor Crossing Joining from Left.png': require('../../assets/images/signs/warning road signs/Minor Crossing Joining from Left.png'),
+      'Minor Crossing Joining from Right.png': require('../../assets/images/signs/warning road signs/Minor Crossing Joining from Right.png'),
+      
+      // Informatory Road Signs
+      'Bus Stop.png': require('../../assets/images/signs/informatory road signs/Bus Stop.png'),
+      'Hospital Sign.png': require('../../assets/images/signs/informatory road signs/Hospital Sign.png'),
+      'Hospital Sign PK.png': require('../../assets/images/signs/informatory road signs/Hospital Sign PK.png'),
+      'Petrol Pump.png': require('../../assets/images/signs/informatory road signs/Petrol Pump.png'),
+      'Restaurant.png': require('../../assets/images/signs/informatory road signs/Restaurant.png'),
+      'Telephone.png': require('../../assets/images/signs/informatory road signs/Telephone.png'),
+      'Parking Sign.png': require('../../assets/images/signs/informatory road signs/Parking Sign.png'),
+      'Parking Place Direction.png': require('../../assets/images/signs/informatory road signs/Parking Place Direction.png'),
+      'Toilet Facility Sign.png': require('../../assets/images/signs/informatory road signs/Toilet Facility Sign.png'),
+      'Toilet Facility Sign (2).png': require('../../assets/images/signs/informatory road signs/Toilet Facility Sign (2).png'),
+      'Breakdown Service.png': require('../../assets/images/signs/informatory road signs/Breakdown Service.png'),
+      'Start Of Motorway.png': require('../../assets/images/signs/informatory road signs/Start Of Motorway.png'),
+      'Go Signal.png': require('../../assets/images/signs/informatory road signs/Go Signal.png'),
+      'Stop Signal.png': require('../../assets/images/signs/informatory road signs/Stop Signal.png'),
+      'Slow Down to Stop Signal.png': require('../../assets/images/signs/informatory road signs/Slow Down to Stop Signal.png'),
+      'A Deadend Road.png': require('../../assets/images/signs/informatory road signs/A Deadend Road.png'),
+      'Deadend on Left.png': require('../../assets/images/signs/informatory road signs/Deadend on Left.png'),
+      'Dangerous Turn.png': require('../../assets/images/signs/informatory road signs/Dangerous Turn.png'),
+      'Overtaking is Prohibited.png': require('../../assets/images/signs/informatory road signs/Overtaking is Prohibited.png'),
+      'Overtaking Allowed if no Vehicle Approaching  from the opposite direction.png': require('../../assets/images/signs/informatory road signs/Overtaking Allowed if no Vehicle Approaching  from the opposite direction.png'),
+      'Stoping on Road Prohibited.png': require('../../assets/images/signs/informatory road signs/Stoping on Road Prohibited.png'),
+      'Prohibition of Stopping the Vehicle on Yellow Section.png': require('../../assets/images/signs/informatory road signs/Prohibition of Stopping the Vehicle on Yellow Section.png'),
+      'Prohibited For Vehicles from Crossing the Lines.png': require('../../assets/images/signs/informatory road signs/Prohibited For Vehicles from Crossing the Lines.png'),
+      'Cannot Cross without stopping on these lines first.png': require('../../assets/images/signs/informatory road signs/Cannot Cross without stopping on these lines first.png'),
+    };
+  };
+
   const renderImage = () => {
     // Don't render image for rules quizzes
     if (isRulesQuiz) {
       return null;
     }
 
-    const imageSource = questions[currentQuestionIndex]?.image_url;
+    const imageUrl = questions[currentQuestionIndex]?.image_url;
     
-    if (typeof imageSource === 'number') {
+    if (!imageUrl) return null;
+    
+    // Extract filename from URL - exact same logic as RoadSignsScreen
+    const urlParts = imageUrl.split('/');
+    const fileName = decodeURIComponent(urlParts[urlParts.length - 1]);
+    
+    console.log('🖼️ SignQuizScreen - Image URL:', imageUrl);
+    console.log('🖼️ SignQuizScreen - Filename:', fileName);
+    
+    const localImageMap = getLocalImageMap();
+    const localImage = localImageMap[fileName];
+    
+    if (localImage) {
+      console.log('✅ Found local image for:', fileName);
       return (
         <Image 
-          key={`image-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
-          source={imageSource}
-          style={styles.signImage}
+          source={localImage} 
+          style={styles.signImage} 
           resizeMode="contain"
         />
-      );
-    } else if (imageSource && typeof imageSource === 'object' && imageSource.uri) {
-      return (
-        <Image 
-          key={`image-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
-          source={imageSource}
-          style={styles.signImage}
-          resizeMode="contain"
-        />
-      );
-    } else if (typeof imageSource === 'string' && (imageSource.startsWith('http') || imageSource.includes('/static/media/'))) {
-      return (
-        <Image 
-          key={`image-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
-          source={{ uri: imageSource }}
-          style={styles.signImage}
-          resizeMode="contain"
-        />
-      );
-    } else if (typeof imageSource === 'string' && imageSource.startsWith('data:')) {
-      return (
-        <Image 
-          key={`image-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
-          source={{ uri: imageSource }}
-          style={styles.signImage}
-          resizeMode="contain"
-        />
-      );
-    } else {
-      return (
-        <Text 
-          key={`emoji-${currentQuestionIndex}-${questions[currentQuestionIndex]?.id}`}
-          style={styles.signImageEmoji}
-        >
-          🚦
-            </Text>
       );
     }
+
+    // Fallback to remote URL - exact same as RoadSignsScreen
+    console.log('🌐 Using remote image for:', fileName);
+    return (
+      <Image 
+        source={{ uri: `https://sup-admin-quizly.vercel.app${imageUrl}` }} 
+        style={styles.signImage} 
+        resizeMode="contain"
+      />
+    );
   };
 
   const renderQuestion = () => {
@@ -369,7 +490,16 @@ const SignQuizScreen = ({ navigation, route }) => {
       return <Text>Loading question...</Text>;
     }
     
-
+    // Debug: Log question data to check Urdu content and image path
+    console.log('🔍 SignQuizScreen Question Debug:', {
+      questionIndex: currentQuestionIndex + 1,
+      questionText: currentQuestion.question || currentQuestion.question_text,
+      questionUrdu: currentQuestion.question_urdu,
+      imageUrl: currentQuestion.image_url,
+      optionsCount: (currentQuestion.options || []).length,
+      firstOptionUrdu: (currentQuestion.options || [])[0]?.text_urdu,
+      category: category
+    });
     
     return (
       <View style={styles.questionContainer}>
@@ -388,10 +518,12 @@ const SignQuizScreen = ({ navigation, route }) => {
       >
         <Text style={[styles.questionText, isRulesQuiz && styles.questionTextRules]}>
           {currentQuestion.question || currentQuestion.question_text || currentQuestion.title || currentQuestion.text}
-            </Text>
-        <Text style={[styles.questionTextUrdu, isRulesQuiz && styles.questionTextUrduRules]}>
-          {currentQuestion.question_urdu || currentQuestion.question_urdu_text || currentQuestion.title_urdu || currentQuestion.text_urdu || 'No Urdu text available'}
-            </Text>
+        </Text>
+        {(currentQuestion.question_urdu || currentQuestion.question_urdu_text || currentQuestion.title_urdu || currentQuestion.text_urdu) && (
+          <Text style={[styles.questionTextUrdu, isRulesQuiz && styles.questionTextUrduRules]}>
+            {currentQuestion.question_urdu || currentQuestion.question_urdu_text || currentQuestion.title_urdu || currentQuestion.text_urdu}
+          </Text>
+        )}
         {!isRulesQuiz && (
           <View style={styles.imageContainer}>
             {renderImage()}
@@ -414,7 +546,7 @@ const SignQuizScreen = ({ navigation, route }) => {
             }
             
       return (
-              <TouchableOpacity 
+      <TouchableOpacity 
                 key={option.id || option.answer_id || index}
                 style={[
                   styles.optionButton,
@@ -425,10 +557,12 @@ const SignQuizScreen = ({ navigation, route }) => {
                 <Text style={styles.optionText}>
                   {optionText}
                 </Text>
-                <Text style={styles.optionTextUrdu}>
-                  {optionTextUrdu || 'No Urdu option text'}
-                </Text>
-              </TouchableOpacity>
+                {optionTextUrdu && (
+                  <Text style={styles.optionTextUrdu}>
+                    {optionTextUrdu}
+                  </Text>
+                )}
+      </TouchableOpacity>
             );
           })}
         </View>
@@ -443,8 +577,8 @@ const SignQuizScreen = ({ navigation, route }) => {
           </Text>
               </TouchableOpacity>
       </ScrollView>
-        </View>
-      );
+    </View>
+  );
     }
 
   const renderFinishConfirmation = () => (
@@ -472,7 +606,7 @@ const SignQuizScreen = ({ navigation, route }) => {
               <Text style={styles.cancelButtonText}>Cancel</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity
+      <TouchableOpacity 
               style={[styles.modalButton, styles.confirmButton]}
               onPress={() => {
                 setShowFinishConfirmation(false);
@@ -480,8 +614,8 @@ const SignQuizScreen = ({ navigation, route }) => {
               }}
             >
               <Text style={styles.confirmButtonText}>Finish Quiz</Text>
-            </TouchableOpacity>
-          </View>
+      </TouchableOpacity>
+    </View>
           </View>
         </View>
     </Modal>
@@ -496,7 +630,7 @@ const SignQuizScreen = ({ navigation, route }) => {
           color={score >= questions.length * 0.7 ? "#f39c12" : "#e74c3c"} 
         />
         <Text style={styles.resultTitle}>Quiz Complete!</Text>
-        <Text style={styles.resultScore}>
+            <Text style={styles.resultScore}>
           You scored {score} out of {questions.length}
             </Text>
         <Text style={[styles.resultPercentage, { color: getPercentageColor(score, questions.length) }]}>
@@ -595,7 +729,7 @@ const SignQuizScreen = ({ navigation, route }) => {
 
                   <Text style={styles.reviewQuestionText}>
                     {question.question || question.question_text || question.title || question.text}
-                  </Text>
+          </Text>
                   
                   {question.question_urdu && (
                     <Text style={styles.reviewQuestionTextUrdu}>
@@ -615,9 +749,9 @@ const SignQuizScreen = ({ navigation, route }) => {
                       const isSelected = option.id === item.selectedAnswer;
                       
                       return (
-                        <View
+            <View 
                           key={option.id || optIndex}
-                          style={[
+              style={[
                             styles.reviewOptionItem,
                             isCorrect && styles.reviewCorrectOption,
                             isSelected && !isCorrect && styles.reviewIncorrectOption
@@ -640,25 +774,25 @@ const SignQuizScreen = ({ navigation, route }) => {
                                 {option.text_urdu}
               </Text>
                             )}
-                          </View>
+          </View>
                           {isCorrect && (
                             <Ionicons name="checkmark-circle" size={20} color="#28a745" />
                           )}
                           {isSelected && !isCorrect && (
                             <Ionicons name="close-circle" size={20} color="#dc3545" />
                           )}
-                        </View>
+        </View>
                       );
                     })}
+          </View>
         </View>
-      </View>
     );
             })}
           </ScrollView>
         </View>
       </View>
     </Modal>
-  );
+    );
 
   return (
     <View style={styles.container}>
@@ -690,8 +824,8 @@ const SignQuizScreen = ({ navigation, route }) => {
               >
                 <Text style={styles.finishQuizButtonText}>Finish Quiz</Text>
               </TouchableOpacity>
+        </View>
       </View>
-          </View>
         )}
 
         {loading ? (
@@ -810,6 +944,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#666',
     marginBottom: 20,
+    writingDirection: 'rtl',
+    textAlign: 'right',
+    fontFamily: 'System',
   },
   questionTextRules: {
     fontSize: 22,
@@ -822,6 +959,8 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     textAlign: 'center',
     lineHeight: 26,
+    writingDirection: 'rtl',
+    fontFamily: 'System',
   },
   imageContainer: {
     alignItems: 'center',
@@ -864,6 +1003,10 @@ const styles = StyleSheet.create({
   optionTextUrdu: {
     fontSize: 14,
     color: '#666',
+    writingDirection: 'rtl',
+    textAlign: 'right',
+    fontFamily: 'System',
+    marginTop: 4,
   },
   nextButton: {
     backgroundColor: '#115740',

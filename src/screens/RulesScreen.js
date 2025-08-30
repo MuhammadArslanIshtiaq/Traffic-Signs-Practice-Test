@@ -13,9 +13,9 @@ const RulesScreen = ({ navigation, route }) => {
       id: '1',
       title: 'Rules Quiz 1',
       titleUrdu: 'قوانین کا کوئز 1',
-      icon: 'document-text-outline',
+      icon: 'reader-outline',
       description: 'Basic traffic rules and regulations',
-      color: '#3498db',
+      color: '#8e44ad',
       onPress: () => navigation.navigate('SignQuiz', { 
         authority, 
         category: 'rules1',
@@ -26,9 +26,9 @@ const RulesScreen = ({ navigation, route }) => {
       id: '2',
       title: 'Rules Quiz 2',
       titleUrdu: 'قوانین کا کوئز 2',
-      icon: 'document-text-outline',
+      icon: 'reader-outline',
       description: 'Advanced traffic rules and safety',
-      color: '#2980b9',
+      color: '#34495e',
       onPress: () => navigation.navigate('SignQuiz', { 
         authority, 
         category: 'rules2',
@@ -63,8 +63,8 @@ const RulesScreen = ({ navigation, route }) => {
       onPress={item.onPress}
     >
       <View style={styles.cardContent}>
-        <View style={[styles.iconContainer, { backgroundColor: `${item.color}20` }]}>
-          <Ionicons name={item.icon} size={32} color={item.color} />
+        <View style={[styles.iconContainer, { backgroundColor: item.color }]}>
+          <Ionicons name={item.icon} size={32} color="white" />
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.quizTitle}>{item.title}</Text>

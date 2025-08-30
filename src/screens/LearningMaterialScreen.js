@@ -67,8 +67,8 @@ const LearningMaterialScreen = ({ navigation, route }) => {
       onPress={item.onPress}
     >
       <View style={styles.cardContent}>
-        <View style={[styles.iconContainer, { backgroundColor: `${item.color}20` }]}>
-          <Ionicons name={item.icon} size={32} color={item.color} />
+        <View style={[styles.iconContainer, { backgroundColor: item.color }]}>
+          <Ionicons name={item.icon} size={32} color="white" />
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.optionTitle}>{item.title}</Text>
